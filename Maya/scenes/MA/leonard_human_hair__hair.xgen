@@ -1,0 +1,365 @@
+# XGen Palette File
+#
+# Version:  C:/Program Files/Autodesk/Maya2018/plug-ins/xgen/
+# Author:   mould
+# Date:     Sun Aug  2 22:13:06 2020
+
+FileVersion 18
+
+Palette
+	name			Hair
+	parent			
+	xgDataPath		${PROJECT}xgen/collections/Hair
+	xgProjectPath		C:/Users/mould/Documents/Github/personalWork/Maya/
+	xgDogTag		
+	endAttrs
+
+Description
+	name			LeonardHair
+	flipNormals		false
+	strayPercentage		25
+	lodFlag			false
+	averageWidth		1.0
+	pixelCullSize		0.0
+	pixelFadeSize		20.0
+	cullFade		0.1
+	minDensity		0.01
+	cullWidthRatio		0.01
+	maxWidthRatio		20.0
+	groom			
+	descriptionId		0
+	xgDataPath		${PROJECT}xgen/collections/Hair/
+	xgProjectPath		C:/Users/mould/Documents/Github/personalWork/Maya/
+	endAttrs
+
+RendermanRenderer
+	percent			100.0
+	startPercent		0.0
+	inCameraOnly		false
+	inCameraMargin		0.0
+	length_XP		true
+	width_XP		true
+	T_XP			false
+	stray_XP		false
+	id_XP			false
+	descid_XP		false
+	ri_XP			true
+	rf_XP			true
+	u_XS			true
+	v_XS			true
+	faceid_XS		true
+	geomid_XS		false
+	geomName_XS		true
+	P_XS			true
+	Pref_XS			false
+	Pg_XS			false
+	Prefg_XS		false
+	N_XS			true
+	Ng_XS			false
+	Nref_XS			false
+	Nrefg_XS		false
+	dPdu_XS			true
+	dPduref_XS		false
+	dPdug_XS		false
+	dPdurefg_XS		false
+	dPdv_XS			true
+	dPdvref_XS		false
+	dPdvg_XS		false
+	dPdvrefg_XS		false
+	renderer		None
+	renderMethod		2
+	draMode			0
+	primitiveBound		1.0
+	custom__arnold_rendermode	0
+	custom__arnold_curveMode	0
+	custom__arnold_minPixelWidth	0.0
+	custom__arnold_motion_blur	0
+	custom__arnold_motion_blur_mode	1
+	custom__arnold_motion_blur_steps	2
+	custom__arnold_motion_blur_factor	0.5
+	custom__arnold_useAuxRenderPatch	0
+	custom__arnold_auxRenderPatch	0
+	custom__arnold_multithreading	0
+	endAttrs
+
+SplinePrimitive
+	_patchNames		
+	length			$a=1.3950;#0.05,5.0\n$a
+	width			$a=0.0500;#0.005,0.5\n$a
+	depth			$a=1.0;#0.05,5.0\n$a
+	offU			$a=0.0000;#-2.0,2.0\n$a
+	offV			$a=0.0000;#-2.0,2.0\n$a
+	offN			$a=0.0000;#-180.0,180.0\n$a
+	aboutN			$a=0.0000;#-180.0,180.0\n$a
+	regionMap		${DESC}/Region/
+	regionMask		0.0
+	iMethod			1
+	useCache		false
+	liveMode		true
+	_wireNames		
+	cacheFileName		${DESC}/guides.abc
+	attrCVCount		3
+	bendParam[0]		$a=0.5000;#0.0,1.0\n$a
+	bendU[0]		$a=0.0000;#-2.0,2.0\n$a
+	bendV[0]		$a=0.0000;#-2.0,2.0\n$a
+	fxCVCount		10
+	uniformCVs		true
+	taper			$a=0.0000;#-1.0,1.0\n$a
+	taperStart		$a=0.0000;#0.0,1.0\n$a
+	displayWidth		true
+	faceCamera		true
+	tubeShade		false
+	tubes			
+	guideSpacing		1.0
+	guideMask		1.0
+	cutParam		1.0
+	texelsPerUnit		10.0
+	CVFrequency		1.0
+	widthRamp		rampUI(0.00974025974026,0.434210526316,3:0.136363636364,0.868421052632,3:0.487012987013,0.868421052632,3:0.993506493506,0.276315789474,3)
+	endAttrs
+
+ClumpingFXModule
+	active			true
+	mask			1.0
+	name			Clumping1
+	cvAttr			false
+	mapInitialized		True
+	pointDir		${DESC}/${FXMODULE}/Points/
+	mapDir			${DESC}/${FXMODULE}/Maps/
+	clump			.25
+	clumpScale		rampUI(0.00657894736842,0.552631578947,3:0.108552631579,0.763157894737,3:0.503289473684,0.934210526316,1:0.848684210526,0.697368421053,3:1.0,0.0,3)
+	clumpVolumize		false
+	clumpVariance		0.0
+	cut			0.0
+	copy			0.0
+	copyScale		rampUI(0.0,0.0,3)
+	copyVariance		0.0
+	curl			0.0
+	curlScale		rampUI(0.0,0.5,3)
+	offset			0.0
+	offsetScale		rampUI(0.0,0.0,3:0.5,1.0,3:1.0,0.0,3)
+	flatness		0.0
+	flatnessScale		rampUI(0.0,0.0,3)
+	frame			0.0
+	noise			0.0
+	noiseScale		rampUI(0.0,0.0,3)
+	noiseFrequency		0.0
+	noiseCorrelation	0.0
+	exportCurves		false
+	exportDir		curves/
+	exportFaces		
+	texelsPerUnit		10.0
+	radiusVariance		0.5
+	ptDensity		1.0
+	ptMask			1.0
+	ptLength		1.0
+	colorPreview		false
+	useControlMaps		0
+	controlMask		0.0
+	controlMapDir		${DESC}/Region/
+	endAttrs
+
+ClumpingFXModule
+	active			true
+	mask			1.0
+	name			Clumping2
+	cvAttr			false
+	mapInitialized		True
+	pointDir		${DESC}/${FXMODULE}/Points/
+	mapDir			${DESC}/${FXMODULE}/Maps/
+	clump			.75
+	clumpScale		rampUI(0.0,0.5,3:1.0,0.0,3)
+	clumpVolumize		false
+	clumpVariance		0.0
+	cut			0.0
+	copy			0.0
+	copyScale		rampUI(0.0,0.0,3)
+	copyVariance		0.0
+	curl			0.0
+	curlScale		rampUI(0.0,0.5,3)
+	offset			0.0
+	offsetScale		rampUI(0.0,0.0,3:0.5,1.0,3:1.0,0.0,3)
+	flatness		0.0
+	flatnessScale		rampUI(0.0,0.0,3)
+	frame			0.0
+	noise			0.0
+	noiseScale		rampUI(0.0,0.0,3)
+	noiseFrequency		0.0
+	noiseCorrelation	0.0
+	exportCurves		false
+	exportDir		curves/
+	exportFaces		
+	texelsPerUnit		10.0
+	radiusVariance		0.5
+	ptDensity		4.0
+	ptMask			1.0
+	ptLength		1.0
+	colorPreview		false
+	useControlMaps		1
+	controlMask		1.0
+	controlMapDir		${DESC}/Clumping1/Maps/
+	endAttrs
+
+ClumpingFXModule
+	active			true
+	mask			1.0
+	name			Clumping3
+	cvAttr			false
+	mapInitialized		True
+	pointDir		${DESC}/${FXMODULE}/Points/
+	mapDir			${DESC}/${FXMODULE}/Maps/
+	clump			1.0
+	clumpScale		rampUI(0.0,0.5,3:1.0,0.0,3)
+	clumpVolumize		false
+	clumpVariance		0.0
+	cut			0.0
+	copy			0.0
+	copyScale		rampUI(0.0,0.0,3)
+	copyVariance		0.0
+	curl			0.0
+	curlScale		rampUI(0.0,0.5,3)
+	offset			0.0
+	offsetScale		rampUI(0.0,0.0,3:0.5,1.0,3:1.0,0.0,3)
+	flatness		0.0
+	flatnessScale		rampUI(0.0,0.0,3)
+	frame			0.0
+	noise			0.0
+	noiseScale		rampUI(0.0,0.0,3)
+	noiseFrequency		0.0
+	noiseCorrelation	0.0
+	exportCurves		false
+	exportDir		curves/
+	exportFaces		
+	texelsPerUnit		10.0
+	radiusVariance		0.5
+	ptDensity		8
+	ptMask			1.0
+	ptLength		1.0
+	colorPreview		false
+	useControlMaps		1
+	controlMask		1.0
+	controlMapDir		${DESC}/Clumping2/Maps/
+	endAttrs
+
+CutFXModule
+	active			true
+	mask			1.0
+	name			Cut1
+	amount			rand(0.0,3)
+	rebuildType		1
+	endAttrs
+
+NoiseFXModule
+	active			true
+	mask			1.0
+	name			Noise1
+	frequency		stray() ? .2 : .2
+	magnitude		stray() ? 3 : .01
+	magnitudeScale		rampUI(0.0,0.0,1:1.0,1.0,1)
+	correlation		0.0
+	preserveLength		0.0
+	mode			0
+	bakeDir			${DESC}/${FXMODULE}/
+	endAttrs
+
+RandomGenerator
+	displacement		$a=0.0000;#-1.0,1.0\n$a
+	vectorDisplacement	0
+	bump			$a=0.0000;#-1.0,1.0\n$a
+	offset			$a=0.0000;#-1.0,1.0\n$a
+	cullFlag		false
+	cullBackface		false
+	cullFrustrum		false
+	cullAngleBF		0.0
+	cullAngleF		0.0
+	cullExpr		$a=0.0000;#0.0,1.0\n$a
+	density			23.645
+	mask			$a=map('${DESC}/paintmaps/mask');#3dpaint,5.0\n$a\n
+	dcFlag			false
+	scFlag			true
+	usePoints		false
+	pointDir		${DESC}/Points/
+	ptLength		1.0
+	endAttrs
+
+GLRenderer
+	percent			100.0
+	startPercent		0.0
+	inCameraOnly		true
+	inCameraMargin		0.0
+	patchNames		false
+	faceIds			false
+	primIDs			false
+	primIDsAt		1.0
+	vertices		false
+	poly			false
+	culled			false
+	unitCube		false
+	color			$a=[0,0,0];#color\n$a
+	guideColor		$a=[1.0,0.4313725,0.0];#color\n$a
+	TEXCOORD3		[ $cWidth, 0, 0 ]  # red channel reserved by XGen
+	TEXCOORD4		
+	TEXCOORD5		
+	TEXCOORD6		
+	TEXCOORD7		
+	splineSegments		2
+	primNumLimit		100000000
+	endAttrs
+
+MapTextures
+	RandomGenerator	mask	C:/Users/mould/Documents/Github/personalWork/Maya/sourceimages/3dPaintTextures/leonard_human_hair/pPlaneShape1_Hair_LeonardHair_mask.iff
+	endAttrs
+
+	Active	SplinePrimitive
+	Active	RandomGenerator
+	Active	RendermanRenderer
+	Preview	GLRenderer
+
+Patches	LeonardHair	5
+Patch	Subd
+	name		pPlane1
+	faceIds		100	 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99
+	animCurves	0	
+Guides	Spline	5
+	id			3
+	loc			9.0394997596740723e-01 1.5503999777138233e-02 54
+	blend			0.0000000000000000e+00
+	interp			1.8671017668285634e+00:1.5970402784801221e+00:4.0811942447964400e-01:1.6679184256247455e+00:1.7089561455602884e+00:1.8670917668285634e+00:2.5912513104555672e+00:1.7763638265388859e+00:3.5641163069249409e+00
+	CVs			4
+	1.5422646258443545e-07 1.7411200825246553e+00 2.0354833614066035e+00
+	1.5864002534398128e-07 3.4874687836804235e+00 4.0770792894086645e+00
+	1.6304037379324285e-07 5.2285888959105726e+00 6.1125626547520326e+00
+	id			4
+	loc			6.1225402355194092e-01 3.9616999030113220e-01 77
+	blend			0.0000000000000000e+00
+	interp			2.5415276760494727e+00:2.1955788477400882e+00:1.0023098465007636e+00:1.7763638265388859e+00:1.5641162420177368e+00:2.5415176760494727e+00:2.0106985201277130e+00
+	CVs			4
+	-6.5021896527282042e-01 1.7362318353162727e+00 1.4625630934064353e+00
+	-3.5801563375062567e-01 3.3441349476593465e+00 3.3459513978156989e+00
+	-7.6930402780619644e-01 5.2083037420786287e+00 4.9378156198696006e+00
+	id			5
+	loc			3.9805299043655396e-01 9.4445198774337769e-01 27
+	blend			0.0000000000000000e+00
+	interp			2.6358121898926581e+00:2.6358021898926580e+00:2.0020879622396182e+00:1.5970402784801221e+00:2.4081195136740168e+00:2.1955788477400882e+00:3.0023098614964132e+00
+	CVs			4
+	-6.3596770268177649e-01 1.7317414731077698e+00 2.5466997000687153e+00
+	-8.0783097299334117e-01 3.4895708329427793e+00 4.8487075162606939e+00
+	-8.6717672607839658e-01 5.2421096511339798e+00 7.1503488099807564e+00
+	id			6
+	loc			5.3155999630689621e-02 1.8893800675868988e-01 32
+	blend			0.0000000000000000e+00
+	interp			2.6358121898926581e+00:2.6358021898926580e+00:2.0879652398514414e-03:2.3449638665495036e+00:3.0080722286553740e+00:1.6679184256247455e+00:3.7089562578523685e+00
+	CVs			4
+	4.9673915955854003e-01 1.7591261288240334e+00 2.5220004901373785e+00
+	8.7578310790700586e-01 3.5092908763551094e+00 4.7810948668592008e+00
+	9.4672519044304815e-01 5.2722476103563061e+00 7.0507430958267046e+00
+	id			7
+	loc			4.8083001375198364e-01 9.2979401350021362e-01 72
+	blend			0.0000000000000000e+00
+	interp			2.5415276760494727e+00:2.5415176760494727e+00:1.0698534769202461e-02:1.8670917668285634e+00:5.9125131607096637e-01:2.3449638665495036e+00:1.0080722075569051e+00
+	CVs			4
+	4.2354834222001253e-01 1.5132670779226978e+00 1.6292820056689887e+00
+	4.1758342218126776e-01 3.4969266881573446e+00 3.0559069963372019e+00
+	4.2276804597789985e-01 5.3479887081099013e+00 4.6386180482715913e+00
+endObject
+endPatches
