@@ -1,0 +1,20 @@
+// Exported skin weight map file
+// 
+demon_arm_GEO	COG_JNT	demon_arm_GEO_COG_JNT.jpg
+demon_arm_GEO	upper_body_JNT	demon_arm_GEO_upper_body_JNT.jpg
+demon_arm_GEO	spine_01_JNT	demon_arm_GEO_spine_01_JNT.jpg
+demon_arm_GEO	spine_02_JNT	demon_arm_GEO_spine_02_JNT.jpg
+demon_arm_GEO	spine_03_JNT	demon_arm_GEO_spine_03_JNT.jpg
+demon_arm_GEO	clav_R_JNT	demon_arm_GEO_clav_R_JNT.jpg
+demon_arm_GEO	shoulder_R_JNT	demon_arm_GEO_shoulder_R_JNT.jpg
+demon_arm_GEO	elbow_R_JNT	demon_arm_GEO_elbow_R_JNT.jpg
+demon_arm_GEO	wrist_R_JNT	demon_arm_GEO_wrist_R_JNT.jpg
+demon_arm_GEO	joint1	demon_arm_GEO_joint1.jpg
+demon_arm_GEO	joint2	demon_arm_GEO_joint2.jpg
+demon_arm_GEO	joint3	demon_arm_GEO_joint3.jpg
+demon_arm_GEO	joint4	demon_arm_GEO_joint4.jpg
+demon_arm_GEO	joint5	demon_arm_GEO_joint5.jpg
+demon_arm_GEO	joint6	demon_arm_GEO_joint6.jpg
+demon_arm_GEO	joint7	demon_arm_GEO_joint7.jpg
+demon_arm_GEO	lower_body_JNT	demon_arm_GEO_lower_body_JNT.jpg
+demon_arm_GEO	hip_R_JNT	demon_arm_GEO_hip_R_JNT.jpg
