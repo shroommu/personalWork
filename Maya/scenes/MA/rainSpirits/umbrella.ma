@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: umbrella.ma
-//Last modified: Wed, Jan 26, 2022 09:12:13 PM
+//Last modified: Wed, Feb 02, 2022 01:22:29 PM
 //Codeset: 1252
 requires maya "2020";
 requires "stereoCamera" "10.0";
@@ -10,21 +10,21 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 19043)\n";
-fileInfo "UUID" "C5D47E89-4461-39BA-FA99-3CABD95B3230";
+fileInfo "UUID" "8872F465-4B8F-B1A7-5EF7-94BC8E049D2D";
 createNode transform -s -n "persp";
 	rename -uid "F5E19DE1-45F7-21A8-5284-D587BDDFB62C";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.95299005375596169 4.1063643899577249 10.884216352111734 ;
-	setAttr ".r" -type "double3" -712.53835272742128 -1084.5999999994892 -4.9856761586680431e-17 ;
+	setAttr ".t" -type "double3" -3.6076398970805306 4.9595224533316014 18.086999001900452 ;
+	setAttr ".r" -type "double3" -715.53835272735728 -1092.5999999994274 2.0369018685171668e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E797AE36-496C-4BB6-DD3B-98BB9B57B445";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 11.07887768972707;
+	setAttr ".coi" 19.273307839256322;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 6.1231458187103271 0 ;
+	setAttr ".tp" -type "double3" 0 8.7566365194053368 0 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "C15A41F6-4937-E25D-6BEE-4297308F1B63";
@@ -11827,7 +11827,6 @@ createNode transform -n "JNTS" -p "umbrella";
 createNode joint -n "main_JNT" -p "JNTS";
 	rename -uid "1286FC8E-41C7-A6EE-CBDE-BEA653EE3EAB";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".uoc" 1;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 2.814775793723737 3.7252902984619141e-09 1;
@@ -11864,11 +11863,67 @@ createNode scaleConstraint -n "joint1_scaleConstraint1" -p "main_JNT";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
+createNode joint -n "fabric_JNT" -p "main_JNT";
+	rename -uid "39172DA0-4A4D-0121-B3F3-37BCC8437FBE";
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".uoc" 1;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 8.6870794059439032 0 1;
+createNode parentConstraint -n "fabric_JNT_parentConstraint1" -p "fabric_JNT";
+	rename -uid "CD27D636-416A-0231-BA2A-F597DE3CD870";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "fabric_CTRLW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" 0 5.8723036122201666 -3.7252902984619141e-09 ;
+	setAttr -k on ".w0";
+createNode scaleConstraint -n "fabric_JNT_scaleConstraint1" -p "fabric_JNT";
+	rename -uid "6F0C8D4C-42EF-500D-3BB6-079A7CFEA7F5";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "fabric_CTRLW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode transform -n "CTRLS" -p "umbrella";
 	rename -uid "C211CACC-40E6-0AB7-13EE-CF916160E9D5";
-createNode transform -n "main_CTRL_GRP" -p "CTRLS";
+createNode transform -n "transform_CTRL" -p "CTRLS";
+	rename -uid "73632245-467F-7AF0-0451-F9BB310ADD46";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 17;
+	setAttr ".t" -type "double3" 0 3.3306690738754696e-16 0 ;
+createNode nurbsCurve -n "transform_CTRLShape" -p "transform_CTRL";
+	rename -uid "E2F76092-4ACD-9A68-AD15-7A94304EB13F";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+	setAttr -s 11 ".cp[0:10]" -type "double3" 2.2709190659504341 -0.78361162489122504 
+		-3.0545306908416636 1.9665161183804259e-16 -1.1081941875543877 -4.3197587296731301 
+		-2.2709190659504341 -0.7836116248912246 -3.0545306908416601 -3.2115645421187429 -7.1226030421407366e-16 
+		-1.5222372060998683e-15 -2.2709190659504341 0.78361162489122416 3.0545306908416561 
+		-3.2170461667359892e-16 1.1081941875543881 4.3197587296731301 2.2709190659504341 
+		0.78361162489122405 3.0545306908416561 3.2115645421187429 -5.0368727176083063e-16 
+		-7.0921617798688723e-16 0 0 0 0 0 0 0 0 0;
+createNode transform -n "main_CTRL_GRP" -p "transform_CTRL";
 	rename -uid "4D2D2143-4500-1581-FFCB-63BA9725D06C";
-	setAttr ".t" -type "double3" 0 2.814775793723737 3.7252902984619141e-09 ;
+	setAttr ".t" -type "double3" 0 2.8147757937237365 3.7252902984619141e-09 ;
 	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
 	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
 createNode transform -n "main_CTRL" -p "main_CTRL_GRP";
@@ -11884,23 +11939,84 @@ createNode nurbsCurve -n "main_CTRLShape" -p "main_CTRL";
 		0 -5.0153819222531093e-16 5.0153819222531093e-16 0 0.78361162489122393 -0.78361162489122405 
 		0 1.1081941875543881 -1.1081941875543877 0 0.78361162489122382 -0.78361162489122393 
 		0 -2.9296515977206672e-16 2.9296515977206672e-16 0 0 0 0 0 0 0 0 0;
+createNode transform -n "fabric_CTRL_GRP" -p "transform_CTRL";
+	rename -uid "A5F98D0E-4BCD-C9C7-3EC2-5BA6C62DFE09";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "fabric_CTRL" -p "fabric_CTRL_GRP";
+	rename -uid "9476BA39-4B38-4CE7-A9C7-EDB70C48D056";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 17;
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "fabric_CTRLShape" -p "fabric_CTRL";
+	rename -uid "C8B49CA7-4B44-7A84-B21F-37B0CF9E5ED8";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+	setAttr -s 11 ".cp[0:10]" -type "double3" 3.1582761715710772 -0.7836116248912246 
+		-3.9418877964623067 2.7349283780362232e-16 -1.1081941875543877 -5.5746711831099827 
+		-3.1582761715710772 -0.78361162489122438 -3.9418877964623018 -4.4664769955555972 
+		-5.7448982375248304e-17 -1.6313881508107855e-15 -3.1582761715710772 0.78361162489122449 
+		3.9418877964623018 -4.4741005540829399e-16 1.1081941875543881 5.5746711831099871 
+		3.1582761715710772 0.78361162489122438 3.9418877964623018 4.4664769955555972 1.511240500779959e-16 
+		-5.821802713172838e-16 0 0 0 0 0 0 0 0 0;
+createNode parentConstraint -n "fabric_CTRL_GRP_Translate_Constraint" -p "fabric_CTRL_GRP";
+	rename -uid "CE3175EF-4921-5BC5-CFDD-E38B84E8F4E1";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "main_CTRLW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 0 5.8723036122201666 -3.7252902984619141e-09 ;
+	setAttr ".rst" -type "double3" 0 8.6870794059439032 0 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "fabric_CTRL_GRP_Rotate_Constraint" -p "fabric_CTRL_GRP";
+	rename -uid "31671721-4DBC-C634-E784-48B2EEB1851F";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "main_CTRLW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 0 5.8723036122201666 -3.7252902984619141e-09 ;
+	setAttr ".rst" -type "double3" 0 8.6870794059439032 0 ;
+	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "1C42FDAE-4873-1673-2468-57B87AC84698";
+	rename -uid "D2946679-4D3E-A502-E93B-F6A0E91D8AD4";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "F807F56D-4125-9DCD-C870-5DA73338A076";
+	rename -uid "F71EEE78-4B87-F1AE-425F-FB8D4244C3A1";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "0C57E2C3-48EB-2D66-F268-8C8AC2F4FCB3";
+	rename -uid "F612907F-4737-0E93-B2E1-7C941FF23AB0";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B58A6BF5-4B78-D71F-843B-29B47B08CD33";
+	rename -uid "B1C838B4-48FC-69CE-1E6C-83AFD10A9044";
 	setAttr ".cdl" 3;
 	setAttr -s 4 ".dli[1:3]"  1 2 3;
 	setAttr -s 4 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "DF0C88C4-45E0-F096-EBF1-3D8DE7BD627E";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "D4263B15-4245-CA2C-5BAC-1586BF37804F";
+	rename -uid "61277F60-4F03-C0B0-82F6-E2ADD789E13B";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0734949B-4C07-7A4A-7A7D-6C93F467F444";
 	setAttr ".g" yes;
@@ -12555,1479 +12671,26 @@ createNode transformGeometry -n "transformGeometry34";
 	rename -uid "3404B3B4-498E-EE81-9621-309835C46828";
 	setAttr ".txf" -type "matrix" 0.0052111443817605112 0 0.99998642189493347 0 -0.99998642189493336 -3.4061642395499788e-13 0.0052111443817605659 0
 		 3.4061642395499798e-13 -0.99999999999999989 -1.7763568394002503e-15 0 1.0645281876206476 10.471430672958643 -0.050820510046292254 1;
-createNode skinCluster -n "skinCluster1";
-	rename -uid "7CDD019A-4708-C092-8C03-0AAC1EDFAA54";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak1";
-	rename -uid "6201E05C-42F8-9C1A-7E78-C7828C12850D";
-createNode objectSet -n "skinCluster1Set";
-	rename -uid "D1FA11C4-4D7D-E200-F5AA-0D9415181BC1";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster1GroupId";
-	rename -uid "A9391E97-43FD-CB82-5B86-2FB5B953C2A3";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster1GroupParts";
-	rename -uid "8CE356D7-491D-DD20-3669-9CB309E191CD";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet1";
-	rename -uid "0520A58F-4F1B-8CA2-DBAA-A58528FF4E27";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId3";
-	rename -uid "E11FB882-4C2A-3713-A196-269B32516E01";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts3";
-	rename -uid "E78C89C0-4B5D-F972-BCB9-9A8E5F551ADA";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 createNode dagPose -n "bindPose1";
 	rename -uid "90FE5EE6-4373-7309-B092-9B92403E123D";
 	setAttr -s 3 ".wm";
 	setAttr ".wm[1]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
 	setAttr ".wm[2]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr -s 3 ".xm";
+	setAttr -s 4 ".xm";
 	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 2.814775793723737 3.7252902984619141e-09 0
 		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
 	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
 	setAttr ".xm[2]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[3]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 8.6870794059439032 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
 	setAttr -s 3 ".m";
-	setAttr -s 3 ".p";
-	setAttr -s 2 ".g[1:2]" yes yes;
+	setAttr -s 4 ".p";
+	setAttr -s 4 ".g[1:3]" yes yes no;
 	setAttr ".bp" yes;
-createNode skinCluster -n "skinCluster2";
-	rename -uid "402C4B40-41A1-DA1F-8A0A-1D83E67772B8";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak2";
-	rename -uid "2092FC0F-4DEC-57AC-19CC-B48219392812";
-createNode objectSet -n "skinCluster2Set";
-	rename -uid "7AB4B081-409C-7709-3EA3-AD96AFBB7293";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster2GroupId";
-	rename -uid "20E0EE6A-48C3-B80B-CD6C-CE94F68F3F54";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster2GroupParts";
-	rename -uid "D609C7A9-4A45-02A0-5B25-2A92954040B6";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet2";
-	rename -uid "A2760361-48AF-D81B-F982-1D9E1B6A0462";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId5";
-	rename -uid "65820DAD-462A-1873-56DB-AFA70F473317";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts5";
-	rename -uid "40293817-490C-1C10-D430-AEBF9C0A8634";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster3";
-	rename -uid "287253A0-488C-B477-7AB1-09B5909DC6C9";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak3";
-	rename -uid "45E18757-41CF-336A-029D-D4A35BA2F26B";
-createNode objectSet -n "skinCluster3Set";
-	rename -uid "99E7D2CD-4DE9-4549-FDF0-3286E69C79CA";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster3GroupId";
-	rename -uid "087E2508-428E-47FE-FFA7-75BA0286A04C";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster3GroupParts";
-	rename -uid "6231F53D-466F-7AA6-7C53-878F006B2C19";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet3";
-	rename -uid "A1224F8D-4FA0-3C16-F03E-468911A18C25";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId7";
-	rename -uid "9B00C83D-40FC-6F98-B134-10B9607D4655";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts7";
-	rename -uid "95C34080-4305-AF46-BC43-92A80E08E033";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster4";
-	rename -uid "D07154EC-40A5-31F9-87CA-5ABB4D2DA6C3";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak4";
-	rename -uid "66AC4B50-4C74-7BC6-D4EF-7E96510490BC";
-createNode objectSet -n "skinCluster4Set";
-	rename -uid "13F30190-4536-A449-CC2D-EEBBD1439936";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster4GroupId";
-	rename -uid "DFAD45B7-43ED-C7C0-F528-5492F702FB29";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster4GroupParts";
-	rename -uid "E5C6271E-4911-E397-58F9-D7B63E68FF1B";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet4";
-	rename -uid "406137F7-4137-B023-71F9-AC8EDBB07577";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId9";
-	rename -uid "7F53EEED-4439-2E4D-5F4F-4C9E1218644B";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts9";
-	rename -uid "FCDC7DB4-480D-F994-514B-F6929043CE31";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster5";
-	rename -uid "C2A186B1-4D01-2BC9-692B-B98BD0BF023F";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak5";
-	rename -uid "C3EBAF72-4F8A-110A-D520-E085F4635FEA";
-createNode objectSet -n "skinCluster5Set";
-	rename -uid "4B0FFDFD-47DA-9584-CE1B-D6803C05B120";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster5GroupId";
-	rename -uid "B1B6080A-4B1A-890D-8932-36A8399C0138";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster5GroupParts";
-	rename -uid "2E7A0522-4B8B-820B-9576-E9B35912E2B1";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet5";
-	rename -uid "F7EB59A3-4EC6-498B-18A0-F4941B0B40CC";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId11";
-	rename -uid "8DD98BDA-4EA6-5ADA-CBDE-64B9AEA7CA25";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts11";
-	rename -uid "EEE1AFCF-44CA-7E11-FDD0-95BD06D2C859";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster6";
-	rename -uid "BB91D67D-4CF6-C336-EABE-249B5BCAC08B";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak6";
-	rename -uid "7ABD4910-4E82-9539-572D-C98449AD0C35";
-createNode objectSet -n "skinCluster6Set";
-	rename -uid "12CE5EE5-44D8-692C-F510-95A579449758";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster6GroupId";
-	rename -uid "5EC80B6C-4E4F-15AB-A532-7B9E160E06A3";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster6GroupParts";
-	rename -uid "498172D8-43D2-BA8D-F764-8B8CACCB8B93";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet6";
-	rename -uid "3AD57A97-4A60-259C-8A89-1AAE94DD7E94";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId13";
-	rename -uid "E40D4AAB-4EDC-AB9D-33A2-52A47EB38FEC";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts13";
-	rename -uid "E77D7F75-456D-2A12-D497-06BA97037C86";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster7";
-	rename -uid "01872627-4CAC-9532-D7F0-0C86ADC4BC98";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak7";
-	rename -uid "409715EC-4EFF-8F05-F4FA-F8B9CD7F8C8F";
-createNode objectSet -n "skinCluster7Set";
-	rename -uid "BC1E9389-4510-423A-AC00-2CA76C801303";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster7GroupId";
-	rename -uid "439A5182-43CA-EDA8-3F8E-2CB43395880A";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster7GroupParts";
-	rename -uid "7E440C18-4685-0D3B-101B-D299FB8EBC8D";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet7";
-	rename -uid "AF05409D-4222-9066-0009-C7BDF81EC4F6";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId15";
-	rename -uid "04A08D29-40A1-C4F0-DCF4-0D8737F52976";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts15";
-	rename -uid "233D29DD-42C3-812A-BC6B-6EAFF86D729D";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster8";
-	rename -uid "E233AF7A-4AB6-FCF7-0C1F-8DBDAD12C6C4";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak8";
-	rename -uid "5C0C273B-4E81-E041-DBE4-7DAAB69E24A6";
-createNode objectSet -n "skinCluster8Set";
-	rename -uid "4CA23D71-4F15-2DF5-4E40-D9AAB35D45C2";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster8GroupId";
-	rename -uid "DD5E8BE2-4753-C3B7-7FA1-1A862A5CABE9";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster8GroupParts";
-	rename -uid "097D28D5-4AC4-8F9A-BC4F-91A07B698BB9";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet8";
-	rename -uid "46AE7EE6-43F7-0BE9-B66E-F7B978979890";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId17";
-	rename -uid "3A164A8B-4ABF-4361-7854-B4BDC0898208";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts17";
-	rename -uid "718D6612-4999-7BC1-A5F7-97B3A52658B7";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster9";
-	rename -uid "22E5A66A-4828-3E93-E976-858C3E9B38CC";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak9";
-	rename -uid "CE227798-4BA5-D68F-2C56-64AE78C85739";
-createNode objectSet -n "skinCluster9Set";
-	rename -uid "34894007-4FCA-E061-BA77-D5AD5F230C2C";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster9GroupId";
-	rename -uid "AA062990-46FE-F84D-14CA-F0A4C9C83AC0";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster9GroupParts";
-	rename -uid "0A3428AE-4BF6-6754-3870-6BB9DEB70F0B";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet9";
-	rename -uid "F50945DA-46CC-D1FC-EF27-13860192FBA2";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId19";
-	rename -uid "8432802E-44B7-04EE-EFA7-B88B24C77472";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts19";
-	rename -uid "0C9A54F7-4F7D-5786-4523-B2B1052481D4";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster10";
-	rename -uid "6DCE5775-4B31-5E8A-6A6A-97B24B7442EE";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak10";
-	rename -uid "59EFD4D0-47A9-500A-218B-1AA6A0EAA061";
-createNode objectSet -n "skinCluster10Set";
-	rename -uid "273D7ECE-455C-5549-E609-B5B607A0A2C8";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster10GroupId";
-	rename -uid "E43880DF-4A43-E685-B9F4-7DB533F27B0C";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster10GroupParts";
-	rename -uid "49D5B659-44CD-239C-84CD-5FB84B7BCBBD";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet10";
-	rename -uid "B7071B05-4DA0-FE46-0567-FB95C023F8C9";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId21";
-	rename -uid "7608EE1B-40E9-30D7-6DE3-0B91A67F6B5A";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts21";
-	rename -uid "51DAC80F-4E39-AE84-76E4-B2892E31F757";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster11";
-	rename -uid "F80BD440-4E28-AD0E-C719-418CBE322266";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak11";
-	rename -uid "E76BA8C3-4BF5-2FAA-8DE3-F5998CC33A08";
-createNode objectSet -n "skinCluster11Set";
-	rename -uid "A27F92EC-4AAD-040E-4C9E-F4A9301F1DEB";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster11GroupId";
-	rename -uid "98D14126-4C5F-2B12-839F-33B4C15A6114";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster11GroupParts";
-	rename -uid "F0A5E88E-42DF-E790-D5A6-959C14EAF908";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet11";
-	rename -uid "079D0A8B-4EC7-DA31-C587-3F962BA53398";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId23";
-	rename -uid "E3038075-497C-4101-7F9E-8BA2AD2D9A67";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts23";
-	rename -uid "6EECB4DA-44DD-4460-2727-A6965088C4A3";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster12";
-	rename -uid "60187330-477A-C443-45FC-B9A0594D584F";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak12";
-	rename -uid "86BC9A41-4489-E9D2-76FA-27A7DDCCCEDA";
-createNode objectSet -n "skinCluster12Set";
-	rename -uid "DCAB1E76-46D5-444B-9A8A-8BAD85F2CAF6";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster12GroupId";
-	rename -uid "F7A33D6D-4E91-FE6B-C2E2-D3B7D8359E42";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster12GroupParts";
-	rename -uid "9A1F0572-4C8F-8645-4C54-74902D37194D";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet12";
-	rename -uid "4D37C3DA-4419-D03E-6662-029A9554149E";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId25";
-	rename -uid "2A2DC429-4634-AF0D-2979-84BEE8EA72D6";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts25";
-	rename -uid "AC51BE21-4DD4-C11B-C587-05861A8401D8";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster13";
-	rename -uid "DDC9D45E-4333-3FE2-BB53-C2B4EAFFCFA3";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak13";
-	rename -uid "5F65826D-438A-DE7C-9F47-98A46405E752";
-createNode objectSet -n "skinCluster13Set";
-	rename -uid "A4CF315B-4540-5060-CAB2-DFAFBCF0A946";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster13GroupId";
-	rename -uid "B9EC98B1-4307-81E5-A780-57AE0AEC427B";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster13GroupParts";
-	rename -uid "B8DB97DA-4584-4336-AFE5-E38AF52577E1";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet13";
-	rename -uid "1AC501D2-40D4-C058-A845-90A6C218E708";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId27";
-	rename -uid "D1C0E932-4CCE-5157-E562-AB8D9E71B959";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts27";
-	rename -uid "AD9BF83C-4827-64DC-86C2-C8A4466B135F";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster14";
-	rename -uid "363639A3-42FA-EE36-E84D-EC9505DBAC70";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak14";
-	rename -uid "ACC5B702-4ACD-3B6E-35B5-BB9FA0E3A487";
-createNode objectSet -n "skinCluster14Set";
-	rename -uid "F055CADB-42CE-DB88-E657-3F8D6C16AF15";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster14GroupId";
-	rename -uid "A2C34039-4D77-EDFA-D561-D98A19DFF455";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster14GroupParts";
-	rename -uid "E4B3DD59-458C-1B92-E316-D2B5F8892158";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet14";
-	rename -uid "90777F65-46FF-377B-4874-E3B86776459D";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId29";
-	rename -uid "14C0C273-4D83-73BF-F1AA-7D940510D004";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts29";
-	rename -uid "C1862B39-4F09-6739-7892-AE8B4E9EAAEA";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster15";
-	rename -uid "C524B19B-482D-4D14-C0E6-FEBEA48A40C1";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak15";
-	rename -uid "5893693B-469B-49E9-356A-B5AEA23ADA20";
-createNode objectSet -n "skinCluster15Set";
-	rename -uid "649AA35E-417F-569D-7200-72AC724FE7C4";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster15GroupId";
-	rename -uid "986BCEAD-449E-E836-D66F-A19174781CF6";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster15GroupParts";
-	rename -uid "3431601C-40B4-041B-B946-F292DC7ED096";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet15";
-	rename -uid "2FCA33D1-44BC-D3AC-AE9D-FBA6DB919563";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId31";
-	rename -uid "0F05D53E-4772-E648-4990-8889A36925CC";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts31";
-	rename -uid "C0149499-477B-7457-08FB-5C95DD94DBFB";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster16";
-	rename -uid "2E085184-4703-FA4E-EF0F-D49FE985CD49";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak16";
-	rename -uid "82A79146-40C3-779E-76BF-E999D1C21BB0";
-createNode objectSet -n "skinCluster16Set";
-	rename -uid "52423B3C-4505-D0BF-3711-32BA17271403";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster16GroupId";
-	rename -uid "5BE09E07-447B-6A7E-B7E1-42873885727E";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster16GroupParts";
-	rename -uid "5741F0F3-4261-75FE-5049-86950E101E8D";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet16";
-	rename -uid "FB7E8FC7-4A6D-A868-208B-D9948FBE8D7D";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId33";
-	rename -uid "D6C1BAC0-4157-1C2E-3E70-758583ABD55E";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts33";
-	rename -uid "640487BD-4D1F-F5B7-503B-F4889A4F986C";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster17";
-	rename -uid "5C997C07-46B1-E39E-EF09-FF95CCBD7E57";
-	setAttr -s 37 ".wl";
-	setAttr ".wl[0:36].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak17";
-	rename -uid "95E4D2DE-4819-E201-DCB8-ABA8612A7E89";
-createNode objectSet -n "skinCluster17Set";
-	rename -uid "57D65662-43FB-B661-C6B4-B4A6B14A6680";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster17GroupId";
-	rename -uid "BB7D621E-40D5-FDA0-1364-7798560C915C";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster17GroupParts";
-	rename -uid "99E6C718-43E0-BA77-42F3-AD9E8FA7EBBD";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet17";
-	rename -uid "941A45FB-4A1C-6C4E-FD2D-ECBA684A2445";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId35";
-	rename -uid "580248A8-485F-0AD2-9957-A4A3A6BC90FE";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts35";
-	rename -uid "70EFEAAF-403C-7471-7983-668ED64F4771";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster18";
-	rename -uid "B2DB10EE-4239-6C32-5855-6ABE029C0A16";
-	setAttr -s 402 ".wl";
-	setAttr ".wl[0:401].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
 createNode tweak -n "tweak18";
 	rename -uid "C2B62D43-462D-F6A5-5849-348ED981DF30";
-createNode objectSet -n "skinCluster18Set";
-	rename -uid "77F02DF1-41E6-0862-C3D2-FBA7D2DE7BDE";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster18GroupId";
-	rename -uid "45AE78F7-4407-E92B-3526-048C5A4C7E2A";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster18GroupParts";
-	rename -uid "97FF8FE6-492F-AD4F-D6CB-85A2E2494EBF";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 createNode objectSet -n "tweakSet18";
 	rename -uid "D8E0954C-4FA8-B41B-DAB9-E0B31A863710";
 	setAttr ".ihi" 0;
@@ -14037,52 +12700,6 @@ createNode groupId -n "groupId37";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts37";
 	rename -uid "7479D588-42DE-082A-2A9C-D8AEE6EA2828";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster19";
-	rename -uid "87786C07-4382-9CB8-B167-FE8DDC3AA7ED";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak19";
-	rename -uid "4C8CFB5A-47A9-DC1B-EFE2-30BEDD2FCD32";
-createNode objectSet -n "skinCluster19Set";
-	rename -uid "AD888FB4-484C-28DD-7B78-FA920E12ABA9";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster19GroupId";
-	rename -uid "32E1969A-4A11-1E17-10E4-CE96DF52E6CF";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster19GroupParts";
-	rename -uid "1B003E12-4C03-B286-C650-75B7B818BC29";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet19";
-	rename -uid "1A067E34-404A-9C1D-AAC3-63B295082434";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId39";
-	rename -uid "F1B87E76-4860-49FE-5EDC-52B6AF7F5572";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts39";
-	rename -uid "ECE625FA-4DC0-6738-5336-89B282A2092A";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 createNode skinCluster -n "skinCluster20";
@@ -14389,558 +13006,6 @@ createNode groupParts -n "groupParts45";
 	rename -uid "1075B71A-415B-E7E8-E2A9-DDAF77C8B1BF";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster23";
-	rename -uid "1B276228-4B3B-9620-75EF-69849FED5E3F";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak23";
-	rename -uid "3AB257E6-4273-8DA3-F3D4-98A4C088EA63";
-createNode objectSet -n "skinCluster23Set";
-	rename -uid "1EE48AD4-4733-D640-B6C9-A986B95F449A";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster23GroupId";
-	rename -uid "F3678C14-4519-6FB7-DE1A-A8A2406A840E";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster23GroupParts";
-	rename -uid "F5D4E2E9-4B45-DEA3-C59C-B5BDB593EA96";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet23";
-	rename -uid "C4164140-40E7-2FBB-54C3-0AB33BC91F27";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId47";
-	rename -uid "50A6D10F-458B-210D-18B7-0F9B20BBA03C";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts47";
-	rename -uid "E362F2FE-414A-CE99-FF61-50A8C93CA618";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster24";
-	rename -uid "4FA1DAB9-4FA5-0F77-89BF-F8A9D188615E";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak24";
-	rename -uid "D454003B-4464-D567-4D16-DAA7AE976585";
-createNode objectSet -n "skinCluster24Set";
-	rename -uid "4701B297-4F40-9F1C-2A43-DC86C1039433";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster24GroupId";
-	rename -uid "70A4E841-478D-F7DB-E27A-E6B0A7085A6E";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster24GroupParts";
-	rename -uid "54D5C0E9-4EE7-DCBE-F14E-01A84970C548";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet24";
-	rename -uid "F02DE9FC-4B89-ACF0-592F-1AB231DE6720";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId49";
-	rename -uid "B0EC486A-4F6C-34A7-A08B-F4A855699644";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts49";
-	rename -uid "DCE303D0-4971-5ADF-5AE7-07BC6C9FEEB2";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster25";
-	rename -uid "B943489D-43D9-AEAF-DFAB-24BD52C6AF30";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak25";
-	rename -uid "7603610C-46A2-CFC3-0A24-1F92EC451EB5";
-createNode objectSet -n "skinCluster25Set";
-	rename -uid "9676A174-4A85-1E36-1A37-59B608F0BA6F";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster25GroupId";
-	rename -uid "6EFC7B2A-4B30-55C4-08DA-9FA3902D8686";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster25GroupParts";
-	rename -uid "C9EBF1B5-4258-C6DE-AC43-3CB8167560C1";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet25";
-	rename -uid "795DCAC5-47CB-3AB9-7F8A-5197EBB9DB58";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId51";
-	rename -uid "F766A7DC-482A-5DEB-A8FB-9397E33B598D";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts51";
-	rename -uid "6D77FA35-46C4-B5CA-3248-71AA370F501F";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster26";
-	rename -uid "B83AD302-4D30-BE19-4370-9A8FB4DAC153";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak26";
-	rename -uid "7656585E-4EEE-5E50-7B18-CEB15646179B";
-createNode objectSet -n "skinCluster26Set";
-	rename -uid "21C04B1D-4F5C-74DA-9F83-C09474E7C969";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster26GroupId";
-	rename -uid "DAA09C57-4963-A945-2A65-DEAAAEE39D1B";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster26GroupParts";
-	rename -uid "47D3EF67-4081-2A9E-AB95-F398E68E65FD";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet26";
-	rename -uid "B60CCE44-4715-A1D8-2D47-9CBE0FC2ABE6";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId53";
-	rename -uid "C39B8C7E-4DE7-3A66-B453-6E91B2794BE7";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts53";
-	rename -uid "EF336DA5-4308-1B3D-99AB-BEA7EA9BADB0";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster27";
-	rename -uid "5B556F5D-4D30-B0B0-0BEA-1B8DC5249EA4";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak27";
-	rename -uid "F453637B-4F4A-4F30-E62D-C1B95B4E3BDA";
-createNode objectSet -n "skinCluster27Set";
-	rename -uid "325B5368-4F37-2325-1A38-E999BC8827A0";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster27GroupId";
-	rename -uid "A5FBC4E0-42F7-0CD0-693A-C59D5DDB95AC";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster27GroupParts";
-	rename -uid "27C51580-4811-1BF3-77C9-7CAFAB7F9F36";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet27";
-	rename -uid "86425F7A-445E-EB87-E3AF-109209444010";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId55";
-	rename -uid "C4654000-4171-2DC4-ADA1-078DA4232958";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts55";
-	rename -uid "81C46322-4C2D-4AE0-ACED-03803F2C773B";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster28";
-	rename -uid "CFE87871-4C4D-28DD-2E66-97AA63C00983";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak28";
-	rename -uid "507ADCDF-448D-6B70-07BD-AA9031AB65F2";
-createNode objectSet -n "skinCluster28Set";
-	rename -uid "1A5B92EA-4CEB-2902-555E-1C903598D95D";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster28GroupId";
-	rename -uid "0F00CEC8-4C22-23D7-8D60-9D86F246CE94";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster28GroupParts";
-	rename -uid "CD249636-421F-3031-1CB4-91899A1DFCBE";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet28";
-	rename -uid "C0D78F6D-48FD-50BF-D329-0DB7107AD0B3";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId57";
-	rename -uid "32E399C1-499C-57AF-925E-7AB0E0EBD169";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts57";
-	rename -uid "95F26A66-4C8E-D0C4-D6E7-B98406696FD0";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster29";
-	rename -uid "86985917-48E8-5B54-F226-1CAC1BA579B7";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak29";
-	rename -uid "B0ACAA1A-4218-6663-E18B-F5ADEDC7F1BC";
-createNode objectSet -n "skinCluster29Set";
-	rename -uid "4C449A80-445E-6B37-EC88-209D2BC74CB0";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster29GroupId";
-	rename -uid "EF83973C-458D-7246-221B-79B82892B66F";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster29GroupParts";
-	rename -uid "185D7112-4A47-B260-7C17-38B84833C5BB";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet29";
-	rename -uid "0836881A-4447-5764-5E5E-1BA19B87872F";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId59";
-	rename -uid "63C2F687-476E-4F59-F8BD-6B8444241C64";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts59";
-	rename -uid "5CAE7DFB-4D75-AD85-9277-25BCC89C5576";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster30";
-	rename -uid "B15E17A0-45DF-252D-7F3C-838537A77891";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak30";
-	rename -uid "056EC947-4E38-804E-A2BE-F0AF60ACAC60";
-createNode objectSet -n "skinCluster30Set";
-	rename -uid "44653133-46ED-C373-A530-05848DB07658";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster30GroupId";
-	rename -uid "A97AAC73-4EB1-2C52-328D-E2A3AC670719";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster30GroupParts";
-	rename -uid "DF029F5F-4671-5D96-2804-719A6AE5E441";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet30";
-	rename -uid "8CEF7242-4127-1F5E-628A-108BA239F101";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId61";
-	rename -uid "09A8D8F1-4958-33F2-25A1-FE880A175FA5";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts61";
-	rename -uid "C640A67C-43A7-C3A9-E885-D9BAF8C1F611";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster31";
-	rename -uid "F1449E84-41FE-58D0-209E-9480692EF083";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak31";
-	rename -uid "7B54D577-4004-C6FE-C9F8-90A6FE75F606";
-createNode objectSet -n "skinCluster31Set";
-	rename -uid "41CD59B4-4C41-2B6B-09C3-48807264842B";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster31GroupId";
-	rename -uid "DBA2F19E-4F01-40E3-0430-108744B5E99B";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster31GroupParts";
-	rename -uid "DB3F6BFC-49E7-9E61-8D98-579C01090E23";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet31";
-	rename -uid "8BF7349A-4B80-94F8-871B-E6A9C15DEDCB";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId63";
-	rename -uid "F1DECE88-4BA2-D246-3F40-7F9CD3E7911B";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts63";
-	rename -uid "6E0DF257-41A0-85A9-8C7A-6FB84479CDEE";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster32";
-	rename -uid "088F80D2-4A85-A07A-36FD-8DAA444A297E";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak32";
-	rename -uid "34197484-45DD-96BA-1479-0C8A9055C3B9";
-createNode objectSet -n "skinCluster32Set";
-	rename -uid "EB886C3A-40BF-9E7D-5AB8-EDA090562153";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster32GroupId";
-	rename -uid "B058D4AE-468E-4990-C2C8-F4BCE7AABCE3";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster32GroupParts";
-	rename -uid "FD8E23A1-4367-17C2-6485-3392B8F60D86";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet32";
-	rename -uid "EC7F3081-4BF0-EACF-53B5-E183FB042C6A";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId65";
-	rename -uid "263D3DCA-43FC-88AE-D13B-70B3D107543D";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts65";
-	rename -uid "9967689F-40EC-5084-2C6B-21ABE50FFDA0";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster33";
-	rename -uid "A97610A9-4964-FD2E-EEFC-77BAFFA64FFA";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak33";
-	rename -uid "A6A37AC8-4BE9-5C09-F5D0-3CAD11143F94";
-createNode objectSet -n "skinCluster33Set";
-	rename -uid "C2888CD0-4C4E-F9CF-B277-DE9511DC7C4B";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster33GroupId";
-	rename -uid "CA6CC40B-446D-CDCD-39C0-16BC56ABF9C5";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster33GroupParts";
-	rename -uid "05AC69FE-4B67-1232-07B1-DF99C4B57CCE";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet33";
-	rename -uid "17AA38C4-4FD4-ED35-9B9A-6DB63AC32460";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId67";
-	rename -uid "2F51010D-49B0-7BED-2110-1EB4697ED0B3";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts67";
-	rename -uid "FFF131FD-48D2-2128-B553-A0924E3882E3";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode skinCluster -n "skinCluster34";
-	rename -uid "8176E656-4DF8-5BDE-6543-E1A0F3963E11";
-	setAttr -s 12 ".wl";
-	setAttr ".wl[0:11].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.8147757937237365 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak34";
-	rename -uid "1ECCA254-4BA4-ABEF-9871-A49A3222FE21";
-createNode objectSet -n "skinCluster34Set";
-	rename -uid "5A833B6A-4386-0DFC-43F4-25AD9FC1D57C";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster34GroupId";
-	rename -uid "F9F18DDC-4EED-25DF-6D6D-F1B3878C6798";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster34GroupParts";
-	rename -uid "66C68533-496B-AF6B-229A-259C81424586";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet34";
-	rename -uid "50E83FF2-44EA-F4B9-BF96-DFAA38679E4F";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId69";
-	rename -uid "8A528204-4916-35DF-7926-CA9286D4D06C";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts69";
-	rename -uid "A6A60215-47FF-F631-22F5-3AA04A9E44E9";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "C0F31AE5-4734-ECC4-7613-F2B7A6A02ECA";
 createNode displayLayer -n "GEO_LYR";
@@ -14948,7 +13013,6 @@ createNode displayLayer -n "GEO_LYR";
 	setAttr ".do" 1;
 createNode displayLayer -n "JNTS_LYR";
 	rename -uid "AE98BAB9-47C2-87E1-A0C3-7F8CE3CB1953";
-	setAttr ".v" no;
 	setAttr ".do" 2;
 createNode displayLayer -n "CTRLS_LYR";
 	rename -uid "B6C8172C-44E6-94A1-1C36-1981F7442EC4";
@@ -14969,35 +13033,35 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 1\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 585\n            -height 689\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 869\n            -height 688\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"<function selCom at 0x7f29c5c04aa0>\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n"
 		+ "            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n"
 		+ "            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n"
 		+ "            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n"
-		+ "                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n"
-		+ "                -isSetMember 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n"
-		+ "                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n"
-		+ "                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n"
-		+ "                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n"
-		+ "                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n"
-		+ "                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n"
-		+ "                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n"
-		+ "\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n"
-		+ "                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n"
-		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
-		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
-		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 1\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 585\\n    -height 689\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 1\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 585\\n    -height 689\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n"
+		+ "                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n"
+		+ "                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n"
+		+ "                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n"
+		+ "                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n"
+		+ "                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n"
+		+ "            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
+		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
+		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n"
+		+ "                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n"
+		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
+		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
+		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n"
+		+ "        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 1\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 869\\n    -height 688\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 1\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 869\\n    -height 688\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -15027,442 +13091,6 @@ createNode polyNormal -n "polyNormal5";
 	rename -uid "8BB31BBB-4E9A-2642-F7F4-E1B85E2069BB";
 	setAttr ".ics" -type "componentList" 1 "f[*]";
 	setAttr ".unm" no;
-createNode skinCluster -n "skinCluster35";
-	rename -uid "A18A381D-4024-C84C-E36D-949AF0862B96";
-	setAttr -s 402 ".wl";
-	setAttr ".wl[0:401].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 -2.814775793723737 -3.7252902984619141e-09 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode tweak -n "tweak35";
-	rename -uid "9F0C95A1-4533-F5B7-E9AF-70B1DA059DA6";
-createNode objectSet -n "skinCluster35Set";
-	rename -uid "8043D777-4152-F336-D2EC-1CBD96D30BB1";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "skinCluster35GroupId";
-	rename -uid "03DB8967-4310-F6A1-8B9A-A8AA5B45608C";
-	setAttr ".ihi" 0;
-createNode groupParts -n "skinCluster35GroupParts";
-	rename -uid "65712491-4FE3-390C-B861-1C9E2906CCDE";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode objectSet -n "tweakSet35";
-	rename -uid "A6D8D740-4EA9-5BBC-F6CE-FEB2754412A5";
-	setAttr ".ihi" 0;
-	setAttr ".vo" yes;
-createNode groupId -n "groupId72";
-	rename -uid "22989617-4F48-7339-4608-AE98C776BE1B";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts72";
-	rename -uid "3CB0529C-40CC-17E2-1FE4-66A5E93873B1";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 createNode skinCluster -n "skinCluster36";
 	rename -uid "4AC251F1-4377-ED53-2A96-03B0BC677406";
 	setAttr -s 74 ".wl";
@@ -16442,6 +14070,2504 @@ createNode shadingEngine -n "lambert2SG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo1";
 	rename -uid "ADC8D741-47DD-A1D4-3222-FE9DDB21FF98";
+createNode skinCluster -n "skinCluster39";
+	rename -uid "B8AA77F7-47F6-7C91-4A4F-BABFB94A1C44";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak39";
+	rename -uid "FA2638E2-4A8D-7CBB-2645-0FBCB7ADC412";
+createNode objectSet -n "skinCluster39Set";
+	rename -uid "22891F95-48A7-D756-B387-5A8A0D978C40";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster39GroupId";
+	rename -uid "B4ACC1DB-490A-62FC-FA9F-21B5AE109F28";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster39GroupParts";
+	rename -uid "97FA340B-40F8-8F47-062F-01BFE1042E97";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet39";
+	rename -uid "AC4346C2-4A78-22B8-ECDD-EE95D34DDBEC";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId80";
+	rename -uid "BAC3BB70-46B5-CE9C-81AB-91852413D979";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts80";
+	rename -uid "A1809BE9-4C49-FA72-A675-119DD1A51A58";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode dagPose -n "bindPose2";
+	rename -uid "35338697-4593-62CA-E8BC-8182CEB11554";
+	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 8.6870794059439032
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".bp" yes;
+createNode skinCluster -n "skinCluster40";
+	rename -uid "8A85E20F-4D57-B24E-7A59-6CB02ED4CC1B";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak40";
+	rename -uid "32EC009F-46B1-AB77-3EDC-77B29E5D1DAE";
+createNode objectSet -n "skinCluster40Set";
+	rename -uid "0DB601B6-4854-C4C5-1878-F1ADC077B71D";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster40GroupId";
+	rename -uid "D58220A3-47B1-9726-F392-9292EB9C59BB";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster40GroupParts";
+	rename -uid "9805A062-4D43-B1CA-2984-66912F77F090";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet40";
+	rename -uid "322B47C4-4483-D073-4BCC-BB94AC485908";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId82";
+	rename -uid "7E998DDD-48B4-C196-D6B5-F389C501ED10";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts82";
+	rename -uid "B31F1837-4186-C236-076C-5797677F4DB8";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster41";
+	rename -uid "932B1529-4865-FCF5-923D-A48FBE0440FC";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak41";
+	rename -uid "37C036E2-4507-A5A0-CB4D-72B04FD2338D";
+createNode objectSet -n "skinCluster41Set";
+	rename -uid "0E04C379-422B-D9B1-4FE9-EAB92272F603";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster41GroupId";
+	rename -uid "04A2FA47-4AF8-22CE-F5D5-6AA5EE59DDB7";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster41GroupParts";
+	rename -uid "31F67237-4387-81F6-7821-D09D0BD6BF70";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet41";
+	rename -uid "329972EE-4C12-FC37-F390-4D8C711B28AD";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId84";
+	rename -uid "B1F66A71-47E1-8397-C291-79B950C93361";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts84";
+	rename -uid "C7848092-4E88-2FD6-1818-34BFA18126C3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster42";
+	rename -uid "CADD83C9-49DD-93A3-7AA7-DE8F28C8DA6E";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak42";
+	rename -uid "73807869-4EED-F92A-B7C3-36B2596FDBCC";
+createNode objectSet -n "skinCluster42Set";
+	rename -uid "6F2A6CFF-4E24-3832-8C6A-C2BA1BEF72AA";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster42GroupId";
+	rename -uid "3DF2A331-43AD-6338-1FC3-39A50EFC10D8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster42GroupParts";
+	rename -uid "8725D05A-47FA-7D39-2DF5-CDB2C4693AD6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet42";
+	rename -uid "03179D54-45ED-89FE-CEEC-7D80D34193DD";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId86";
+	rename -uid "BC18C4CE-462E-D63B-4700-1E87101AC0F3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts86";
+	rename -uid "6D7CEA9F-4935-98B0-5D10-14BDFB3BEE55";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster43";
+	rename -uid "DBE56B4C-4D37-CA91-8B14-C296703C59F2";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak43";
+	rename -uid "216D63C5-406C-99E0-2036-31BF62CC10FB";
+createNode objectSet -n "skinCluster43Set";
+	rename -uid "99D57F0C-408F-2545-2B9C-A6A04779827E";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster43GroupId";
+	rename -uid "3CB01E27-47B2-A5F5-8823-C88602A509ED";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster43GroupParts";
+	rename -uid "FE8E1100-4981-DDAB-50F7-22979F0A56E0";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet43";
+	rename -uid "14D90AA2-4AF3-7053-9FF8-8494687CB88C";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId88";
+	rename -uid "2A10FDD9-4E2E-36BC-5C79-DDBFAA499640";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts88";
+	rename -uid "D1DE54C5-476A-FCCF-AF3A-F3802946D16B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster44";
+	rename -uid "4F1F7588-47D6-C112-C697-BCB5AD775CDE";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak44";
+	rename -uid "CA0F9B95-4CED-7B58-E53D-C9B0AA01DF74";
+createNode objectSet -n "skinCluster44Set";
+	rename -uid "2F125AFD-4CC4-7012-6036-21BFB8E1EB88";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster44GroupId";
+	rename -uid "5D64CE1B-4998-73D3-C57F-D68183D03598";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster44GroupParts";
+	rename -uid "3D97B64F-4FED-36CE-2EA2-9086E40C6D51";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet44";
+	rename -uid "BDB09F76-4B32-268B-9142-80B2C639AC64";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId90";
+	rename -uid "1E4829C0-49FE-735A-DED9-B68D1DD3318C";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts90";
+	rename -uid "8DF0F8B1-41EC-92EF-586F-699F85F9C367";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster45";
+	rename -uid "68927500-4525-65C9-455E-09A13C17D844";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak45";
+	rename -uid "896BBB28-4FBC-3D15-93C5-51942AC47C21";
+createNode objectSet -n "skinCluster45Set";
+	rename -uid "0AEBA237-4314-8257-8BF5-8FBA25973ACD";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster45GroupId";
+	rename -uid "5D42454D-44DB-40C9-56DD-A994DB0B479D";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster45GroupParts";
+	rename -uid "8782C382-4AC6-054E-DBF3-FDA39332A75B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet45";
+	rename -uid "03FAA2A7-4849-FFBF-BF5E-F7B4C6EFE877";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId92";
+	rename -uid "8C91FD7C-4544-1049-507B-13BBCBFBE271";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts92";
+	rename -uid "1E2B775C-49CB-F0D7-84CB-40AED553AEBD";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster46";
+	rename -uid "144CFAD7-468D-E07D-72AB-FB9D89A8F4E8";
+	setAttr -s 402 ".wl";
+	setAttr ".wl[0:401].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode objectSet -n "skinCluster46Set";
+	rename -uid "BF09FF63-4EBC-C696-C836-EDB6CC813D9D";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster46GroupId";
+	rename -uid "D901B399-42F9-79AE-07B7-A2B04B1351D0";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster46GroupParts";
+	rename -uid "AE756578-4DAD-7F2D-68EA-C4B556B1DC1F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster47";
+	rename -uid "D1CD3D16-4D13-5282-0720-88A2D172E6B7";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak46";
+	rename -uid "6C56E0FF-48C0-6F9B-E5F5-57822DB2C68F";
+createNode objectSet -n "skinCluster47Set";
+	rename -uid "3EB73725-4C02-43FA-BCC8-FEB8DBD04AA3";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster47GroupId";
+	rename -uid "BFBB0875-4FCD-DF18-9914-C3A5F9F52C50";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster47GroupParts";
+	rename -uid "974A88A4-4A63-48F7-94F9-C186437CAC69";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet46";
+	rename -uid "F6FBBB27-47DE-72FE-038F-10B632FBDAB4";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId94";
+	rename -uid "0FA950DA-49A1-219E-EA26-8FB7C1738BE4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts94";
+	rename -uid "B5FDE0D6-442A-109D-8214-809BBB165BFF";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster48";
+	rename -uid "9AD0EAD7-4B20-A7F0-509A-DB8505087E99";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak47";
+	rename -uid "2EBD2159-45CB-E8F9-F2CB-648E5C430A9B";
+createNode objectSet -n "skinCluster48Set";
+	rename -uid "C7C6227F-4E3E-323D-C4BD-6EB055ABDC36";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster48GroupId";
+	rename -uid "113780EF-4932-108E-DA32-0CA93FFBC058";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster48GroupParts";
+	rename -uid "DB9D626F-4E1F-F1F8-D28F-C4B73A9D8DD7";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet47";
+	rename -uid "2C1BB5DE-433A-183D-E5FD-E8A2F163A7C0";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId96";
+	rename -uid "51C6E39E-49F9-8AA8-145E-7E9E4BBEF5F8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts96";
+	rename -uid "BC612EAC-43DA-63EC-49BE-BFB7A70A55A5";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster49";
+	rename -uid "AAE510B8-4145-9929-F8CA-528662018F7A";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak48";
+	rename -uid "0C17F44C-440C-E226-0AD3-CCBB2C1879A4";
+createNode objectSet -n "skinCluster49Set";
+	rename -uid "7EAB97D1-43E5-23BB-357E-1AAAE0E6DC33";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster49GroupId";
+	rename -uid "D0CB0026-412A-D737-A77B-8DBA325D4A20";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster49GroupParts";
+	rename -uid "D7490E9F-465A-F33C-9324-F989620D7735";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet48";
+	rename -uid "C285649E-434A-8110-1EFA-BFA03BD16106";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId98";
+	rename -uid "F858D183-4B37-E91E-1759-F69DEB1ED3DC";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts98";
+	rename -uid "39E8E565-4584-FFEE-7DAA-59AF9959966A";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster50";
+	rename -uid "17E6DEED-41C2-B8B6-7C62-D98EDC463AB1";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak49";
+	rename -uid "20EEB23B-4658-6E6A-C7D8-25924B3287B5";
+createNode objectSet -n "skinCluster50Set";
+	rename -uid "12184A83-45B2-A560-3DF2-F6B1080A9F8B";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster50GroupId";
+	rename -uid "89E046B6-444E-78E1-1F48-0DBAF3E2CCB4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster50GroupParts";
+	rename -uid "7C39DDBC-47CB-5B06-334F-0EB12F6479DA";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet49";
+	rename -uid "DFE57460-45B8-B0DF-1985-D4BB4C3D6DD7";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId100";
+	rename -uid "28D575CD-44B1-3B38-C908-E9B388E5B6DF";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts100";
+	rename -uid "5933F174-428D-2394-DECE-66B33E90AB3E";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster51";
+	rename -uid "DB9261DC-49BA-2375-F65D-CFA8A517E685";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak50";
+	rename -uid "FF1F339F-4B78-8472-92CC-3784615FED7D";
+createNode objectSet -n "skinCluster51Set";
+	rename -uid "84716627-42A2-2B45-59EE-06A0FCECBBB2";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster51GroupId";
+	rename -uid "E984611A-4004-F4D8-DCFB-3F8FF5E4A3A8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster51GroupParts";
+	rename -uid "17E1FCFB-4098-933A-50CD-F2A5CF412FE7";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet50";
+	rename -uid "155A703C-46AC-0467-0119-3C9F54C2091F";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId102";
+	rename -uid "F66BEE2E-47D3-B54C-C3EB-A38613DE4528";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts102";
+	rename -uid "5E37CB07-44C6-47E6-B235-A9B2D245F9D4";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster52";
+	rename -uid "0C7FD44E-442A-4346-6D18-B690BF782464";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak51";
+	rename -uid "1A3841F4-4BBE-C1C3-9EA2-39AA8D875AC8";
+createNode objectSet -n "skinCluster52Set";
+	rename -uid "B0E7D29D-4E2C-3294-6B3B-F5B788A1B727";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster52GroupId";
+	rename -uid "911B0611-4B0A-3C11-EA7A-79944250A36A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster52GroupParts";
+	rename -uid "19333028-4ED9-F57D-B22E-7BB5FBAD0116";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet51";
+	rename -uid "543106A1-4DF9-CC41-B6EB-BFB95F8645A1";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId104";
+	rename -uid "4FEC697D-470F-7DF0-1C88-5E838C71BE3A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts104";
+	rename -uid "7AEBAA7D-470C-BBA7-239D-D1B3EE3A7793";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster53";
+	rename -uid "1FFA27DC-4B34-FB57-DE90-FE8BD457F298";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak52";
+	rename -uid "39FB6BF2-4588-08B0-FD67-5DBBBCB511FD";
+createNode objectSet -n "skinCluster53Set";
+	rename -uid "531B136D-4512-3FC8-29FF-2B9E813C8A03";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster53GroupId";
+	rename -uid "08A826DB-47F1-F2E8-CCDE-CEB40216422E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster53GroupParts";
+	rename -uid "4080738B-4179-C2C3-DBEE-75B9F9E8EE81";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet52";
+	rename -uid "C992683C-48FE-D461-0D4B-7AA963BA9A77";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId106";
+	rename -uid "DE1991CA-41AE-C245-C634-A285C1AD66C0";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts106";
+	rename -uid "553A7A3D-419F-CD83-A2EA-06BCBA3EE4A6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster54";
+	rename -uid "EE5BF3C5-4213-DB54-A0E6-169E8473E127";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak53";
+	rename -uid "C993B29B-4496-545A-967C-28A392407C7E";
+createNode objectSet -n "skinCluster54Set";
+	rename -uid "43E99F48-4434-543C-9B1B-59837BD30642";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster54GroupId";
+	rename -uid "D9E747A2-4792-30C1-0229-1A8A1965792F";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster54GroupParts";
+	rename -uid "B6888B7A-4A9B-CF3F-9769-CE96F3AA5AF9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet53";
+	rename -uid "EBFD3C84-4C44-E089-2DD2-79B50C997DFA";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId108";
+	rename -uid "432C6574-468F-32CB-D35E-95A17A8B3EB5";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts108";
+	rename -uid "C05E3A7E-444B-5167-5DC9-DB9B8BDAF178";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster55";
+	rename -uid "BD107A96-4494-0671-0DD2-36BF534E06B0";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak54";
+	rename -uid "0685E632-4195-5B7E-8183-E0B93CED0F11";
+createNode objectSet -n "skinCluster55Set";
+	rename -uid "1B427ACD-4E4C-6EDF-DEF8-DB97D035B5E4";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster55GroupId";
+	rename -uid "3FC956B0-41D3-46E1-608D-3CAEA7FC779A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster55GroupParts";
+	rename -uid "A254FCA2-4C41-9523-CCD9-81A3C98C1B7F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet54";
+	rename -uid "FFD675B1-46D3-09E7-E55C-639517D67DCD";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId110";
+	rename -uid "8A9FB19F-4518-B0D1-DB48-00A41A08D363";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts110";
+	rename -uid "78FABD24-428B-7F7C-924D-5D958B1BA029";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster56";
+	rename -uid "FCD823BF-4196-6995-D5EE-5AABFCBA50F0";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak55";
+	rename -uid "B5B2F12C-4A39-F391-D273-33B2B1945ED4";
+createNode objectSet -n "skinCluster56Set";
+	rename -uid "C0CB5402-4964-B6B7-FB1D-6EBBFDB7B5AD";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster56GroupId";
+	rename -uid "63A4BE47-413E-7E77-B851-E59DD6C53492";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster56GroupParts";
+	rename -uid "1677B514-4115-AE25-F42F-A684FE2B21AA";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet55";
+	rename -uid "166220C5-45F6-3F04-7690-3AB2DF0C8081";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId112";
+	rename -uid "A84CDF2A-4522-8DE0-B195-14A184693963";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts112";
+	rename -uid "F11BF782-4F5E-1748-FAF6-E397EB79548B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster57";
+	rename -uid "D90D8CAF-4A63-6094-50C9-FFB6042B69EE";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak56";
+	rename -uid "BF6FDE7C-4334-913F-1A64-7DBA5D931FFB";
+createNode objectSet -n "skinCluster57Set";
+	rename -uid "027D75AF-414B-1990-5BA1-89B72F04E0EB";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster57GroupId";
+	rename -uid "C3BD5591-438C-1D6A-24C4-E5A58D18EC3A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster57GroupParts";
+	rename -uid "27899860-4E7F-5B5A-327C-15A7195A176D";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet56";
+	rename -uid "E71896E3-47B9-3A56-E4D3-1B9A6A700AB8";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId114";
+	rename -uid "BFF2E42B-475E-B4E9-17AE-888B452C4443";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts114";
+	rename -uid "4339DF12-437E-F5FB-9CDC-4DBDD5AE4C66";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster58";
+	rename -uid "82508A7E-49DD-DA0E-25F5-FD9FA9880BE8";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak57";
+	rename -uid "0435368C-410F-00AA-3C9B-5A80D9064340";
+createNode objectSet -n "skinCluster58Set";
+	rename -uid "71AD74FF-4EA3-31C2-397A-2AB3998D1F75";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster58GroupId";
+	rename -uid "961F0101-4F59-3D71-2B17-858154B09C2E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster58GroupParts";
+	rename -uid "BFB63C83-49BC-9E2B-B570-79A58432AF3D";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet57";
+	rename -uid "695D401A-4A24-BA8E-CA1C-08A2B0A6DB99";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId116";
+	rename -uid "3FB5010F-47CB-A9CA-F746-B78A74C485F9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts116";
+	rename -uid "7A8F5EB2-4E54-A5A3-7765-4480CFCD1BFC";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster59";
+	rename -uid "8E63FF99-4D4A-5CD0-524D-EF9F759A181B";
+	setAttr -s 402 ".wl";
+	setAttr ".wl[0:401].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak58";
+	rename -uid "E232C344-4844-E1D2-86FD-9496A7C60EDF";
+createNode objectSet -n "skinCluster59Set";
+	rename -uid "A9CDD6ED-4C64-F3A0-9773-7C9C0555CE7F";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster59GroupId";
+	rename -uid "B354113D-4435-ABBA-2B2D-39968C07B608";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster59GroupParts";
+	rename -uid "A11531EB-45C5-7120-05FA-749FD1921CCF";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet58";
+	rename -uid "F3E98BA0-4360-2667-DE31-61A764B12DE9";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId118";
+	rename -uid "308BAB62-476D-2C1C-F01B-BEAF44B5C4DF";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts118";
+	rename -uid "881EF169-4514-6345-A14E-C99D49A15A22";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster60";
+	rename -uid "E984BFBE-4D64-C50D-E313-53AA51D62235";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak59";
+	rename -uid "4BD572F2-4C1C-F288-5B7B-7497E049E967";
+createNode objectSet -n "skinCluster60Set";
+	rename -uid "9FA24A45-4118-2F03-C4B9-E68C03209BF4";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster60GroupId";
+	rename -uid "EF295777-4716-6F9A-29B2-9B97A3EC4EFB";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster60GroupParts";
+	rename -uid "810C9913-4660-1D1E-3CE4-788A37FC1077";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet59";
+	rename -uid "4118E215-4E85-0D12-7C66-98A0B446AC05";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId120";
+	rename -uid "10EE8580-4967-489F-9DAB-0598A17292CB";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts120";
+	rename -uid "627F61C9-4A9C-91D0-4872-6CBC8273C6C7";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster61";
+	rename -uid "62850959-4538-9155-316C-F6B6DB6FF3E7";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak60";
+	rename -uid "AEF02F69-4841-655D-FAF2-159152CCD586";
+createNode objectSet -n "skinCluster61Set";
+	rename -uid "AD0BC54C-4C58-07D2-D718-41B4C64F4EB7";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster61GroupId";
+	rename -uid "1EE6F3EA-4D4C-614E-BDF3-F6A28E693187";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster61GroupParts";
+	rename -uid "1C061234-4FA6-42B7-2A51-D09E554891C5";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet60";
+	rename -uid "875589D4-43B1-330E-F3B1-E8A2211486C9";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId122";
+	rename -uid "C8B4FCF7-4A71-C722-C641-8BA29DB7B30E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts122";
+	rename -uid "5829DAAE-4687-7CAB-851D-04ADB5B30645";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster62";
+	rename -uid "A40142CF-441F-4C11-46DC-EDA20D9B0C3A";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak61";
+	rename -uid "3B968610-4562-EC75-CE7F-B08E569F1D66";
+createNode objectSet -n "skinCluster62Set";
+	rename -uid "C65C0200-413F-3B43-F9B4-17A8A2359FA4";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster62GroupId";
+	rename -uid "2602364C-42A1-50FC-B876-78AA9C3C612E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster62GroupParts";
+	rename -uid "72EEA06D-4A87-F752-7588-62A9DCE93538";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet61";
+	rename -uid "15C9505D-4377-F1AD-5897-37A295836341";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId124";
+	rename -uid "70F8D23F-4AD8-3943-6D76-33AECDC71917";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts124";
+	rename -uid "4B480DD0-4750-822D-8162-A88B5553C6D9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster63";
+	rename -uid "882F3E1E-4A40-A310-A4A8-3C882D8E2259";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak62";
+	rename -uid "F2EA0FB1-4883-25F7-25A7-22BDAEFECF06";
+createNode objectSet -n "skinCluster63Set";
+	rename -uid "1FA63C28-4A46-A1DE-E38F-78AE39A14D4D";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster63GroupId";
+	rename -uid "8D7675AD-4D8C-B9F7-86F4-939E06144B8F";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster63GroupParts";
+	rename -uid "9E806C99-4FD5-EE05-773E-89B3B1A0D862";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet62";
+	rename -uid "1772F74F-471C-8D7E-1D1C-9BBCBA6F4B66";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId126";
+	rename -uid "FF5EE5A0-4ACD-9E61-2245-AB9A0967F379";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts126";
+	rename -uid "5A71C9CD-4259-725A-3EEE-3BBAB3F468D9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster64";
+	rename -uid "689C3EE4-477C-16B7-C95D-D2AA4949BC46";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak63";
+	rename -uid "23005E81-418B-DC60-A609-12B3960ED08A";
+createNode objectSet -n "skinCluster64Set";
+	rename -uid "C9112FF3-4EB2-6D67-A5B2-4EA227971A25";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster64GroupId";
+	rename -uid "6703776A-43E1-82E2-2503-6A9F80D477A2";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster64GroupParts";
+	rename -uid "DBF1583C-4446-BAA4-9CFF-CCB7F4FBA9CF";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet63";
+	rename -uid "AD9DEB15-4917-4572-D1F0-E4B11AD5C778";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId128";
+	rename -uid "BD9B60B3-47D3-50AA-F0E5-E49A5D9712AF";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts128";
+	rename -uid "80C7D725-43DE-879B-EF82-0ABDBAC40E16";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster65";
+	rename -uid "7AD6B7D3-4B46-21AA-8BD8-918A57FA6357";
+	setAttr -s 12 ".wl";
+	setAttr ".wl[0:11].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak64";
+	rename -uid "3C0F702F-4491-A1CB-0B57-B18C23B8880A";
+createNode objectSet -n "skinCluster65Set";
+	rename -uid "AF27DFAA-4E21-5121-6739-51A54D9564B9";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster65GroupId";
+	rename -uid "EC8A1D95-4723-186D-897D-60B02DD10229";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster65GroupParts";
+	rename -uid "10DDFAF6-45A1-8FFA-33F3-97B09A92B3BB";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet64";
+	rename -uid "FC7A944E-47F6-EB81-BD9C-DF9934084638";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId130";
+	rename -uid "C2F79318-4F7F-8139-7624-AF90D7626142";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts130";
+	rename -uid "B67F9ACF-4087-2672-B210-35876FC0F4BD";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster66";
+	rename -uid "A053766A-4E85-B1F1-048D-598D33F00C06";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak65";
+	rename -uid "B0429FCB-4195-7DCC-ED80-349DE9CE1DE9";
+createNode objectSet -n "skinCluster66Set";
+	rename -uid "2BE237AC-4E8B-9722-4384-7D94423C8E73";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster66GroupId";
+	rename -uid "0C6B5289-429B-22DB-E859-AE887C2CC215";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster66GroupParts";
+	rename -uid "7CBE567C-4A26-9330-D6E3-7897D53FEBDF";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet65";
+	rename -uid "CBB65F80-4EB8-F8C5-99B0-E2BB9B2F084F";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId132";
+	rename -uid "47017305-4AE2-4459-C18E-C38BECC1E7CB";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts132";
+	rename -uid "EFC0BB07-4B45-862A-E848-B086F5F8A2A5";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster67";
+	rename -uid "722093DA-44BD-5B4B-C670-86B6EE0450E1";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak66";
+	rename -uid "B5666BB2-4C0C-723E-177E-D7A4D8E97CDB";
+createNode objectSet -n "skinCluster67Set";
+	rename -uid "217EEEA9-4A33-9204-9DEA-03863660C9EC";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster67GroupId";
+	rename -uid "FECB21AE-48CE-263F-EF1B-A794E2994719";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster67GroupParts";
+	rename -uid "3DE59317-4921-AB68-F71B-F2BC74EA95E7";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet66";
+	rename -uid "B2F4CAF4-4C5C-AB44-1ED6-278E54700B7E";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId134";
+	rename -uid "5E7B55E3-45E6-2637-FD10-6088BC726D71";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts134";
+	rename -uid "35340DBB-4034-0CA9-FD54-0489E7F81436";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster68";
+	rename -uid "C6DF965D-4BF6-39DC-29A2-8FBF08A57E7C";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak67";
+	rename -uid "7E3417A1-436B-D8EE-E4EC-328B722FC5E0";
+createNode objectSet -n "skinCluster68Set";
+	rename -uid "4BB4F01B-409C-C9AB-9BE0-F3AABB44E846";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster68GroupId";
+	rename -uid "3B2FF188-411C-DD6F-D6BB-758975A68D0C";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster68GroupParts";
+	rename -uid "23A3C738-48E2-358F-0881-72B02511BA4A";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet67";
+	rename -uid "13922DE0-4E7F-C78F-64E4-B287CF6F1B17";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId136";
+	rename -uid "71C41A57-4A03-6FAE-8849-9395F720D2D6";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts136";
+	rename -uid "6E71090F-4DB9-0822-64DA-418051E1FFE9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster69";
+	rename -uid "0294BD38-4B48-7844-2639-2F975BDC240E";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak68";
+	rename -uid "E049DA6D-4F18-7540-343A-DEAC59045511";
+createNode objectSet -n "skinCluster69Set";
+	rename -uid "625C040D-49F3-D34F-0D13-AFA7F6DD5FA1";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster69GroupId";
+	rename -uid "6475E0A5-433D-79DC-1E97-1EBD6263E7FE";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster69GroupParts";
+	rename -uid "642B401D-4D49-9823-159C-F98FA3D792EC";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet68";
+	rename -uid "1D8D4A5C-4BC0-239F-772C-28B9050025B8";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId138";
+	rename -uid "04BF629A-42F3-8498-1B16-F88FBEF3892A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts138";
+	rename -uid "827B48A0-4021-13D9-C93A-8BAD3D1863C2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode skinCluster -n "skinCluster70";
+	rename -uid "EF8EC6D1-4CD8-3BB5-2DAF-9DA0071E2815";
+	setAttr -s 37 ".wl";
+	setAttr ".wl[0:36].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1;
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 -8.6870794059439032 -0 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".dpf[0]"  4;
+	setAttr ".mmi" yes;
+	setAttr ".mi" 5;
+	setAttr ".ucm" yes;
+createNode tweak -n "tweak69";
+	rename -uid "28648910-459D-13F2-F9B0-D4A948F51D51";
+createNode objectSet -n "skinCluster70Set";
+	rename -uid "4FE35CFF-43B6-2162-4153-1CA4A759E465";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster70GroupId";
+	rename -uid "8BDE8E44-42B8-6A85-7D3C-AA9CAA7C49D0";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster70GroupParts";
+	rename -uid "F3B5602E-4240-65FE-D5A7-D7BDC8FE24AD";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode objectSet -n "tweakSet69";
+	rename -uid "5C225071-404C-A554-624F-EBAEA98B2FE8";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId140";
+	rename -uid "A5422006-474E-8B96-4E51-76ABB4081A78";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts140";
+	rename -uid "F7A30F55-4D6C-7498-3311-109487D3FFB6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode makeNurbCircle -n "makeNurbCircle2";
+	rename -uid "536D7DDF-4F3D-6F3D-CD2E-46B368F80640";
+createNode makeNurbCircle -n "makeNurbCircle3";
+	rename -uid "68175939-4B04-8CBF-24DA-F6B946814395";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -16489,11 +16615,11 @@ connectAttr "polyTweakUV8.out" "push_GEOShape.i";
 connectAttr "tweak21.vl[0].vt[0]" "push_GEOShape.twl";
 connectAttr "polyTweakUV8.uvtk[0]" "push_GEOShape.uvst[0].uvtw";
 connectAttr "transformGeometry2.og" "push_GEOShapeOrig.i";
-connectAttr "polyTweakUV9.out" "fabric_GEOShape.i";
-connectAttr "skinCluster18GroupId.id" "fabric_GEOShape.iog.og[1].gid";
-connectAttr "skinCluster18Set.mwc" "fabric_GEOShape.iog.og[1].gco";
+connectAttr "skinCluster46.og[0]" "fabric_GEOShape.i";
 connectAttr "groupId37.id" "fabric_GEOShape.iog.og[2].gid";
 connectAttr "tweakSet18.mwc" "fabric_GEOShape.iog.og[2].gco";
+connectAttr "skinCluster46GroupId.id" "fabric_GEOShape.iog.og[3].gid";
+connectAttr "skinCluster46Set.mwc" "fabric_GEOShape.iog.og[3].gco";
 connectAttr "tweak18.vl[0].vt[0]" "fabric_GEOShape.twl";
 connectAttr "polyTweakUV9.uvtk[0]" "fabric_GEOShape.uvst[0].uvtw";
 connectAttr "transformGeometry3.og" "fabric_GEOShapeOrig.i";
@@ -16505,224 +16631,224 @@ connectAttr "polyTweakUV10.out" "handle_GEOShape.i";
 connectAttr "tweak20.vl[0].vt[0]" "handle_GEOShape.twl";
 connectAttr "polyTweakUV10.uvtk[0]" "handle_GEOShape.uvst[0].uvtw";
 connectAttr "transformGeometry4.og" "handle_GEOShapeOrig.i";
-connectAttr "skinCluster25GroupId.id" "small_arm_01_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster25Set.mwc" "small_arm_01_GEOShape.iog.og[0].gco";
-connectAttr "groupId51.id" "small_arm_01_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet25.mwc" "small_arm_01_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster25.og[0]" "small_arm_01_GEOShape.i";
-connectAttr "tweak25.vl[0].vt[0]" "small_arm_01_GEOShape.twl";
+connectAttr "skinCluster40GroupId.id" "small_arm_01_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster40Set.mwc" "small_arm_01_GEOShape.iog.og[2].gco";
+connectAttr "groupId82.id" "small_arm_01_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet40.mwc" "small_arm_01_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster40.og[0]" "small_arm_01_GEOShape.i";
+connectAttr "tweak40.vl[0].vt[0]" "small_arm_01_GEOShape.twl";
 connectAttr "transformGeometry5.og" "small_arm_01_GEOShapeOrig.i";
-connectAttr "skinCluster28GroupId.id" "small_arm_02_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster28Set.mwc" "small_arm_02_GEOShape.iog.og[0].gco";
-connectAttr "groupId57.id" "small_arm_02_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet28.mwc" "small_arm_02_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster28.og[0]" "small_arm_02_GEOShape.i";
-connectAttr "tweak28.vl[0].vt[0]" "small_arm_02_GEOShape.twl";
+connectAttr "skinCluster42GroupId.id" "small_arm_02_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster42Set.mwc" "small_arm_02_GEOShape.iog.og[2].gco";
+connectAttr "groupId86.id" "small_arm_02_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet42.mwc" "small_arm_02_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster42.og[0]" "small_arm_02_GEOShape.i";
+connectAttr "tweak42.vl[0].vt[0]" "small_arm_02_GEOShape.twl";
 connectAttr "transformGeometry6.og" "small_arm_02_GEOShapeOrig.i";
-connectAttr "skinCluster29GroupId.id" "small_arm_03_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster29Set.mwc" "small_arm_03_GEOShape.iog.og[0].gco";
-connectAttr "groupId59.id" "small_arm_03_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet29.mwc" "small_arm_03_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster29.og[0]" "small_arm_03_GEOShape.i";
-connectAttr "tweak29.vl[0].vt[0]" "small_arm_03_GEOShape.twl";
+connectAttr "skinCluster39GroupId.id" "small_arm_03_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster39Set.mwc" "small_arm_03_GEOShape.iog.og[2].gco";
+connectAttr "groupId80.id" "small_arm_03_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet39.mwc" "small_arm_03_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster39.og[0]" "small_arm_03_GEOShape.i";
+connectAttr "tweak39.vl[0].vt[0]" "small_arm_03_GEOShape.twl";
 connectAttr "transformGeometry7.og" "small_arm_03_GEOShapeOrig.i";
-connectAttr "skinCluster31GroupId.id" "small_arm_04_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster31Set.mwc" "small_arm_04_GEOShape.iog.og[0].gco";
-connectAttr "groupId63.id" "small_arm_04_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet31.mwc" "small_arm_04_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster31.og[0]" "small_arm_04_GEOShape.i";
-connectAttr "tweak31.vl[0].vt[0]" "small_arm_04_GEOShape.twl";
+connectAttr "skinCluster41GroupId.id" "small_arm_04_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster41Set.mwc" "small_arm_04_GEOShape.iog.og[2].gco";
+connectAttr "groupId84.id" "small_arm_04_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet41.mwc" "small_arm_04_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster41.og[0]" "small_arm_04_GEOShape.i";
+connectAttr "tweak41.vl[0].vt[0]" "small_arm_04_GEOShape.twl";
 connectAttr "transformGeometry8.og" "small_arm_04_GEOShapeOrig.i";
-connectAttr "skinCluster26GroupId.id" "small_arm_05_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster26Set.mwc" "small_arm_05_GEOShape.iog.og[0].gco";
-connectAttr "groupId53.id" "small_arm_05_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet26.mwc" "small_arm_05_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster26.og[0]" "small_arm_05_GEOShape.i";
-connectAttr "tweak26.vl[0].vt[0]" "small_arm_05_GEOShape.twl";
+connectAttr "skinCluster43GroupId.id" "small_arm_05_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster43Set.mwc" "small_arm_05_GEOShape.iog.og[2].gco";
+connectAttr "groupId88.id" "small_arm_05_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet43.mwc" "small_arm_05_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster43.og[0]" "small_arm_05_GEOShape.i";
+connectAttr "tweak43.vl[0].vt[0]" "small_arm_05_GEOShape.twl";
 connectAttr "transformGeometry9.og" "small_arm_05_GEOShapeOrig.i";
-connectAttr "skinCluster30GroupId.id" "small_arm_06_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster30Set.mwc" "small_arm_06_GEOShape.iog.og[0].gco";
-connectAttr "groupId61.id" "small_arm_06_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet30.mwc" "small_arm_06_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster30.og[0]" "small_arm_06_GEOShape.i";
-connectAttr "tweak30.vl[0].vt[0]" "small_arm_06_GEOShape.twl";
+connectAttr "skinCluster44GroupId.id" "small_arm_06_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster44Set.mwc" "small_arm_06_GEOShape.iog.og[2].gco";
+connectAttr "groupId90.id" "small_arm_06_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet44.mwc" "small_arm_06_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster44.og[0]" "small_arm_06_GEOShape.i";
+connectAttr "tweak44.vl[0].vt[0]" "small_arm_06_GEOShape.twl";
 connectAttr "transformGeometry10.og" "small_arm_06_GEOShapeOrig.i";
-connectAttr "skinCluster24GroupId.id" "small_arm_07_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster24Set.mwc" "small_arm_07_GEOShape.iog.og[0].gco";
-connectAttr "groupId49.id" "small_arm_07_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet24.mwc" "small_arm_07_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster24.og[0]" "small_arm_07_GEOShape.i";
-connectAttr "tweak24.vl[0].vt[0]" "small_arm_07_GEOShape.twl";
+connectAttr "skinCluster45GroupId.id" "small_arm_07_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster45Set.mwc" "small_arm_07_GEOShape.iog.og[2].gco";
+connectAttr "groupId92.id" "small_arm_07_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet45.mwc" "small_arm_07_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster45.og[0]" "small_arm_07_GEOShape.i";
+connectAttr "tweak45.vl[0].vt[0]" "small_arm_07_GEOShape.twl";
 connectAttr "transformGeometry11.og" "small_arm_07_GEOShapeOrig.i";
-connectAttr "skinCluster27GroupId.id" "small_arm_08_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster27Set.mwc" "small_arm_08_GEOShape.iog.og[0].gco";
-connectAttr "groupId55.id" "small_arm_08_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet27.mwc" "small_arm_08_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster27.og[0]" "small_arm_08_GEOShape.i";
-connectAttr "tweak27.vl[0].vt[0]" "small_arm_08_GEOShape.twl";
+connectAttr "skinCluster50GroupId.id" "small_arm_08_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster50Set.mwc" "small_arm_08_GEOShape.iog.og[2].gco";
+connectAttr "groupId100.id" "small_arm_08_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet49.mwc" "small_arm_08_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster50.og[0]" "small_arm_08_GEOShape.i";
+connectAttr "tweak49.vl[0].vt[0]" "small_arm_08_GEOShape.twl";
 connectAttr "transformGeometry12.og" "small_arm_08_GEOShapeOrig.i";
-connectAttr "skinCluster12GroupId.id" "small_arm_09_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster12Set.mwc" "small_arm_09_GEOShape.iog.og[0].gco";
-connectAttr "groupId25.id" "small_arm_09_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet12.mwc" "small_arm_09_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster12.og[0]" "small_arm_09_GEOShape.i";
-connectAttr "tweak12.vl[0].vt[0]" "small_arm_09_GEOShape.twl";
+connectAttr "skinCluster52GroupId.id" "small_arm_09_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster52Set.mwc" "small_arm_09_GEOShape.iog.og[2].gco";
+connectAttr "groupId104.id" "small_arm_09_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet51.mwc" "small_arm_09_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster52.og[0]" "small_arm_09_GEOShape.i";
+connectAttr "tweak51.vl[0].vt[0]" "small_arm_09_GEOShape.twl";
 connectAttr "transformGeometry13.og" "small_arm_09_GEOShapeOrig.i";
-connectAttr "skinCluster6GroupId.id" "small_arm_10_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster6Set.mwc" "small_arm_10_GEOShape.iog.og[0].gco";
-connectAttr "groupId13.id" "small_arm_10_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet6.mwc" "small_arm_10_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster6.og[0]" "small_arm_10_GEOShape.i";
-connectAttr "tweak6.vl[0].vt[0]" "small_arm_10_GEOShape.twl";
+connectAttr "skinCluster51GroupId.id" "small_arm_10_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster51Set.mwc" "small_arm_10_GEOShape.iog.og[2].gco";
+connectAttr "groupId102.id" "small_arm_10_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet50.mwc" "small_arm_10_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster51.og[0]" "small_arm_10_GEOShape.i";
+connectAttr "tweak50.vl[0].vt[0]" "small_arm_10_GEOShape.twl";
 connectAttr "transformGeometry14.og" "small_arm_10_GEOShapeOrig.i";
-connectAttr "skinCluster19GroupId.id" "medium_arm_01_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster19Set.mwc" "medium_arm_01_GEOShape.iog.og[0].gco";
-connectAttr "groupId39.id" "medium_arm_01_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet19.mwc" "medium_arm_01_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster19.og[0]" "medium_arm_01_GEOShape.i";
-connectAttr "tweak19.vl[0].vt[0]" "medium_arm_01_GEOShape.twl";
+connectAttr "skinCluster48GroupId.id" "medium_arm_01_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster48Set.mwc" "medium_arm_01_GEOShape.iog.og[2].gco";
+connectAttr "groupId96.id" "medium_arm_01_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet47.mwc" "medium_arm_01_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster48.og[0]" "medium_arm_01_GEOShape.i";
+connectAttr "tweak47.vl[0].vt[0]" "medium_arm_01_GEOShape.twl";
 connectAttr "transformGeometry15.og" "medium_arm_01_GEOShapeOrig.i";
-connectAttr "skinCluster23GroupId.id" "medium_arm_02_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster23Set.mwc" "medium_arm_02_GEOShape.iog.og[0].gco";
-connectAttr "groupId47.id" "medium_arm_02_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet23.mwc" "medium_arm_02_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster23.og[0]" "medium_arm_02_GEOShape.i";
-connectAttr "tweak23.vl[0].vt[0]" "medium_arm_02_GEOShape.twl";
+connectAttr "skinCluster49GroupId.id" "medium_arm_02_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster49Set.mwc" "medium_arm_02_GEOShape.iog.og[2].gco";
+connectAttr "groupId98.id" "medium_arm_02_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet48.mwc" "medium_arm_02_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster49.og[0]" "medium_arm_02_GEOShape.i";
+connectAttr "tweak48.vl[0].vt[0]" "medium_arm_02_GEOShape.twl";
 connectAttr "transformGeometry16.og" "medium_arm_02_GEOShapeOrig.i";
-connectAttr "skinCluster5GroupId.id" "medium_arm_03_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster5Set.mwc" "medium_arm_03_GEOShape.iog.og[0].gco";
-connectAttr "groupId11.id" "medium_arm_03_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet5.mwc" "medium_arm_03_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster5.og[0]" "medium_arm_03_GEOShape.i";
-connectAttr "tweak5.vl[0].vt[0]" "medium_arm_03_GEOShape.twl";
+connectAttr "skinCluster47GroupId.id" "medium_arm_03_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster47Set.mwc" "medium_arm_03_GEOShape.iog.og[2].gco";
+connectAttr "groupId94.id" "medium_arm_03_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet46.mwc" "medium_arm_03_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster47.og[0]" "medium_arm_03_GEOShape.i";
+connectAttr "tweak46.vl[0].vt[0]" "medium_arm_03_GEOShape.twl";
 connectAttr "transformGeometry17.og" "medium_arm_03_GEOShapeOrig.i";
-connectAttr "skinCluster2GroupId.id" "medium_arm_04_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster2Set.mwc" "medium_arm_04_GEOShape.iog.og[0].gco";
-connectAttr "groupId5.id" "medium_arm_04_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet2.mwc" "medium_arm_04_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster2.og[0]" "medium_arm_04_GEOShape.i";
-connectAttr "tweak2.vl[0].vt[0]" "medium_arm_04_GEOShape.twl";
+connectAttr "skinCluster58GroupId.id" "medium_arm_04_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster58Set.mwc" "medium_arm_04_GEOShape.iog.og[2].gco";
+connectAttr "groupId116.id" "medium_arm_04_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet57.mwc" "medium_arm_04_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster58.og[0]" "medium_arm_04_GEOShape.i";
+connectAttr "tweak57.vl[0].vt[0]" "medium_arm_04_GEOShape.twl";
 connectAttr "transformGeometry18.og" "medium_arm_04_GEOShapeOrig.i";
-connectAttr "skinCluster1GroupId.id" "medium_arm_05_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster1Set.mwc" "medium_arm_05_GEOShape.iog.og[0].gco";
-connectAttr "groupId3.id" "medium_arm_05_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet1.mwc" "medium_arm_05_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster1.og[0]" "medium_arm_05_GEOShape.i";
-connectAttr "tweak1.vl[0].vt[0]" "medium_arm_05_GEOShape.twl";
+connectAttr "skinCluster54GroupId.id" "medium_arm_05_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster54Set.mwc" "medium_arm_05_GEOShape.iog.og[2].gco";
+connectAttr "groupId108.id" "medium_arm_05_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet53.mwc" "medium_arm_05_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster54.og[0]" "medium_arm_05_GEOShape.i";
+connectAttr "tweak53.vl[0].vt[0]" "medium_arm_05_GEOShape.twl";
 connectAttr "transformGeometry19.og" "medium_arm_05_GEOShapeOrig.i";
-connectAttr "skinCluster3GroupId.id" "medium_arm_06_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster3Set.mwc" "medium_arm_06_GEOShape.iog.og[0].gco";
-connectAttr "groupId7.id" "medium_arm_06_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet3.mwc" "medium_arm_06_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster3.og[0]" "medium_arm_06_GEOShape.i";
-connectAttr "tweak3.vl[0].vt[0]" "medium_arm_06_GEOShape.twl";
+connectAttr "skinCluster56GroupId.id" "medium_arm_06_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster56Set.mwc" "medium_arm_06_GEOShape.iog.og[2].gco";
+connectAttr "groupId112.id" "medium_arm_06_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet55.mwc" "medium_arm_06_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster56.og[0]" "medium_arm_06_GEOShape.i";
+connectAttr "tweak55.vl[0].vt[0]" "medium_arm_06_GEOShape.twl";
 connectAttr "transformGeometry20.og" "medium_arm_06_GEOShapeOrig.i";
-connectAttr "skinCluster4GroupId.id" "medium_arm_07_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster4Set.mwc" "medium_arm_07_GEOShape.iog.og[0].gco";
-connectAttr "groupId9.id" "medium_arm_07_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet4.mwc" "medium_arm_07_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster4.og[0]" "medium_arm_07_GEOShape.i";
-connectAttr "tweak4.vl[0].vt[0]" "medium_arm_07_GEOShape.twl";
+connectAttr "skinCluster55GroupId.id" "medium_arm_07_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster55Set.mwc" "medium_arm_07_GEOShape.iog.og[2].gco";
+connectAttr "groupId110.id" "medium_arm_07_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet54.mwc" "medium_arm_07_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster55.og[0]" "medium_arm_07_GEOShape.i";
+connectAttr "tweak54.vl[0].vt[0]" "medium_arm_07_GEOShape.twl";
 connectAttr "transformGeometry21.og" "medium_arm_07_GEOShapeOrig.i";
-connectAttr "skinCluster33GroupId.id" "medium_arm_08_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster33Set.mwc" "medium_arm_08_GEOShape.iog.og[0].gco";
-connectAttr "groupId67.id" "medium_arm_08_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet33.mwc" "medium_arm_08_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster33.og[0]" "medium_arm_08_GEOShape.i";
-connectAttr "tweak33.vl[0].vt[0]" "medium_arm_08_GEOShape.twl";
+connectAttr "skinCluster53GroupId.id" "medium_arm_08_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster53Set.mwc" "medium_arm_08_GEOShape.iog.og[2].gco";
+connectAttr "groupId106.id" "medium_arm_08_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet52.mwc" "medium_arm_08_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster53.og[0]" "medium_arm_08_GEOShape.i";
+connectAttr "tweak52.vl[0].vt[0]" "medium_arm_08_GEOShape.twl";
 connectAttr "transformGeometry22.og" "medium_arm_08_GEOShapeOrig.i";
-connectAttr "skinCluster34GroupId.id" "medium_arm_09_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster34Set.mwc" "medium_arm_09_GEOShape.iog.og[0].gco";
-connectAttr "groupId69.id" "medium_arm_09_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet34.mwc" "medium_arm_09_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster34.og[0]" "medium_arm_09_GEOShape.i";
-connectAttr "tweak34.vl[0].vt[0]" "medium_arm_09_GEOShape.twl";
+connectAttr "skinCluster57GroupId.id" "medium_arm_09_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster57Set.mwc" "medium_arm_09_GEOShape.iog.og[2].gco";
+connectAttr "groupId114.id" "medium_arm_09_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet56.mwc" "medium_arm_09_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster57.og[0]" "medium_arm_09_GEOShape.i";
+connectAttr "tweak56.vl[0].vt[0]" "medium_arm_09_GEOShape.twl";
 connectAttr "transformGeometry23.og" "medium_arm_09_GEOShapeOrig.i";
-connectAttr "skinCluster32GroupId.id" "medium_arm_10_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster32Set.mwc" "medium_arm_10_GEOShape.iog.og[0].gco";
-connectAttr "groupId65.id" "medium_arm_10_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet32.mwc" "medium_arm_10_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster32.og[0]" "medium_arm_10_GEOShape.i";
-connectAttr "tweak32.vl[0].vt[0]" "medium_arm_10_GEOShape.twl";
+connectAttr "skinCluster65GroupId.id" "medium_arm_10_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster65Set.mwc" "medium_arm_10_GEOShape.iog.og[2].gco";
+connectAttr "groupId130.id" "medium_arm_10_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet64.mwc" "medium_arm_10_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster65.og[0]" "medium_arm_10_GEOShape.i";
+connectAttr "tweak64.vl[0].vt[0]" "medium_arm_10_GEOShape.twl";
 connectAttr "transformGeometry24.og" "medium_arm_10_GEOShapeOrig.i";
-connectAttr "skinCluster14GroupId.id" "large_arm_01_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster14Set.mwc" "large_arm_01_GEOShape.iog.og[0].gco";
-connectAttr "groupId29.id" "large_arm_01_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet14.mwc" "large_arm_01_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster14.og[0]" "large_arm_01_GEOShape.i";
-connectAttr "tweak14.vl[0].vt[0]" "large_arm_01_GEOShape.twl";
+connectAttr "skinCluster64GroupId.id" "large_arm_01_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster64Set.mwc" "large_arm_01_GEOShape.iog.og[2].gco";
+connectAttr "groupId128.id" "large_arm_01_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet63.mwc" "large_arm_01_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster64.og[0]" "large_arm_01_GEOShape.i";
+connectAttr "tweak63.vl[0].vt[0]" "large_arm_01_GEOShape.twl";
 connectAttr "transformGeometry25.og" "large_arm_01_GEOShapeOrig.i";
-connectAttr "skinCluster15GroupId.id" "large_arm_02_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster15Set.mwc" "large_arm_02_GEOShape.iog.og[0].gco";
-connectAttr "groupId31.id" "large_arm_02_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet15.mwc" "large_arm_02_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster15.og[0]" "large_arm_02_GEOShape.i";
-connectAttr "tweak15.vl[0].vt[0]" "large_arm_02_GEOShape.twl";
+connectAttr "skinCluster63GroupId.id" "large_arm_02_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster63Set.mwc" "large_arm_02_GEOShape.iog.og[2].gco";
+connectAttr "groupId126.id" "large_arm_02_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet62.mwc" "large_arm_02_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster63.og[0]" "large_arm_02_GEOShape.i";
+connectAttr "tweak62.vl[0].vt[0]" "large_arm_02_GEOShape.twl";
 connectAttr "transformGeometry26.og" "large_arm_02_GEOShapeOrig.i";
-connectAttr "skinCluster16GroupId.id" "large_arm_03_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster16Set.mwc" "large_arm_03_GEOShape.iog.og[0].gco";
-connectAttr "groupId33.id" "large_arm_03_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet16.mwc" "large_arm_03_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster16.og[0]" "large_arm_03_GEOShape.i";
-connectAttr "tweak16.vl[0].vt[0]" "large_arm_03_GEOShape.twl";
+connectAttr "skinCluster62GroupId.id" "large_arm_03_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster62Set.mwc" "large_arm_03_GEOShape.iog.og[2].gco";
+connectAttr "groupId124.id" "large_arm_03_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet61.mwc" "large_arm_03_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster62.og[0]" "large_arm_03_GEOShape.i";
+connectAttr "tweak61.vl[0].vt[0]" "large_arm_03_GEOShape.twl";
 connectAttr "transformGeometry27.og" "large_arm_03_GEOShapeOrig.i";
-connectAttr "skinCluster13GroupId.id" "large_arm_04_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster13Set.mwc" "large_arm_04_GEOShape.iog.og[0].gco";
-connectAttr "groupId27.id" "large_arm_04_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet13.mwc" "large_arm_04_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster13.og[0]" "large_arm_04_GEOShape.i";
-connectAttr "tweak13.vl[0].vt[0]" "large_arm_04_GEOShape.twl";
+connectAttr "skinCluster61GroupId.id" "large_arm_04_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster61Set.mwc" "large_arm_04_GEOShape.iog.og[2].gco";
+connectAttr "groupId122.id" "large_arm_04_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet60.mwc" "large_arm_04_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster61.og[0]" "large_arm_04_GEOShape.i";
+connectAttr "tweak60.vl[0].vt[0]" "large_arm_04_GEOShape.twl";
 connectAttr "transformGeometry28.og" "large_arm_04_GEOShapeOrig.i";
-connectAttr "skinCluster17GroupId.id" "large_arm_05_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster17Set.mwc" "large_arm_05_GEOShape.iog.og[0].gco";
-connectAttr "groupId35.id" "large_arm_05_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet17.mwc" "large_arm_05_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster17.og[0]" "large_arm_05_GEOShape.i";
-connectAttr "tweak17.vl[0].vt[0]" "large_arm_05_GEOShape.twl";
+connectAttr "skinCluster70GroupId.id" "large_arm_05_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster70Set.mwc" "large_arm_05_GEOShape.iog.og[2].gco";
+connectAttr "groupId140.id" "large_arm_05_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet69.mwc" "large_arm_05_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster70.og[0]" "large_arm_05_GEOShape.i";
+connectAttr "tweak69.vl[0].vt[0]" "large_arm_05_GEOShape.twl";
 connectAttr "transformGeometry29.og" "large_arm_05_GEOShapeOrig.i";
-connectAttr "skinCluster11GroupId.id" "large_arm_06_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster11Set.mwc" "large_arm_06_GEOShape.iog.og[0].gco";
-connectAttr "groupId23.id" "large_arm_06_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet11.mwc" "large_arm_06_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster11.og[0]" "large_arm_06_GEOShape.i";
-connectAttr "tweak11.vl[0].vt[0]" "large_arm_06_GEOShape.twl";
+connectAttr "skinCluster69GroupId.id" "large_arm_06_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster69Set.mwc" "large_arm_06_GEOShape.iog.og[2].gco";
+connectAttr "groupId138.id" "large_arm_06_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet68.mwc" "large_arm_06_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster69.og[0]" "large_arm_06_GEOShape.i";
+connectAttr "tweak68.vl[0].vt[0]" "large_arm_06_GEOShape.twl";
 connectAttr "transformGeometry30.og" "large_arm_06_GEOShapeOrig.i";
-connectAttr "skinCluster10GroupId.id" "large_arm_07_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster10Set.mwc" "large_arm_07_GEOShape.iog.og[0].gco";
-connectAttr "groupId21.id" "large_arm_07_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet10.mwc" "large_arm_07_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster10.og[0]" "large_arm_07_GEOShape.i";
-connectAttr "tweak10.vl[0].vt[0]" "large_arm_07_GEOShape.twl";
+connectAttr "skinCluster68GroupId.id" "large_arm_07_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster68Set.mwc" "large_arm_07_GEOShape.iog.og[2].gco";
+connectAttr "groupId136.id" "large_arm_07_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet67.mwc" "large_arm_07_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster68.og[0]" "large_arm_07_GEOShape.i";
+connectAttr "tweak67.vl[0].vt[0]" "large_arm_07_GEOShape.twl";
 connectAttr "transformGeometry31.og" "large_arm_07_GEOShapeOrig.i";
-connectAttr "skinCluster9GroupId.id" "large_arm_08_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster9Set.mwc" "large_arm_08_GEOShape.iog.og[0].gco";
-connectAttr "groupId19.id" "large_arm_08_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet9.mwc" "large_arm_08_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster9.og[0]" "large_arm_08_GEOShape.i";
-connectAttr "tweak9.vl[0].vt[0]" "large_arm_08_GEOShape.twl";
+connectAttr "skinCluster67GroupId.id" "large_arm_08_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster67Set.mwc" "large_arm_08_GEOShape.iog.og[2].gco";
+connectAttr "groupId134.id" "large_arm_08_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet66.mwc" "large_arm_08_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster67.og[0]" "large_arm_08_GEOShape.i";
+connectAttr "tweak66.vl[0].vt[0]" "large_arm_08_GEOShape.twl";
 connectAttr "transformGeometry32.og" "large_arm_08_GEOShapeOrig.i";
-connectAttr "skinCluster8GroupId.id" "large_arm_09_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster8Set.mwc" "large_arm_09_GEOShape.iog.og[0].gco";
-connectAttr "groupId17.id" "large_arm_09_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet8.mwc" "large_arm_09_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster8.og[0]" "large_arm_09_GEOShape.i";
-connectAttr "tweak8.vl[0].vt[0]" "large_arm_09_GEOShape.twl";
+connectAttr "skinCluster66GroupId.id" "large_arm_09_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster66Set.mwc" "large_arm_09_GEOShape.iog.og[2].gco";
+connectAttr "groupId132.id" "large_arm_09_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet65.mwc" "large_arm_09_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster66.og[0]" "large_arm_09_GEOShape.i";
+connectAttr "tweak65.vl[0].vt[0]" "large_arm_09_GEOShape.twl";
 connectAttr "transformGeometry33.og" "large_arm_09_GEOShapeOrig.i";
-connectAttr "skinCluster7GroupId.id" "large_arm_10_GEOShape.iog.og[0].gid";
-connectAttr "skinCluster7Set.mwc" "large_arm_10_GEOShape.iog.og[0].gco";
-connectAttr "groupId15.id" "large_arm_10_GEOShape.iog.og[1].gid";
-connectAttr "tweakSet7.mwc" "large_arm_10_GEOShape.iog.og[1].gco";
-connectAttr "skinCluster7.og[0]" "large_arm_10_GEOShape.i";
-connectAttr "tweak7.vl[0].vt[0]" "large_arm_10_GEOShape.twl";
+connectAttr "skinCluster60GroupId.id" "large_arm_10_GEOShape.iog.og[2].gid";
+connectAttr "skinCluster60Set.mwc" "large_arm_10_GEOShape.iog.og[2].gco";
+connectAttr "groupId120.id" "large_arm_10_GEOShape.iog.og[3].gid";
+connectAttr "tweakSet59.mwc" "large_arm_10_GEOShape.iog.og[3].gco";
+connectAttr "skinCluster60.og[0]" "large_arm_10_GEOShape.i";
+connectAttr "tweak59.vl[0].vt[0]" "large_arm_10_GEOShape.twl";
 connectAttr "transformGeometry34.og" "large_arm_10_GEOShapeOrig.i";
-connectAttr "skinCluster35.og[0]" "fabric_GEO1Shape.i";
+connectAttr "skinCluster59.og[0]" "fabric_GEO1Shape.i";
 connectAttr "groupId70.id" "fabric_GEO1Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "fabric_GEO1Shape.iog.og[0].gco";
-connectAttr "skinCluster35GroupId.id" "fabric_GEO1Shape.iog.og[3].gid";
-connectAttr "skinCluster35Set.mwc" "fabric_GEO1Shape.iog.og[3].gco";
-connectAttr "groupId72.id" "fabric_GEO1Shape.iog.og[4].gid";
-connectAttr "tweakSet35.mwc" "fabric_GEO1Shape.iog.og[4].gco";
-connectAttr "tweak35.vl[0].vt[0]" "fabric_GEO1Shape.twl";
+connectAttr "skinCluster59GroupId.id" "fabric_GEO1Shape.iog.og[5].gid";
+connectAttr "skinCluster59Set.mwc" "fabric_GEO1Shape.iog.og[5].gco";
+connectAttr "groupId118.id" "fabric_GEO1Shape.iog.og[6].gid";
+connectAttr "tweakSet58.mwc" "fabric_GEO1Shape.iog.og[6].gco";
+connectAttr "tweak58.vl[0].vt[0]" "fabric_GEO1Shape.twl";
 connectAttr "polyNormal2.out" "fabric_GEO1ShapeOrig1.i";
 connectAttr "skinCluster37GroupId.id" "centralPole_GEO1Shape.iog.og[2].gid";
 connectAttr "skinCluster37Set.mwc" "centralPole_GEO1Shape.iog.og[2].gco";
@@ -16772,8 +16898,76 @@ connectAttr "main_JNT.pim" "joint1_scaleConstraint1.cpim";
 connectAttr "main_CTRL.s" "joint1_scaleConstraint1.tg[0].ts";
 connectAttr "main_CTRL.pm" "joint1_scaleConstraint1.tg[0].tpm";
 connectAttr "joint1_scaleConstraint1.w0" "joint1_scaleConstraint1.tg[0].tw";
+connectAttr "main_JNT.s" "fabric_JNT.is";
+connectAttr "fabric_JNT_parentConstraint1.ctx" "fabric_JNT.tx";
+connectAttr "fabric_JNT_parentConstraint1.cty" "fabric_JNT.ty";
+connectAttr "fabric_JNT_parentConstraint1.ctz" "fabric_JNT.tz";
+connectAttr "fabric_JNT_parentConstraint1.crx" "fabric_JNT.rx";
+connectAttr "fabric_JNT_parentConstraint1.cry" "fabric_JNT.ry";
+connectAttr "fabric_JNT_parentConstraint1.crz" "fabric_JNT.rz";
+connectAttr "fabric_JNT_scaleConstraint1.csx" "fabric_JNT.sx";
+connectAttr "fabric_JNT_scaleConstraint1.csy" "fabric_JNT.sy";
+connectAttr "fabric_JNT_scaleConstraint1.csz" "fabric_JNT.sz";
+connectAttr "fabric_JNT.ro" "fabric_JNT_parentConstraint1.cro";
+connectAttr "fabric_JNT.pim" "fabric_JNT_parentConstraint1.cpim";
+connectAttr "fabric_JNT.rp" "fabric_JNT_parentConstraint1.crp";
+connectAttr "fabric_JNT.rpt" "fabric_JNT_parentConstraint1.crt";
+connectAttr "fabric_JNT.jo" "fabric_JNT_parentConstraint1.cjo";
+connectAttr "fabric_CTRL.t" "fabric_JNT_parentConstraint1.tg[0].tt";
+connectAttr "fabric_CTRL.rp" "fabric_JNT_parentConstraint1.tg[0].trp";
+connectAttr "fabric_CTRL.rpt" "fabric_JNT_parentConstraint1.tg[0].trt";
+connectAttr "fabric_CTRL.r" "fabric_JNT_parentConstraint1.tg[0].tr";
+connectAttr "fabric_CTRL.ro" "fabric_JNT_parentConstraint1.tg[0].tro";
+connectAttr "fabric_CTRL.s" "fabric_JNT_parentConstraint1.tg[0].ts";
+connectAttr "fabric_CTRL.pm" "fabric_JNT_parentConstraint1.tg[0].tpm";
+connectAttr "fabric_JNT_parentConstraint1.w0" "fabric_JNT_parentConstraint1.tg[0].tw"
+		;
+connectAttr "fabric_JNT.ssc" "fabric_JNT_scaleConstraint1.tsc";
+connectAttr "fabric_JNT.pim" "fabric_JNT_scaleConstraint1.cpim";
+connectAttr "fabric_CTRL.s" "fabric_JNT_scaleConstraint1.tg[0].ts";
+connectAttr "fabric_CTRL.pm" "fabric_JNT_scaleConstraint1.tg[0].tpm";
+connectAttr "fabric_JNT_scaleConstraint1.w0" "fabric_JNT_scaleConstraint1.tg[0].tw"
+		;
 connectAttr "CTRLS_LYR.di" "CTRLS.do";
+connectAttr "makeNurbCircle3.oc" "transform_CTRLShape.cr";
 connectAttr "makeNurbCircle1.oc" "main_CTRLShape.cr";
+connectAttr "fabric_CTRL_GRP_Translate_Constraint.ctx" "fabric_CTRL_GRP.tx";
+connectAttr "fabric_CTRL_GRP_Translate_Constraint.cty" "fabric_CTRL_GRP.ty";
+connectAttr "fabric_CTRL_GRP_Translate_Constraint.ctz" "fabric_CTRL_GRP.tz";
+connectAttr "fabric_CTRL_GRP_Rotate_Constraint.crx" "fabric_CTRL_GRP.rx";
+connectAttr "fabric_CTRL_GRP_Rotate_Constraint.cry" "fabric_CTRL_GRP.ry";
+connectAttr "fabric_CTRL_GRP_Rotate_Constraint.crz" "fabric_CTRL_GRP.rz";
+connectAttr "makeNurbCircle2.oc" "fabric_CTRLShape.cr";
+connectAttr "fabric_CTRL_GRP.ro" "fabric_CTRL_GRP_Translate_Constraint.cro";
+connectAttr "fabric_CTRL_GRP.pim" "fabric_CTRL_GRP_Translate_Constraint.cpim";
+connectAttr "fabric_CTRL_GRP.rp" "fabric_CTRL_GRP_Translate_Constraint.crp";
+connectAttr "fabric_CTRL_GRP.rpt" "fabric_CTRL_GRP_Translate_Constraint.crt";
+connectAttr "main_CTRL.t" "fabric_CTRL_GRP_Translate_Constraint.tg[0].tt";
+connectAttr "main_CTRL.rp" "fabric_CTRL_GRP_Translate_Constraint.tg[0].trp";
+connectAttr "main_CTRL.rpt" "fabric_CTRL_GRP_Translate_Constraint.tg[0].trt";
+connectAttr "main_CTRL.r" "fabric_CTRL_GRP_Translate_Constraint.tg[0].tr";
+connectAttr "main_CTRL.ro" "fabric_CTRL_GRP_Translate_Constraint.tg[0].tro";
+connectAttr "main_CTRL.s" "fabric_CTRL_GRP_Translate_Constraint.tg[0].ts";
+connectAttr "main_CTRL.pm" "fabric_CTRL_GRP_Translate_Constraint.tg[0].tpm";
+connectAttr "fabric_CTRL_GRP_Translate_Constraint.w0" "fabric_CTRL_GRP_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "fabric_CTRL.Translate_Constraint" "fabric_CTRL_GRP_Translate_Constraint.w0"
+		;
+connectAttr "fabric_CTRL_GRP.ro" "fabric_CTRL_GRP_Rotate_Constraint.cro";
+connectAttr "fabric_CTRL_GRP.pim" "fabric_CTRL_GRP_Rotate_Constraint.cpim";
+connectAttr "fabric_CTRL_GRP.rp" "fabric_CTRL_GRP_Rotate_Constraint.crp";
+connectAttr "fabric_CTRL_GRP.rpt" "fabric_CTRL_GRP_Rotate_Constraint.crt";
+connectAttr "main_CTRL.t" "fabric_CTRL_GRP_Rotate_Constraint.tg[0].tt";
+connectAttr "main_CTRL.rp" "fabric_CTRL_GRP_Rotate_Constraint.tg[0].trp";
+connectAttr "main_CTRL.rpt" "fabric_CTRL_GRP_Rotate_Constraint.tg[0].trt";
+connectAttr "main_CTRL.r" "fabric_CTRL_GRP_Rotate_Constraint.tg[0].tr";
+connectAttr "main_CTRL.ro" "fabric_CTRL_GRP_Rotate_Constraint.tg[0].tro";
+connectAttr "main_CTRL.s" "fabric_CTRL_GRP_Rotate_Constraint.tg[0].ts";
+connectAttr "main_CTRL.pm" "fabric_CTRL_GRP_Rotate_Constraint.tg[0].tpm";
+connectAttr "fabric_CTRL_GRP_Rotate_Constraint.w0" "fabric_CTRL_GRP_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "fabric_CTRL.Rotate_Constraint" "fabric_CTRL_GRP_Rotate_Constraint.w0"
+		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -16912,355 +17106,21 @@ connectAttr "polySoftEdge29.out" "transformGeometry31.ig";
 connectAttr "polySoftEdge30.out" "transformGeometry32.ig";
 connectAttr "polySoftEdge23.out" "transformGeometry33.ig";
 connectAttr "polySoftEdge31.out" "transformGeometry34.ig";
-connectAttr "skinCluster1GroupParts.og" "skinCluster1.ip[0].ig";
-connectAttr "skinCluster1GroupId.id" "skinCluster1.ip[0].gi";
-connectAttr "bindPose1.msg" "skinCluster1.bp";
-connectAttr "main_JNT.wm" "skinCluster1.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster1.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster1.ifcl[0]";
-connectAttr "groupParts3.og" "tweak1.ip[0].ig";
-connectAttr "groupId3.id" "tweak1.ip[0].gi";
-connectAttr "skinCluster1GroupId.msg" "skinCluster1Set.gn" -na;
-connectAttr "medium_arm_05_GEOShape.iog.og[0]" "skinCluster1Set.dsm" -na;
-connectAttr "skinCluster1.msg" "skinCluster1Set.ub[0]";
-connectAttr "tweak1.og[0]" "skinCluster1GroupParts.ig";
-connectAttr "skinCluster1GroupId.id" "skinCluster1GroupParts.gi";
-connectAttr "groupId3.msg" "tweakSet1.gn" -na;
-connectAttr "medium_arm_05_GEOShape.iog.og[1]" "tweakSet1.dsm" -na;
-connectAttr "tweak1.msg" "tweakSet1.ub[0]";
-connectAttr "medium_arm_05_GEOShapeOrig.w" "groupParts3.ig";
-connectAttr "groupId3.id" "groupParts3.gi";
 connectAttr "main_JNT.msg" "bindPose1.m[0]";
 connectAttr "umbrella.msg" "bindPose1.m[1]";
 connectAttr "JNTS.msg" "bindPose1.m[2]";
 connectAttr "bindPose1.m[2]" "bindPose1.p[0]";
 connectAttr "bindPose1.w" "bindPose1.p[1]";
 connectAttr "umbrella.msg" "bindPose1.p[2]";
+connectAttr "bindPose1.w" "bindPose1.p[3]";
 connectAttr "main_JNT.bps" "bindPose1.wm[0]";
-connectAttr "skinCluster2GroupParts.og" "skinCluster2.ip[0].ig";
-connectAttr "skinCluster2GroupId.id" "skinCluster2.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster2.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster2.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster2.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster2.bp";
-connectAttr "groupParts5.og" "tweak2.ip[0].ig";
-connectAttr "groupId5.id" "tweak2.ip[0].gi";
-connectAttr "skinCluster2GroupId.msg" "skinCluster2Set.gn" -na;
-connectAttr "medium_arm_04_GEOShape.iog.og[0]" "skinCluster2Set.dsm" -na;
-connectAttr "skinCluster2.msg" "skinCluster2Set.ub[0]";
-connectAttr "tweak2.og[0]" "skinCluster2GroupParts.ig";
-connectAttr "skinCluster2GroupId.id" "skinCluster2GroupParts.gi";
-connectAttr "groupId5.msg" "tweakSet2.gn" -na;
-connectAttr "medium_arm_04_GEOShape.iog.og[1]" "tweakSet2.dsm" -na;
-connectAttr "tweak2.msg" "tweakSet2.ub[0]";
-connectAttr "medium_arm_04_GEOShapeOrig.w" "groupParts5.ig";
-connectAttr "groupId5.id" "groupParts5.gi";
-connectAttr "skinCluster3GroupParts.og" "skinCluster3.ip[0].ig";
-connectAttr "skinCluster3GroupId.id" "skinCluster3.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster3.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster3.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster3.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster3.bp";
-connectAttr "groupParts7.og" "tweak3.ip[0].ig";
-connectAttr "groupId7.id" "tweak3.ip[0].gi";
-connectAttr "skinCluster3GroupId.msg" "skinCluster3Set.gn" -na;
-connectAttr "medium_arm_06_GEOShape.iog.og[0]" "skinCluster3Set.dsm" -na;
-connectAttr "skinCluster3.msg" "skinCluster3Set.ub[0]";
-connectAttr "tweak3.og[0]" "skinCluster3GroupParts.ig";
-connectAttr "skinCluster3GroupId.id" "skinCluster3GroupParts.gi";
-connectAttr "groupId7.msg" "tweakSet3.gn" -na;
-connectAttr "medium_arm_06_GEOShape.iog.og[1]" "tweakSet3.dsm" -na;
-connectAttr "tweak3.msg" "tweakSet3.ub[0]";
-connectAttr "medium_arm_06_GEOShapeOrig.w" "groupParts7.ig";
-connectAttr "groupId7.id" "groupParts7.gi";
-connectAttr "skinCluster4GroupParts.og" "skinCluster4.ip[0].ig";
-connectAttr "skinCluster4GroupId.id" "skinCluster4.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster4.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster4.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster4.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster4.bp";
-connectAttr "groupParts9.og" "tweak4.ip[0].ig";
-connectAttr "groupId9.id" "tweak4.ip[0].gi";
-connectAttr "skinCluster4GroupId.msg" "skinCluster4Set.gn" -na;
-connectAttr "medium_arm_07_GEOShape.iog.og[0]" "skinCluster4Set.dsm" -na;
-connectAttr "skinCluster4.msg" "skinCluster4Set.ub[0]";
-connectAttr "tweak4.og[0]" "skinCluster4GroupParts.ig";
-connectAttr "skinCluster4GroupId.id" "skinCluster4GroupParts.gi";
-connectAttr "groupId9.msg" "tweakSet4.gn" -na;
-connectAttr "medium_arm_07_GEOShape.iog.og[1]" "tweakSet4.dsm" -na;
-connectAttr "tweak4.msg" "tweakSet4.ub[0]";
-connectAttr "medium_arm_07_GEOShapeOrig.w" "groupParts9.ig";
-connectAttr "groupId9.id" "groupParts9.gi";
-connectAttr "skinCluster5GroupParts.og" "skinCluster5.ip[0].ig";
-connectAttr "skinCluster5GroupId.id" "skinCluster5.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster5.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster5.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster5.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster5.bp";
-connectAttr "groupParts11.og" "tweak5.ip[0].ig";
-connectAttr "groupId11.id" "tweak5.ip[0].gi";
-connectAttr "skinCluster5GroupId.msg" "skinCluster5Set.gn" -na;
-connectAttr "medium_arm_03_GEOShape.iog.og[0]" "skinCluster5Set.dsm" -na;
-connectAttr "skinCluster5.msg" "skinCluster5Set.ub[0]";
-connectAttr "tweak5.og[0]" "skinCluster5GroupParts.ig";
-connectAttr "skinCluster5GroupId.id" "skinCluster5GroupParts.gi";
-connectAttr "groupId11.msg" "tweakSet5.gn" -na;
-connectAttr "medium_arm_03_GEOShape.iog.og[1]" "tweakSet5.dsm" -na;
-connectAttr "tweak5.msg" "tweakSet5.ub[0]";
-connectAttr "medium_arm_03_GEOShapeOrig.w" "groupParts11.ig";
-connectAttr "groupId11.id" "groupParts11.gi";
-connectAttr "skinCluster6GroupParts.og" "skinCluster6.ip[0].ig";
-connectAttr "skinCluster6GroupId.id" "skinCluster6.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster6.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster6.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster6.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster6.bp";
-connectAttr "groupParts13.og" "tweak6.ip[0].ig";
-connectAttr "groupId13.id" "tweak6.ip[0].gi";
-connectAttr "skinCluster6GroupId.msg" "skinCluster6Set.gn" -na;
-connectAttr "small_arm_10_GEOShape.iog.og[0]" "skinCluster6Set.dsm" -na;
-connectAttr "skinCluster6.msg" "skinCluster6Set.ub[0]";
-connectAttr "tweak6.og[0]" "skinCluster6GroupParts.ig";
-connectAttr "skinCluster6GroupId.id" "skinCluster6GroupParts.gi";
-connectAttr "groupId13.msg" "tweakSet6.gn" -na;
-connectAttr "small_arm_10_GEOShape.iog.og[1]" "tweakSet6.dsm" -na;
-connectAttr "tweak6.msg" "tweakSet6.ub[0]";
-connectAttr "small_arm_10_GEOShapeOrig.w" "groupParts13.ig";
-connectAttr "groupId13.id" "groupParts13.gi";
-connectAttr "skinCluster7GroupParts.og" "skinCluster7.ip[0].ig";
-connectAttr "skinCluster7GroupId.id" "skinCluster7.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster7.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster7.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster7.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster7.bp";
-connectAttr "groupParts15.og" "tweak7.ip[0].ig";
-connectAttr "groupId15.id" "tweak7.ip[0].gi";
-connectAttr "skinCluster7GroupId.msg" "skinCluster7Set.gn" -na;
-connectAttr "large_arm_10_GEOShape.iog.og[0]" "skinCluster7Set.dsm" -na;
-connectAttr "skinCluster7.msg" "skinCluster7Set.ub[0]";
-connectAttr "tweak7.og[0]" "skinCluster7GroupParts.ig";
-connectAttr "skinCluster7GroupId.id" "skinCluster7GroupParts.gi";
-connectAttr "groupId15.msg" "tweakSet7.gn" -na;
-connectAttr "large_arm_10_GEOShape.iog.og[1]" "tweakSet7.dsm" -na;
-connectAttr "tweak7.msg" "tweakSet7.ub[0]";
-connectAttr "large_arm_10_GEOShapeOrig.w" "groupParts15.ig";
-connectAttr "groupId15.id" "groupParts15.gi";
-connectAttr "skinCluster8GroupParts.og" "skinCluster8.ip[0].ig";
-connectAttr "skinCluster8GroupId.id" "skinCluster8.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster8.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster8.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster8.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster8.bp";
-connectAttr "groupParts17.og" "tweak8.ip[0].ig";
-connectAttr "groupId17.id" "tweak8.ip[0].gi";
-connectAttr "skinCluster8GroupId.msg" "skinCluster8Set.gn" -na;
-connectAttr "large_arm_09_GEOShape.iog.og[0]" "skinCluster8Set.dsm" -na;
-connectAttr "skinCluster8.msg" "skinCluster8Set.ub[0]";
-connectAttr "tweak8.og[0]" "skinCluster8GroupParts.ig";
-connectAttr "skinCluster8GroupId.id" "skinCluster8GroupParts.gi";
-connectAttr "groupId17.msg" "tweakSet8.gn" -na;
-connectAttr "large_arm_09_GEOShape.iog.og[1]" "tweakSet8.dsm" -na;
-connectAttr "tweak8.msg" "tweakSet8.ub[0]";
-connectAttr "large_arm_09_GEOShapeOrig.w" "groupParts17.ig";
-connectAttr "groupId17.id" "groupParts17.gi";
-connectAttr "skinCluster9GroupParts.og" "skinCluster9.ip[0].ig";
-connectAttr "skinCluster9GroupId.id" "skinCluster9.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster9.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster9.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster9.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster9.bp";
-connectAttr "groupParts19.og" "tweak9.ip[0].ig";
-connectAttr "groupId19.id" "tweak9.ip[0].gi";
-connectAttr "skinCluster9GroupId.msg" "skinCluster9Set.gn" -na;
-connectAttr "large_arm_08_GEOShape.iog.og[0]" "skinCluster9Set.dsm" -na;
-connectAttr "skinCluster9.msg" "skinCluster9Set.ub[0]";
-connectAttr "tweak9.og[0]" "skinCluster9GroupParts.ig";
-connectAttr "skinCluster9GroupId.id" "skinCluster9GroupParts.gi";
-connectAttr "groupId19.msg" "tweakSet9.gn" -na;
-connectAttr "large_arm_08_GEOShape.iog.og[1]" "tweakSet9.dsm" -na;
-connectAttr "tweak9.msg" "tweakSet9.ub[0]";
-connectAttr "large_arm_08_GEOShapeOrig.w" "groupParts19.ig";
-connectAttr "groupId19.id" "groupParts19.gi";
-connectAttr "skinCluster10GroupParts.og" "skinCluster10.ip[0].ig";
-connectAttr "skinCluster10GroupId.id" "skinCluster10.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster10.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster10.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster10.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster10.bp";
-connectAttr "groupParts21.og" "tweak10.ip[0].ig";
-connectAttr "groupId21.id" "tweak10.ip[0].gi";
-connectAttr "skinCluster10GroupId.msg" "skinCluster10Set.gn" -na;
-connectAttr "large_arm_07_GEOShape.iog.og[0]" "skinCluster10Set.dsm" -na;
-connectAttr "skinCluster10.msg" "skinCluster10Set.ub[0]";
-connectAttr "tweak10.og[0]" "skinCluster10GroupParts.ig";
-connectAttr "skinCluster10GroupId.id" "skinCluster10GroupParts.gi";
-connectAttr "groupId21.msg" "tweakSet10.gn" -na;
-connectAttr "large_arm_07_GEOShape.iog.og[1]" "tweakSet10.dsm" -na;
-connectAttr "tweak10.msg" "tweakSet10.ub[0]";
-connectAttr "large_arm_07_GEOShapeOrig.w" "groupParts21.ig";
-connectAttr "groupId21.id" "groupParts21.gi";
-connectAttr "skinCluster11GroupParts.og" "skinCluster11.ip[0].ig";
-connectAttr "skinCluster11GroupId.id" "skinCluster11.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster11.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster11.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster11.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster11.bp";
-connectAttr "groupParts23.og" "tweak11.ip[0].ig";
-connectAttr "groupId23.id" "tweak11.ip[0].gi";
-connectAttr "skinCluster11GroupId.msg" "skinCluster11Set.gn" -na;
-connectAttr "large_arm_06_GEOShape.iog.og[0]" "skinCluster11Set.dsm" -na;
-connectAttr "skinCluster11.msg" "skinCluster11Set.ub[0]";
-connectAttr "tweak11.og[0]" "skinCluster11GroupParts.ig";
-connectAttr "skinCluster11GroupId.id" "skinCluster11GroupParts.gi";
-connectAttr "groupId23.msg" "tweakSet11.gn" -na;
-connectAttr "large_arm_06_GEOShape.iog.og[1]" "tweakSet11.dsm" -na;
-connectAttr "tweak11.msg" "tweakSet11.ub[0]";
-connectAttr "large_arm_06_GEOShapeOrig.w" "groupParts23.ig";
-connectAttr "groupId23.id" "groupParts23.gi";
-connectAttr "skinCluster12GroupParts.og" "skinCluster12.ip[0].ig";
-connectAttr "skinCluster12GroupId.id" "skinCluster12.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster12.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster12.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster12.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster12.bp";
-connectAttr "groupParts25.og" "tweak12.ip[0].ig";
-connectAttr "groupId25.id" "tweak12.ip[0].gi";
-connectAttr "skinCluster12GroupId.msg" "skinCluster12Set.gn" -na;
-connectAttr "small_arm_09_GEOShape.iog.og[0]" "skinCluster12Set.dsm" -na;
-connectAttr "skinCluster12.msg" "skinCluster12Set.ub[0]";
-connectAttr "tweak12.og[0]" "skinCluster12GroupParts.ig";
-connectAttr "skinCluster12GroupId.id" "skinCluster12GroupParts.gi";
-connectAttr "groupId25.msg" "tweakSet12.gn" -na;
-connectAttr "small_arm_09_GEOShape.iog.og[1]" "tweakSet12.dsm" -na;
-connectAttr "tweak12.msg" "tweakSet12.ub[0]";
-connectAttr "small_arm_09_GEOShapeOrig.w" "groupParts25.ig";
-connectAttr "groupId25.id" "groupParts25.gi";
-connectAttr "skinCluster13GroupParts.og" "skinCluster13.ip[0].ig";
-connectAttr "skinCluster13GroupId.id" "skinCluster13.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster13.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster13.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster13.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster13.bp";
-connectAttr "groupParts27.og" "tweak13.ip[0].ig";
-connectAttr "groupId27.id" "tweak13.ip[0].gi";
-connectAttr "skinCluster13GroupId.msg" "skinCluster13Set.gn" -na;
-connectAttr "large_arm_04_GEOShape.iog.og[0]" "skinCluster13Set.dsm" -na;
-connectAttr "skinCluster13.msg" "skinCluster13Set.ub[0]";
-connectAttr "tweak13.og[0]" "skinCluster13GroupParts.ig";
-connectAttr "skinCluster13GroupId.id" "skinCluster13GroupParts.gi";
-connectAttr "groupId27.msg" "tweakSet13.gn" -na;
-connectAttr "large_arm_04_GEOShape.iog.og[1]" "tweakSet13.dsm" -na;
-connectAttr "tweak13.msg" "tweakSet13.ub[0]";
-connectAttr "large_arm_04_GEOShapeOrig.w" "groupParts27.ig";
-connectAttr "groupId27.id" "groupParts27.gi";
-connectAttr "skinCluster14GroupParts.og" "skinCluster14.ip[0].ig";
-connectAttr "skinCluster14GroupId.id" "skinCluster14.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster14.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster14.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster14.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster14.bp";
-connectAttr "groupParts29.og" "tweak14.ip[0].ig";
-connectAttr "groupId29.id" "tweak14.ip[0].gi";
-connectAttr "skinCluster14GroupId.msg" "skinCluster14Set.gn" -na;
-connectAttr "large_arm_01_GEOShape.iog.og[0]" "skinCluster14Set.dsm" -na;
-connectAttr "skinCluster14.msg" "skinCluster14Set.ub[0]";
-connectAttr "tweak14.og[0]" "skinCluster14GroupParts.ig";
-connectAttr "skinCluster14GroupId.id" "skinCluster14GroupParts.gi";
-connectAttr "groupId29.msg" "tweakSet14.gn" -na;
-connectAttr "large_arm_01_GEOShape.iog.og[1]" "tweakSet14.dsm" -na;
-connectAttr "tweak14.msg" "tweakSet14.ub[0]";
-connectAttr "large_arm_01_GEOShapeOrig.w" "groupParts29.ig";
-connectAttr "groupId29.id" "groupParts29.gi";
-connectAttr "skinCluster15GroupParts.og" "skinCluster15.ip[0].ig";
-connectAttr "skinCluster15GroupId.id" "skinCluster15.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster15.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster15.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster15.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster15.bp";
-connectAttr "groupParts31.og" "tweak15.ip[0].ig";
-connectAttr "groupId31.id" "tweak15.ip[0].gi";
-connectAttr "skinCluster15GroupId.msg" "skinCluster15Set.gn" -na;
-connectAttr "large_arm_02_GEOShape.iog.og[0]" "skinCluster15Set.dsm" -na;
-connectAttr "skinCluster15.msg" "skinCluster15Set.ub[0]";
-connectAttr "tweak15.og[0]" "skinCluster15GroupParts.ig";
-connectAttr "skinCluster15GroupId.id" "skinCluster15GroupParts.gi";
-connectAttr "groupId31.msg" "tweakSet15.gn" -na;
-connectAttr "large_arm_02_GEOShape.iog.og[1]" "tweakSet15.dsm" -na;
-connectAttr "tweak15.msg" "tweakSet15.ub[0]";
-connectAttr "large_arm_02_GEOShapeOrig.w" "groupParts31.ig";
-connectAttr "groupId31.id" "groupParts31.gi";
-connectAttr "skinCluster16GroupParts.og" "skinCluster16.ip[0].ig";
-connectAttr "skinCluster16GroupId.id" "skinCluster16.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster16.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster16.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster16.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster16.bp";
-connectAttr "groupParts33.og" "tweak16.ip[0].ig";
-connectAttr "groupId33.id" "tweak16.ip[0].gi";
-connectAttr "skinCluster16GroupId.msg" "skinCluster16Set.gn" -na;
-connectAttr "large_arm_03_GEOShape.iog.og[0]" "skinCluster16Set.dsm" -na;
-connectAttr "skinCluster16.msg" "skinCluster16Set.ub[0]";
-connectAttr "tweak16.og[0]" "skinCluster16GroupParts.ig";
-connectAttr "skinCluster16GroupId.id" "skinCluster16GroupParts.gi";
-connectAttr "groupId33.msg" "tweakSet16.gn" -na;
-connectAttr "large_arm_03_GEOShape.iog.og[1]" "tweakSet16.dsm" -na;
-connectAttr "tweak16.msg" "tweakSet16.ub[0]";
-connectAttr "large_arm_03_GEOShapeOrig.w" "groupParts33.ig";
-connectAttr "groupId33.id" "groupParts33.gi";
-connectAttr "skinCluster17GroupParts.og" "skinCluster17.ip[0].ig";
-connectAttr "skinCluster17GroupId.id" "skinCluster17.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster17.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster17.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster17.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster17.bp";
-connectAttr "groupParts35.og" "tweak17.ip[0].ig";
-connectAttr "groupId35.id" "tweak17.ip[0].gi";
-connectAttr "skinCluster17GroupId.msg" "skinCluster17Set.gn" -na;
-connectAttr "large_arm_05_GEOShape.iog.og[0]" "skinCluster17Set.dsm" -na;
-connectAttr "skinCluster17.msg" "skinCluster17Set.ub[0]";
-connectAttr "tweak17.og[0]" "skinCluster17GroupParts.ig";
-connectAttr "skinCluster17GroupId.id" "skinCluster17GroupParts.gi";
-connectAttr "groupId35.msg" "tweakSet17.gn" -na;
-connectAttr "large_arm_05_GEOShape.iog.og[1]" "tweakSet17.dsm" -na;
-connectAttr "tweak17.msg" "tweakSet17.ub[0]";
-connectAttr "large_arm_05_GEOShapeOrig.w" "groupParts35.ig";
-connectAttr "groupId35.id" "groupParts35.gi";
-connectAttr "skinCluster18GroupParts.og" "skinCluster18.ip[0].ig";
-connectAttr "skinCluster18GroupId.id" "skinCluster18.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster18.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster18.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster18.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster18.bp";
 connectAttr "groupParts37.og" "tweak18.ip[0].ig";
 connectAttr "groupId37.id" "tweak18.ip[0].gi";
-connectAttr "skinCluster18GroupId.msg" "skinCluster18Set.gn" -na;
-connectAttr "fabric_GEOShape.iog.og[1]" "skinCluster18Set.dsm" -na;
-connectAttr "skinCluster18.msg" "skinCluster18Set.ub[0]";
-connectAttr "tweak18.og[0]" "skinCluster18GroupParts.ig";
-connectAttr "skinCluster18GroupId.id" "skinCluster18GroupParts.gi";
 connectAttr "groupId37.msg" "tweakSet18.gn" -na;
 connectAttr "fabric_GEOShape.iog.og[2]" "tweakSet18.dsm" -na;
 connectAttr "tweak18.msg" "tweakSet18.ub[0]";
 connectAttr "polyPlanarProj3.out" "groupParts37.ig";
 connectAttr "groupId37.id" "groupParts37.gi";
-connectAttr "skinCluster19GroupParts.og" "skinCluster19.ip[0].ig";
-connectAttr "skinCluster19GroupId.id" "skinCluster19.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster19.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster19.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster19.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster19.bp";
-connectAttr "groupParts39.og" "tweak19.ip[0].ig";
-connectAttr "groupId39.id" "tweak19.ip[0].gi";
-connectAttr "skinCluster19GroupId.msg" "skinCluster19Set.gn" -na;
-connectAttr "medium_arm_01_GEOShape.iog.og[0]" "skinCluster19Set.dsm" -na;
-connectAttr "skinCluster19.msg" "skinCluster19Set.ub[0]";
-connectAttr "tweak19.og[0]" "skinCluster19GroupParts.ig";
-connectAttr "skinCluster19GroupId.id" "skinCluster19GroupParts.gi";
-connectAttr "groupId39.msg" "tweakSet19.gn" -na;
-connectAttr "medium_arm_01_GEOShape.iog.og[1]" "tweakSet19.dsm" -na;
-connectAttr "tweak19.msg" "tweakSet19.ub[0]";
-connectAttr "medium_arm_01_GEOShapeOrig.w" "groupParts39.ig";
-connectAttr "groupId39.id" "groupParts39.gi";
 connectAttr "skinCluster20GroupParts.og" "skinCluster20.ip[0].ig";
 connectAttr "skinCluster20GroupId.id" "skinCluster20.ip[0].gi";
 connectAttr "main_JNT.wm" "skinCluster20.ma[0]";
@@ -17316,222 +17176,6 @@ connectAttr "centralPole_GEOShape.iog.og[1]" "tweakSet22.dsm" -na;
 connectAttr "tweak22.msg" "tweakSet22.ub[0]";
 connectAttr "polyPlanarProj1.out" "groupParts45.ig";
 connectAttr "groupId45.id" "groupParts45.gi";
-connectAttr "skinCluster23GroupParts.og" "skinCluster23.ip[0].ig";
-connectAttr "skinCluster23GroupId.id" "skinCluster23.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster23.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster23.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster23.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster23.bp";
-connectAttr "groupParts47.og" "tweak23.ip[0].ig";
-connectAttr "groupId47.id" "tweak23.ip[0].gi";
-connectAttr "skinCluster23GroupId.msg" "skinCluster23Set.gn" -na;
-connectAttr "medium_arm_02_GEOShape.iog.og[0]" "skinCluster23Set.dsm" -na;
-connectAttr "skinCluster23.msg" "skinCluster23Set.ub[0]";
-connectAttr "tweak23.og[0]" "skinCluster23GroupParts.ig";
-connectAttr "skinCluster23GroupId.id" "skinCluster23GroupParts.gi";
-connectAttr "groupId47.msg" "tweakSet23.gn" -na;
-connectAttr "medium_arm_02_GEOShape.iog.og[1]" "tweakSet23.dsm" -na;
-connectAttr "tweak23.msg" "tweakSet23.ub[0]";
-connectAttr "medium_arm_02_GEOShapeOrig.w" "groupParts47.ig";
-connectAttr "groupId47.id" "groupParts47.gi";
-connectAttr "skinCluster24GroupParts.og" "skinCluster24.ip[0].ig";
-connectAttr "skinCluster24GroupId.id" "skinCluster24.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster24.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster24.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster24.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster24.bp";
-connectAttr "groupParts49.og" "tweak24.ip[0].ig";
-connectAttr "groupId49.id" "tweak24.ip[0].gi";
-connectAttr "skinCluster24GroupId.msg" "skinCluster24Set.gn" -na;
-connectAttr "small_arm_07_GEOShape.iog.og[0]" "skinCluster24Set.dsm" -na;
-connectAttr "skinCluster24.msg" "skinCluster24Set.ub[0]";
-connectAttr "tweak24.og[0]" "skinCluster24GroupParts.ig";
-connectAttr "skinCluster24GroupId.id" "skinCluster24GroupParts.gi";
-connectAttr "groupId49.msg" "tweakSet24.gn" -na;
-connectAttr "small_arm_07_GEOShape.iog.og[1]" "tweakSet24.dsm" -na;
-connectAttr "tweak24.msg" "tweakSet24.ub[0]";
-connectAttr "small_arm_07_GEOShapeOrig.w" "groupParts49.ig";
-connectAttr "groupId49.id" "groupParts49.gi";
-connectAttr "skinCluster25GroupParts.og" "skinCluster25.ip[0].ig";
-connectAttr "skinCluster25GroupId.id" "skinCluster25.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster25.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster25.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster25.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster25.bp";
-connectAttr "groupParts51.og" "tweak25.ip[0].ig";
-connectAttr "groupId51.id" "tweak25.ip[0].gi";
-connectAttr "skinCluster25GroupId.msg" "skinCluster25Set.gn" -na;
-connectAttr "small_arm_01_GEOShape.iog.og[0]" "skinCluster25Set.dsm" -na;
-connectAttr "skinCluster25.msg" "skinCluster25Set.ub[0]";
-connectAttr "tweak25.og[0]" "skinCluster25GroupParts.ig";
-connectAttr "skinCluster25GroupId.id" "skinCluster25GroupParts.gi";
-connectAttr "groupId51.msg" "tweakSet25.gn" -na;
-connectAttr "small_arm_01_GEOShape.iog.og[1]" "tweakSet25.dsm" -na;
-connectAttr "tweak25.msg" "tweakSet25.ub[0]";
-connectAttr "small_arm_01_GEOShapeOrig.w" "groupParts51.ig";
-connectAttr "groupId51.id" "groupParts51.gi";
-connectAttr "skinCluster26GroupParts.og" "skinCluster26.ip[0].ig";
-connectAttr "skinCluster26GroupId.id" "skinCluster26.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster26.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster26.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster26.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster26.bp";
-connectAttr "groupParts53.og" "tweak26.ip[0].ig";
-connectAttr "groupId53.id" "tweak26.ip[0].gi";
-connectAttr "skinCluster26GroupId.msg" "skinCluster26Set.gn" -na;
-connectAttr "small_arm_05_GEOShape.iog.og[0]" "skinCluster26Set.dsm" -na;
-connectAttr "skinCluster26.msg" "skinCluster26Set.ub[0]";
-connectAttr "tweak26.og[0]" "skinCluster26GroupParts.ig";
-connectAttr "skinCluster26GroupId.id" "skinCluster26GroupParts.gi";
-connectAttr "groupId53.msg" "tweakSet26.gn" -na;
-connectAttr "small_arm_05_GEOShape.iog.og[1]" "tweakSet26.dsm" -na;
-connectAttr "tweak26.msg" "tweakSet26.ub[0]";
-connectAttr "small_arm_05_GEOShapeOrig.w" "groupParts53.ig";
-connectAttr "groupId53.id" "groupParts53.gi";
-connectAttr "skinCluster27GroupParts.og" "skinCluster27.ip[0].ig";
-connectAttr "skinCluster27GroupId.id" "skinCluster27.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster27.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster27.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster27.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster27.bp";
-connectAttr "groupParts55.og" "tweak27.ip[0].ig";
-connectAttr "groupId55.id" "tweak27.ip[0].gi";
-connectAttr "skinCluster27GroupId.msg" "skinCluster27Set.gn" -na;
-connectAttr "small_arm_08_GEOShape.iog.og[0]" "skinCluster27Set.dsm" -na;
-connectAttr "skinCluster27.msg" "skinCluster27Set.ub[0]";
-connectAttr "tweak27.og[0]" "skinCluster27GroupParts.ig";
-connectAttr "skinCluster27GroupId.id" "skinCluster27GroupParts.gi";
-connectAttr "groupId55.msg" "tweakSet27.gn" -na;
-connectAttr "small_arm_08_GEOShape.iog.og[1]" "tweakSet27.dsm" -na;
-connectAttr "tweak27.msg" "tweakSet27.ub[0]";
-connectAttr "small_arm_08_GEOShapeOrig.w" "groupParts55.ig";
-connectAttr "groupId55.id" "groupParts55.gi";
-connectAttr "skinCluster28GroupParts.og" "skinCluster28.ip[0].ig";
-connectAttr "skinCluster28GroupId.id" "skinCluster28.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster28.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster28.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster28.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster28.bp";
-connectAttr "groupParts57.og" "tweak28.ip[0].ig";
-connectAttr "groupId57.id" "tweak28.ip[0].gi";
-connectAttr "skinCluster28GroupId.msg" "skinCluster28Set.gn" -na;
-connectAttr "small_arm_02_GEOShape.iog.og[0]" "skinCluster28Set.dsm" -na;
-connectAttr "skinCluster28.msg" "skinCluster28Set.ub[0]";
-connectAttr "tweak28.og[0]" "skinCluster28GroupParts.ig";
-connectAttr "skinCluster28GroupId.id" "skinCluster28GroupParts.gi";
-connectAttr "groupId57.msg" "tweakSet28.gn" -na;
-connectAttr "small_arm_02_GEOShape.iog.og[1]" "tweakSet28.dsm" -na;
-connectAttr "tweak28.msg" "tweakSet28.ub[0]";
-connectAttr "small_arm_02_GEOShapeOrig.w" "groupParts57.ig";
-connectAttr "groupId57.id" "groupParts57.gi";
-connectAttr "skinCluster29GroupParts.og" "skinCluster29.ip[0].ig";
-connectAttr "skinCluster29GroupId.id" "skinCluster29.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster29.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster29.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster29.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster29.bp";
-connectAttr "groupParts59.og" "tweak29.ip[0].ig";
-connectAttr "groupId59.id" "tweak29.ip[0].gi";
-connectAttr "skinCluster29GroupId.msg" "skinCluster29Set.gn" -na;
-connectAttr "small_arm_03_GEOShape.iog.og[0]" "skinCluster29Set.dsm" -na;
-connectAttr "skinCluster29.msg" "skinCluster29Set.ub[0]";
-connectAttr "tweak29.og[0]" "skinCluster29GroupParts.ig";
-connectAttr "skinCluster29GroupId.id" "skinCluster29GroupParts.gi";
-connectAttr "groupId59.msg" "tweakSet29.gn" -na;
-connectAttr "small_arm_03_GEOShape.iog.og[1]" "tweakSet29.dsm" -na;
-connectAttr "tweak29.msg" "tweakSet29.ub[0]";
-connectAttr "small_arm_03_GEOShapeOrig.w" "groupParts59.ig";
-connectAttr "groupId59.id" "groupParts59.gi";
-connectAttr "skinCluster30GroupParts.og" "skinCluster30.ip[0].ig";
-connectAttr "skinCluster30GroupId.id" "skinCluster30.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster30.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster30.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster30.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster30.bp";
-connectAttr "groupParts61.og" "tweak30.ip[0].ig";
-connectAttr "groupId61.id" "tweak30.ip[0].gi";
-connectAttr "skinCluster30GroupId.msg" "skinCluster30Set.gn" -na;
-connectAttr "small_arm_06_GEOShape.iog.og[0]" "skinCluster30Set.dsm" -na;
-connectAttr "skinCluster30.msg" "skinCluster30Set.ub[0]";
-connectAttr "tweak30.og[0]" "skinCluster30GroupParts.ig";
-connectAttr "skinCluster30GroupId.id" "skinCluster30GroupParts.gi";
-connectAttr "groupId61.msg" "tweakSet30.gn" -na;
-connectAttr "small_arm_06_GEOShape.iog.og[1]" "tweakSet30.dsm" -na;
-connectAttr "tweak30.msg" "tweakSet30.ub[0]";
-connectAttr "small_arm_06_GEOShapeOrig.w" "groupParts61.ig";
-connectAttr "groupId61.id" "groupParts61.gi";
-connectAttr "skinCluster31GroupParts.og" "skinCluster31.ip[0].ig";
-connectAttr "skinCluster31GroupId.id" "skinCluster31.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster31.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster31.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster31.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster31.bp";
-connectAttr "groupParts63.og" "tweak31.ip[0].ig";
-connectAttr "groupId63.id" "tweak31.ip[0].gi";
-connectAttr "skinCluster31GroupId.msg" "skinCluster31Set.gn" -na;
-connectAttr "small_arm_04_GEOShape.iog.og[0]" "skinCluster31Set.dsm" -na;
-connectAttr "skinCluster31.msg" "skinCluster31Set.ub[0]";
-connectAttr "tweak31.og[0]" "skinCluster31GroupParts.ig";
-connectAttr "skinCluster31GroupId.id" "skinCluster31GroupParts.gi";
-connectAttr "groupId63.msg" "tweakSet31.gn" -na;
-connectAttr "small_arm_04_GEOShape.iog.og[1]" "tweakSet31.dsm" -na;
-connectAttr "tweak31.msg" "tweakSet31.ub[0]";
-connectAttr "small_arm_04_GEOShapeOrig.w" "groupParts63.ig";
-connectAttr "groupId63.id" "groupParts63.gi";
-connectAttr "skinCluster32GroupParts.og" "skinCluster32.ip[0].ig";
-connectAttr "skinCluster32GroupId.id" "skinCluster32.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster32.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster32.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster32.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster32.bp";
-connectAttr "groupParts65.og" "tweak32.ip[0].ig";
-connectAttr "groupId65.id" "tweak32.ip[0].gi";
-connectAttr "skinCluster32GroupId.msg" "skinCluster32Set.gn" -na;
-connectAttr "medium_arm_10_GEOShape.iog.og[0]" "skinCluster32Set.dsm" -na;
-connectAttr "skinCluster32.msg" "skinCluster32Set.ub[0]";
-connectAttr "tweak32.og[0]" "skinCluster32GroupParts.ig";
-connectAttr "skinCluster32GroupId.id" "skinCluster32GroupParts.gi";
-connectAttr "groupId65.msg" "tweakSet32.gn" -na;
-connectAttr "medium_arm_10_GEOShape.iog.og[1]" "tweakSet32.dsm" -na;
-connectAttr "tweak32.msg" "tweakSet32.ub[0]";
-connectAttr "medium_arm_10_GEOShapeOrig.w" "groupParts65.ig";
-connectAttr "groupId65.id" "groupParts65.gi";
-connectAttr "skinCluster33GroupParts.og" "skinCluster33.ip[0].ig";
-connectAttr "skinCluster33GroupId.id" "skinCluster33.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster33.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster33.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster33.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster33.bp";
-connectAttr "groupParts67.og" "tweak33.ip[0].ig";
-connectAttr "groupId67.id" "tweak33.ip[0].gi";
-connectAttr "skinCluster33GroupId.msg" "skinCluster33Set.gn" -na;
-connectAttr "medium_arm_08_GEOShape.iog.og[0]" "skinCluster33Set.dsm" -na;
-connectAttr "skinCluster33.msg" "skinCluster33Set.ub[0]";
-connectAttr "tweak33.og[0]" "skinCluster33GroupParts.ig";
-connectAttr "skinCluster33GroupId.id" "skinCluster33GroupParts.gi";
-connectAttr "groupId67.msg" "tweakSet33.gn" -na;
-connectAttr "medium_arm_08_GEOShape.iog.og[1]" "tweakSet33.dsm" -na;
-connectAttr "tweak33.msg" "tweakSet33.ub[0]";
-connectAttr "medium_arm_08_GEOShapeOrig.w" "groupParts67.ig";
-connectAttr "groupId67.id" "groupParts67.gi";
-connectAttr "skinCluster34GroupParts.og" "skinCluster34.ip[0].ig";
-connectAttr "skinCluster34GroupId.id" "skinCluster34.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster34.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster34.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster34.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster34.bp";
-connectAttr "groupParts69.og" "tweak34.ip[0].ig";
-connectAttr "groupId69.id" "tweak34.ip[0].gi";
-connectAttr "skinCluster34GroupId.msg" "skinCluster34Set.gn" -na;
-connectAttr "medium_arm_09_GEOShape.iog.og[0]" "skinCluster34Set.dsm" -na;
-connectAttr "skinCluster34.msg" "skinCluster34Set.ub[0]";
-connectAttr "tweak34.og[0]" "skinCluster34GroupParts.ig";
-connectAttr "skinCluster34GroupId.id" "skinCluster34GroupParts.gi";
-connectAttr "groupId69.msg" "tweakSet34.gn" -na;
-connectAttr "medium_arm_09_GEOShape.iog.og[1]" "tweakSet34.dsm" -na;
-connectAttr "tweak34.msg" "tweakSet34.ub[0]";
-connectAttr "medium_arm_09_GEOShapeOrig.w" "groupParts69.ig";
-connectAttr "groupId69.id" "groupParts69.gi";
 connectAttr "layerManager.dli[1]" "GEO_LYR.id";
 connectAttr "layerManager.dli[2]" "JNTS_LYR.id";
 connectAttr "layerManager.dli[3]" "CTRLS_LYR.id";
@@ -17541,24 +17185,6 @@ connectAttr "groupId70.id" "groupParts70.gi";
 connectAttr "polySurfaceShape32.o" "polyNormal3.ip";
 connectAttr "polySurfaceShape33.o" "polyNormal4.ip";
 connectAttr "polySurfaceShape34.o" "polyNormal5.ip";
-connectAttr "skinCluster35GroupParts.og" "skinCluster35.ip[0].ig";
-connectAttr "skinCluster35GroupId.id" "skinCluster35.ip[0].gi";
-connectAttr "main_JNT.wm" "skinCluster35.ma[0]";
-connectAttr "main_JNT.liw" "skinCluster35.lw[0]";
-connectAttr "main_JNT.obcc" "skinCluster35.ifcl[0]";
-connectAttr "bindPose1.msg" "skinCluster35.bp";
-connectAttr "groupParts72.og" "tweak35.ip[0].ig";
-connectAttr "groupId72.id" "tweak35.ip[0].gi";
-connectAttr "skinCluster35GroupId.msg" "skinCluster35Set.gn" -na;
-connectAttr "fabric_GEO1Shape.iog.og[3]" "skinCluster35Set.dsm" -na;
-connectAttr "skinCluster35.msg" "skinCluster35Set.ub[0]";
-connectAttr "tweak35.og[0]" "skinCluster35GroupParts.ig";
-connectAttr "skinCluster35GroupId.id" "skinCluster35GroupParts.gi";
-connectAttr "groupId72.msg" "tweakSet35.gn" -na;
-connectAttr "fabric_GEO1Shape.iog.og[4]" "tweakSet35.dsm" -na;
-connectAttr "tweak35.msg" "tweakSet35.ub[0]";
-connectAttr "fabric_GEO1ShapeOrig1.w" "groupParts72.ig";
-connectAttr "groupId72.id" "groupParts72.gi";
 connectAttr "skinCluster36GroupParts.og" "skinCluster36.ip[0].ig";
 connectAttr "skinCluster36GroupId.id" "skinCluster36.ip[0].gi";
 connectAttr "main_JNT.wm" "skinCluster36.ma[0]";
@@ -17623,7 +17249,7 @@ connectAttr "handle_GEOShapeOrig.w" "polyPlanarProj4.ip";
 connectAttr "handle_GEOShape.wm" "polyPlanarProj4.mp";
 connectAttr "skinCluster21.og[0]" "polyMapCut1.ip";
 connectAttr "skinCluster20.og[0]" "polyMapCut2.ip";
-connectAttr "skinCluster18.og[0]" "polyMapCut3.ip";
+connectAttr "tweak18.og[0]" "polyMapCut3.ip";
 connectAttr "skinCluster22.og[0]" "polyMapCut4.ip";
 connectAttr "polyMapCut4.out" "polyTweakUV1.ip";
 connectAttr "polyMapCut1.out" "polyTweakUV2.ip";
@@ -17651,6 +17277,578 @@ connectAttr "push_GEOShape.iog" "lambert2SG.dsm" -na;
 connectAttr "centralPole_GEOShape.iog" "lambert2SG.dsm" -na;
 connectAttr "lambert2SG.msg" "materialInfo1.sg";
 connectAttr "umbrella_MAT.msg" "materialInfo1.m";
+connectAttr "skinCluster39GroupParts.og" "skinCluster39.ip[0].ig";
+connectAttr "skinCluster39GroupId.id" "skinCluster39.ip[0].gi";
+connectAttr "bindPose2.msg" "skinCluster39.bp";
+connectAttr "fabric_JNT.wm" "skinCluster39.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster39.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster39.ifcl[0]";
+connectAttr "groupParts80.og" "tweak39.ip[0].ig";
+connectAttr "groupId80.id" "tweak39.ip[0].gi";
+connectAttr "skinCluster39GroupId.msg" "skinCluster39Set.gn" -na;
+connectAttr "small_arm_03_GEOShape.iog.og[2]" "skinCluster39Set.dsm" -na;
+connectAttr "skinCluster39.msg" "skinCluster39Set.ub[0]";
+connectAttr "tweak39.og[0]" "skinCluster39GroupParts.ig";
+connectAttr "skinCluster39GroupId.id" "skinCluster39GroupParts.gi";
+connectAttr "groupId80.msg" "tweakSet39.gn" -na;
+connectAttr "small_arm_03_GEOShape.iog.og[3]" "tweakSet39.dsm" -na;
+connectAttr "tweak39.msg" "tweakSet39.ub[0]";
+connectAttr "small_arm_03_GEOShapeOrig.w" "groupParts80.ig";
+connectAttr "groupId80.id" "groupParts80.gi";
+connectAttr "fabric_JNT.msg" "bindPose2.m[0]";
+connectAttr "bindPose2.w" "bindPose2.p[0]";
+connectAttr "fabric_JNT.bps" "bindPose2.wm[0]";
+connectAttr "skinCluster40GroupParts.og" "skinCluster40.ip[0].ig";
+connectAttr "skinCluster40GroupId.id" "skinCluster40.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster40.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster40.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster40.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster40.bp";
+connectAttr "groupParts82.og" "tweak40.ip[0].ig";
+connectAttr "groupId82.id" "tweak40.ip[0].gi";
+connectAttr "skinCluster40GroupId.msg" "skinCluster40Set.gn" -na;
+connectAttr "small_arm_01_GEOShape.iog.og[2]" "skinCluster40Set.dsm" -na;
+connectAttr "skinCluster40.msg" "skinCluster40Set.ub[0]";
+connectAttr "tweak40.og[0]" "skinCluster40GroupParts.ig";
+connectAttr "skinCluster40GroupId.id" "skinCluster40GroupParts.gi";
+connectAttr "groupId82.msg" "tweakSet40.gn" -na;
+connectAttr "small_arm_01_GEOShape.iog.og[3]" "tweakSet40.dsm" -na;
+connectAttr "tweak40.msg" "tweakSet40.ub[0]";
+connectAttr "small_arm_01_GEOShapeOrig.w" "groupParts82.ig";
+connectAttr "groupId82.id" "groupParts82.gi";
+connectAttr "skinCluster41GroupParts.og" "skinCluster41.ip[0].ig";
+connectAttr "skinCluster41GroupId.id" "skinCluster41.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster41.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster41.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster41.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster41.bp";
+connectAttr "groupParts84.og" "tweak41.ip[0].ig";
+connectAttr "groupId84.id" "tweak41.ip[0].gi";
+connectAttr "skinCluster41GroupId.msg" "skinCluster41Set.gn" -na;
+connectAttr "small_arm_04_GEOShape.iog.og[2]" "skinCluster41Set.dsm" -na;
+connectAttr "skinCluster41.msg" "skinCluster41Set.ub[0]";
+connectAttr "tweak41.og[0]" "skinCluster41GroupParts.ig";
+connectAttr "skinCluster41GroupId.id" "skinCluster41GroupParts.gi";
+connectAttr "groupId84.msg" "tweakSet41.gn" -na;
+connectAttr "small_arm_04_GEOShape.iog.og[3]" "tweakSet41.dsm" -na;
+connectAttr "tweak41.msg" "tweakSet41.ub[0]";
+connectAttr "small_arm_04_GEOShapeOrig.w" "groupParts84.ig";
+connectAttr "groupId84.id" "groupParts84.gi";
+connectAttr "skinCluster42GroupParts.og" "skinCluster42.ip[0].ig";
+connectAttr "skinCluster42GroupId.id" "skinCluster42.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster42.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster42.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster42.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster42.bp";
+connectAttr "groupParts86.og" "tweak42.ip[0].ig";
+connectAttr "groupId86.id" "tweak42.ip[0].gi";
+connectAttr "skinCluster42GroupId.msg" "skinCluster42Set.gn" -na;
+connectAttr "small_arm_02_GEOShape.iog.og[2]" "skinCluster42Set.dsm" -na;
+connectAttr "skinCluster42.msg" "skinCluster42Set.ub[0]";
+connectAttr "tweak42.og[0]" "skinCluster42GroupParts.ig";
+connectAttr "skinCluster42GroupId.id" "skinCluster42GroupParts.gi";
+connectAttr "groupId86.msg" "tweakSet42.gn" -na;
+connectAttr "small_arm_02_GEOShape.iog.og[3]" "tweakSet42.dsm" -na;
+connectAttr "tweak42.msg" "tweakSet42.ub[0]";
+connectAttr "small_arm_02_GEOShapeOrig.w" "groupParts86.ig";
+connectAttr "groupId86.id" "groupParts86.gi";
+connectAttr "skinCluster43GroupParts.og" "skinCluster43.ip[0].ig";
+connectAttr "skinCluster43GroupId.id" "skinCluster43.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster43.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster43.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster43.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster43.bp";
+connectAttr "groupParts88.og" "tweak43.ip[0].ig";
+connectAttr "groupId88.id" "tweak43.ip[0].gi";
+connectAttr "skinCluster43GroupId.msg" "skinCluster43Set.gn" -na;
+connectAttr "small_arm_05_GEOShape.iog.og[2]" "skinCluster43Set.dsm" -na;
+connectAttr "skinCluster43.msg" "skinCluster43Set.ub[0]";
+connectAttr "tweak43.og[0]" "skinCluster43GroupParts.ig";
+connectAttr "skinCluster43GroupId.id" "skinCluster43GroupParts.gi";
+connectAttr "groupId88.msg" "tweakSet43.gn" -na;
+connectAttr "small_arm_05_GEOShape.iog.og[3]" "tweakSet43.dsm" -na;
+connectAttr "tweak43.msg" "tweakSet43.ub[0]";
+connectAttr "small_arm_05_GEOShapeOrig.w" "groupParts88.ig";
+connectAttr "groupId88.id" "groupParts88.gi";
+connectAttr "skinCluster44GroupParts.og" "skinCluster44.ip[0].ig";
+connectAttr "skinCluster44GroupId.id" "skinCluster44.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster44.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster44.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster44.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster44.bp";
+connectAttr "groupParts90.og" "tweak44.ip[0].ig";
+connectAttr "groupId90.id" "tweak44.ip[0].gi";
+connectAttr "skinCluster44GroupId.msg" "skinCluster44Set.gn" -na;
+connectAttr "small_arm_06_GEOShape.iog.og[2]" "skinCluster44Set.dsm" -na;
+connectAttr "skinCluster44.msg" "skinCluster44Set.ub[0]";
+connectAttr "tweak44.og[0]" "skinCluster44GroupParts.ig";
+connectAttr "skinCluster44GroupId.id" "skinCluster44GroupParts.gi";
+connectAttr "groupId90.msg" "tweakSet44.gn" -na;
+connectAttr "small_arm_06_GEOShape.iog.og[3]" "tweakSet44.dsm" -na;
+connectAttr "tweak44.msg" "tweakSet44.ub[0]";
+connectAttr "small_arm_06_GEOShapeOrig.w" "groupParts90.ig";
+connectAttr "groupId90.id" "groupParts90.gi";
+connectAttr "skinCluster45GroupParts.og" "skinCluster45.ip[0].ig";
+connectAttr "skinCluster45GroupId.id" "skinCluster45.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster45.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster45.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster45.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster45.bp";
+connectAttr "groupParts92.og" "tweak45.ip[0].ig";
+connectAttr "groupId92.id" "tweak45.ip[0].gi";
+connectAttr "skinCluster45GroupId.msg" "skinCluster45Set.gn" -na;
+connectAttr "small_arm_07_GEOShape.iog.og[2]" "skinCluster45Set.dsm" -na;
+connectAttr "skinCluster45.msg" "skinCluster45Set.ub[0]";
+connectAttr "tweak45.og[0]" "skinCluster45GroupParts.ig";
+connectAttr "skinCluster45GroupId.id" "skinCluster45GroupParts.gi";
+connectAttr "groupId92.msg" "tweakSet45.gn" -na;
+connectAttr "small_arm_07_GEOShape.iog.og[3]" "tweakSet45.dsm" -na;
+connectAttr "tweak45.msg" "tweakSet45.ub[0]";
+connectAttr "small_arm_07_GEOShapeOrig.w" "groupParts92.ig";
+connectAttr "groupId92.id" "groupParts92.gi";
+connectAttr "skinCluster46GroupParts.og" "skinCluster46.ip[0].ig";
+connectAttr "skinCluster46GroupId.id" "skinCluster46.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster46.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster46.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster46.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster46.bp";
+connectAttr "skinCluster46GroupId.msg" "skinCluster46Set.gn" -na;
+connectAttr "fabric_GEOShape.iog.og[3]" "skinCluster46Set.dsm" -na;
+connectAttr "skinCluster46.msg" "skinCluster46Set.ub[0]";
+connectAttr "polyTweakUV9.out" "skinCluster46GroupParts.ig";
+connectAttr "skinCluster46GroupId.id" "skinCluster46GroupParts.gi";
+connectAttr "skinCluster47GroupParts.og" "skinCluster47.ip[0].ig";
+connectAttr "skinCluster47GroupId.id" "skinCluster47.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster47.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster47.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster47.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster47.bp";
+connectAttr "groupParts94.og" "tweak46.ip[0].ig";
+connectAttr "groupId94.id" "tweak46.ip[0].gi";
+connectAttr "skinCluster47GroupId.msg" "skinCluster47Set.gn" -na;
+connectAttr "medium_arm_03_GEOShape.iog.og[2]" "skinCluster47Set.dsm" -na;
+connectAttr "skinCluster47.msg" "skinCluster47Set.ub[0]";
+connectAttr "tweak46.og[0]" "skinCluster47GroupParts.ig";
+connectAttr "skinCluster47GroupId.id" "skinCluster47GroupParts.gi";
+connectAttr "groupId94.msg" "tweakSet46.gn" -na;
+connectAttr "medium_arm_03_GEOShape.iog.og[3]" "tweakSet46.dsm" -na;
+connectAttr "tweak46.msg" "tweakSet46.ub[0]";
+connectAttr "medium_arm_03_GEOShapeOrig.w" "groupParts94.ig";
+connectAttr "groupId94.id" "groupParts94.gi";
+connectAttr "skinCluster48GroupParts.og" "skinCluster48.ip[0].ig";
+connectAttr "skinCluster48GroupId.id" "skinCluster48.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster48.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster48.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster48.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster48.bp";
+connectAttr "groupParts96.og" "tweak47.ip[0].ig";
+connectAttr "groupId96.id" "tweak47.ip[0].gi";
+connectAttr "skinCluster48GroupId.msg" "skinCluster48Set.gn" -na;
+connectAttr "medium_arm_01_GEOShape.iog.og[2]" "skinCluster48Set.dsm" -na;
+connectAttr "skinCluster48.msg" "skinCluster48Set.ub[0]";
+connectAttr "tweak47.og[0]" "skinCluster48GroupParts.ig";
+connectAttr "skinCluster48GroupId.id" "skinCluster48GroupParts.gi";
+connectAttr "groupId96.msg" "tweakSet47.gn" -na;
+connectAttr "medium_arm_01_GEOShape.iog.og[3]" "tweakSet47.dsm" -na;
+connectAttr "tweak47.msg" "tweakSet47.ub[0]";
+connectAttr "medium_arm_01_GEOShapeOrig.w" "groupParts96.ig";
+connectAttr "groupId96.id" "groupParts96.gi";
+connectAttr "skinCluster49GroupParts.og" "skinCluster49.ip[0].ig";
+connectAttr "skinCluster49GroupId.id" "skinCluster49.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster49.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster49.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster49.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster49.bp";
+connectAttr "groupParts98.og" "tweak48.ip[0].ig";
+connectAttr "groupId98.id" "tweak48.ip[0].gi";
+connectAttr "skinCluster49GroupId.msg" "skinCluster49Set.gn" -na;
+connectAttr "medium_arm_02_GEOShape.iog.og[2]" "skinCluster49Set.dsm" -na;
+connectAttr "skinCluster49.msg" "skinCluster49Set.ub[0]";
+connectAttr "tweak48.og[0]" "skinCluster49GroupParts.ig";
+connectAttr "skinCluster49GroupId.id" "skinCluster49GroupParts.gi";
+connectAttr "groupId98.msg" "tweakSet48.gn" -na;
+connectAttr "medium_arm_02_GEOShape.iog.og[3]" "tweakSet48.dsm" -na;
+connectAttr "tweak48.msg" "tweakSet48.ub[0]";
+connectAttr "medium_arm_02_GEOShapeOrig.w" "groupParts98.ig";
+connectAttr "groupId98.id" "groupParts98.gi";
+connectAttr "skinCluster50GroupParts.og" "skinCluster50.ip[0].ig";
+connectAttr "skinCluster50GroupId.id" "skinCluster50.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster50.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster50.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster50.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster50.bp";
+connectAttr "groupParts100.og" "tweak49.ip[0].ig";
+connectAttr "groupId100.id" "tweak49.ip[0].gi";
+connectAttr "skinCluster50GroupId.msg" "skinCluster50Set.gn" -na;
+connectAttr "small_arm_08_GEOShape.iog.og[2]" "skinCluster50Set.dsm" -na;
+connectAttr "skinCluster50.msg" "skinCluster50Set.ub[0]";
+connectAttr "tweak49.og[0]" "skinCluster50GroupParts.ig";
+connectAttr "skinCluster50GroupId.id" "skinCluster50GroupParts.gi";
+connectAttr "groupId100.msg" "tweakSet49.gn" -na;
+connectAttr "small_arm_08_GEOShape.iog.og[3]" "tweakSet49.dsm" -na;
+connectAttr "tweak49.msg" "tweakSet49.ub[0]";
+connectAttr "small_arm_08_GEOShapeOrig.w" "groupParts100.ig";
+connectAttr "groupId100.id" "groupParts100.gi";
+connectAttr "skinCluster51GroupParts.og" "skinCluster51.ip[0].ig";
+connectAttr "skinCluster51GroupId.id" "skinCluster51.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster51.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster51.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster51.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster51.bp";
+connectAttr "groupParts102.og" "tweak50.ip[0].ig";
+connectAttr "groupId102.id" "tweak50.ip[0].gi";
+connectAttr "skinCluster51GroupId.msg" "skinCluster51Set.gn" -na;
+connectAttr "small_arm_10_GEOShape.iog.og[2]" "skinCluster51Set.dsm" -na;
+connectAttr "skinCluster51.msg" "skinCluster51Set.ub[0]";
+connectAttr "tweak50.og[0]" "skinCluster51GroupParts.ig";
+connectAttr "skinCluster51GroupId.id" "skinCluster51GroupParts.gi";
+connectAttr "groupId102.msg" "tweakSet50.gn" -na;
+connectAttr "small_arm_10_GEOShape.iog.og[3]" "tweakSet50.dsm" -na;
+connectAttr "tweak50.msg" "tweakSet50.ub[0]";
+connectAttr "small_arm_10_GEOShapeOrig.w" "groupParts102.ig";
+connectAttr "groupId102.id" "groupParts102.gi";
+connectAttr "skinCluster52GroupParts.og" "skinCluster52.ip[0].ig";
+connectAttr "skinCluster52GroupId.id" "skinCluster52.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster52.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster52.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster52.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster52.bp";
+connectAttr "groupParts104.og" "tweak51.ip[0].ig";
+connectAttr "groupId104.id" "tweak51.ip[0].gi";
+connectAttr "skinCluster52GroupId.msg" "skinCluster52Set.gn" -na;
+connectAttr "small_arm_09_GEOShape.iog.og[2]" "skinCluster52Set.dsm" -na;
+connectAttr "skinCluster52.msg" "skinCluster52Set.ub[0]";
+connectAttr "tweak51.og[0]" "skinCluster52GroupParts.ig";
+connectAttr "skinCluster52GroupId.id" "skinCluster52GroupParts.gi";
+connectAttr "groupId104.msg" "tweakSet51.gn" -na;
+connectAttr "small_arm_09_GEOShape.iog.og[3]" "tweakSet51.dsm" -na;
+connectAttr "tweak51.msg" "tweakSet51.ub[0]";
+connectAttr "small_arm_09_GEOShapeOrig.w" "groupParts104.ig";
+connectAttr "groupId104.id" "groupParts104.gi";
+connectAttr "skinCluster53GroupParts.og" "skinCluster53.ip[0].ig";
+connectAttr "skinCluster53GroupId.id" "skinCluster53.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster53.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster53.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster53.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster53.bp";
+connectAttr "groupParts106.og" "tweak52.ip[0].ig";
+connectAttr "groupId106.id" "tweak52.ip[0].gi";
+connectAttr "skinCluster53GroupId.msg" "skinCluster53Set.gn" -na;
+connectAttr "medium_arm_08_GEOShape.iog.og[2]" "skinCluster53Set.dsm" -na;
+connectAttr "skinCluster53.msg" "skinCluster53Set.ub[0]";
+connectAttr "tweak52.og[0]" "skinCluster53GroupParts.ig";
+connectAttr "skinCluster53GroupId.id" "skinCluster53GroupParts.gi";
+connectAttr "groupId106.msg" "tweakSet52.gn" -na;
+connectAttr "medium_arm_08_GEOShape.iog.og[3]" "tweakSet52.dsm" -na;
+connectAttr "tweak52.msg" "tweakSet52.ub[0]";
+connectAttr "medium_arm_08_GEOShapeOrig.w" "groupParts106.ig";
+connectAttr "groupId106.id" "groupParts106.gi";
+connectAttr "skinCluster54GroupParts.og" "skinCluster54.ip[0].ig";
+connectAttr "skinCluster54GroupId.id" "skinCluster54.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster54.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster54.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster54.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster54.bp";
+connectAttr "groupParts108.og" "tweak53.ip[0].ig";
+connectAttr "groupId108.id" "tweak53.ip[0].gi";
+connectAttr "skinCluster54GroupId.msg" "skinCluster54Set.gn" -na;
+connectAttr "medium_arm_05_GEOShape.iog.og[2]" "skinCluster54Set.dsm" -na;
+connectAttr "skinCluster54.msg" "skinCluster54Set.ub[0]";
+connectAttr "tweak53.og[0]" "skinCluster54GroupParts.ig";
+connectAttr "skinCluster54GroupId.id" "skinCluster54GroupParts.gi";
+connectAttr "groupId108.msg" "tweakSet53.gn" -na;
+connectAttr "medium_arm_05_GEOShape.iog.og[3]" "tweakSet53.dsm" -na;
+connectAttr "tweak53.msg" "tweakSet53.ub[0]";
+connectAttr "medium_arm_05_GEOShapeOrig.w" "groupParts108.ig";
+connectAttr "groupId108.id" "groupParts108.gi";
+connectAttr "skinCluster55GroupParts.og" "skinCluster55.ip[0].ig";
+connectAttr "skinCluster55GroupId.id" "skinCluster55.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster55.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster55.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster55.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster55.bp";
+connectAttr "groupParts110.og" "tweak54.ip[0].ig";
+connectAttr "groupId110.id" "tweak54.ip[0].gi";
+connectAttr "skinCluster55GroupId.msg" "skinCluster55Set.gn" -na;
+connectAttr "medium_arm_07_GEOShape.iog.og[2]" "skinCluster55Set.dsm" -na;
+connectAttr "skinCluster55.msg" "skinCluster55Set.ub[0]";
+connectAttr "tweak54.og[0]" "skinCluster55GroupParts.ig";
+connectAttr "skinCluster55GroupId.id" "skinCluster55GroupParts.gi";
+connectAttr "groupId110.msg" "tweakSet54.gn" -na;
+connectAttr "medium_arm_07_GEOShape.iog.og[3]" "tweakSet54.dsm" -na;
+connectAttr "tweak54.msg" "tweakSet54.ub[0]";
+connectAttr "medium_arm_07_GEOShapeOrig.w" "groupParts110.ig";
+connectAttr "groupId110.id" "groupParts110.gi";
+connectAttr "skinCluster56GroupParts.og" "skinCluster56.ip[0].ig";
+connectAttr "skinCluster56GroupId.id" "skinCluster56.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster56.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster56.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster56.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster56.bp";
+connectAttr "groupParts112.og" "tweak55.ip[0].ig";
+connectAttr "groupId112.id" "tweak55.ip[0].gi";
+connectAttr "skinCluster56GroupId.msg" "skinCluster56Set.gn" -na;
+connectAttr "medium_arm_06_GEOShape.iog.og[2]" "skinCluster56Set.dsm" -na;
+connectAttr "skinCluster56.msg" "skinCluster56Set.ub[0]";
+connectAttr "tweak55.og[0]" "skinCluster56GroupParts.ig";
+connectAttr "skinCluster56GroupId.id" "skinCluster56GroupParts.gi";
+connectAttr "groupId112.msg" "tweakSet55.gn" -na;
+connectAttr "medium_arm_06_GEOShape.iog.og[3]" "tweakSet55.dsm" -na;
+connectAttr "tweak55.msg" "tweakSet55.ub[0]";
+connectAttr "medium_arm_06_GEOShapeOrig.w" "groupParts112.ig";
+connectAttr "groupId112.id" "groupParts112.gi";
+connectAttr "skinCluster57GroupParts.og" "skinCluster57.ip[0].ig";
+connectAttr "skinCluster57GroupId.id" "skinCluster57.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster57.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster57.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster57.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster57.bp";
+connectAttr "groupParts114.og" "tweak56.ip[0].ig";
+connectAttr "groupId114.id" "tweak56.ip[0].gi";
+connectAttr "skinCluster57GroupId.msg" "skinCluster57Set.gn" -na;
+connectAttr "medium_arm_09_GEOShape.iog.og[2]" "skinCluster57Set.dsm" -na;
+connectAttr "skinCluster57.msg" "skinCluster57Set.ub[0]";
+connectAttr "tweak56.og[0]" "skinCluster57GroupParts.ig";
+connectAttr "skinCluster57GroupId.id" "skinCluster57GroupParts.gi";
+connectAttr "groupId114.msg" "tweakSet56.gn" -na;
+connectAttr "medium_arm_09_GEOShape.iog.og[3]" "tweakSet56.dsm" -na;
+connectAttr "tweak56.msg" "tweakSet56.ub[0]";
+connectAttr "medium_arm_09_GEOShapeOrig.w" "groupParts114.ig";
+connectAttr "groupId114.id" "groupParts114.gi";
+connectAttr "skinCluster58GroupParts.og" "skinCluster58.ip[0].ig";
+connectAttr "skinCluster58GroupId.id" "skinCluster58.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster58.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster58.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster58.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster58.bp";
+connectAttr "groupParts116.og" "tweak57.ip[0].ig";
+connectAttr "groupId116.id" "tweak57.ip[0].gi";
+connectAttr "skinCluster58GroupId.msg" "skinCluster58Set.gn" -na;
+connectAttr "medium_arm_04_GEOShape.iog.og[2]" "skinCluster58Set.dsm" -na;
+connectAttr "skinCluster58.msg" "skinCluster58Set.ub[0]";
+connectAttr "tweak57.og[0]" "skinCluster58GroupParts.ig";
+connectAttr "skinCluster58GroupId.id" "skinCluster58GroupParts.gi";
+connectAttr "groupId116.msg" "tweakSet57.gn" -na;
+connectAttr "medium_arm_04_GEOShape.iog.og[3]" "tweakSet57.dsm" -na;
+connectAttr "tweak57.msg" "tweakSet57.ub[0]";
+connectAttr "medium_arm_04_GEOShapeOrig.w" "groupParts116.ig";
+connectAttr "groupId116.id" "groupParts116.gi";
+connectAttr "skinCluster59GroupParts.og" "skinCluster59.ip[0].ig";
+connectAttr "skinCluster59GroupId.id" "skinCluster59.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster59.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster59.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster59.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster59.bp";
+connectAttr "groupParts118.og" "tweak58.ip[0].ig";
+connectAttr "groupId118.id" "tweak58.ip[0].gi";
+connectAttr "skinCluster59GroupId.msg" "skinCluster59Set.gn" -na;
+connectAttr "fabric_GEO1Shape.iog.og[5]" "skinCluster59Set.dsm" -na;
+connectAttr "skinCluster59.msg" "skinCluster59Set.ub[0]";
+connectAttr "tweak58.og[0]" "skinCluster59GroupParts.ig";
+connectAttr "skinCluster59GroupId.id" "skinCluster59GroupParts.gi";
+connectAttr "groupId118.msg" "tweakSet58.gn" -na;
+connectAttr "fabric_GEO1Shape.iog.og[6]" "tweakSet58.dsm" -na;
+connectAttr "tweak58.msg" "tweakSet58.ub[0]";
+connectAttr "fabric_GEO1ShapeOrig1.w" "groupParts118.ig";
+connectAttr "groupId118.id" "groupParts118.gi";
+connectAttr "skinCluster60GroupParts.og" "skinCluster60.ip[0].ig";
+connectAttr "skinCluster60GroupId.id" "skinCluster60.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster60.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster60.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster60.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster60.bp";
+connectAttr "groupParts120.og" "tweak59.ip[0].ig";
+connectAttr "groupId120.id" "tweak59.ip[0].gi";
+connectAttr "skinCluster60GroupId.msg" "skinCluster60Set.gn" -na;
+connectAttr "large_arm_10_GEOShape.iog.og[2]" "skinCluster60Set.dsm" -na;
+connectAttr "skinCluster60.msg" "skinCluster60Set.ub[0]";
+connectAttr "tweak59.og[0]" "skinCluster60GroupParts.ig";
+connectAttr "skinCluster60GroupId.id" "skinCluster60GroupParts.gi";
+connectAttr "groupId120.msg" "tweakSet59.gn" -na;
+connectAttr "large_arm_10_GEOShape.iog.og[3]" "tweakSet59.dsm" -na;
+connectAttr "tweak59.msg" "tweakSet59.ub[0]";
+connectAttr "large_arm_10_GEOShapeOrig.w" "groupParts120.ig";
+connectAttr "groupId120.id" "groupParts120.gi";
+connectAttr "skinCluster61GroupParts.og" "skinCluster61.ip[0].ig";
+connectAttr "skinCluster61GroupId.id" "skinCluster61.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster61.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster61.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster61.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster61.bp";
+connectAttr "groupParts122.og" "tweak60.ip[0].ig";
+connectAttr "groupId122.id" "tweak60.ip[0].gi";
+connectAttr "skinCluster61GroupId.msg" "skinCluster61Set.gn" -na;
+connectAttr "large_arm_04_GEOShape.iog.og[2]" "skinCluster61Set.dsm" -na;
+connectAttr "skinCluster61.msg" "skinCluster61Set.ub[0]";
+connectAttr "tweak60.og[0]" "skinCluster61GroupParts.ig";
+connectAttr "skinCluster61GroupId.id" "skinCluster61GroupParts.gi";
+connectAttr "groupId122.msg" "tweakSet60.gn" -na;
+connectAttr "large_arm_04_GEOShape.iog.og[3]" "tweakSet60.dsm" -na;
+connectAttr "tweak60.msg" "tweakSet60.ub[0]";
+connectAttr "large_arm_04_GEOShapeOrig.w" "groupParts122.ig";
+connectAttr "groupId122.id" "groupParts122.gi";
+connectAttr "skinCluster62GroupParts.og" "skinCluster62.ip[0].ig";
+connectAttr "skinCluster62GroupId.id" "skinCluster62.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster62.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster62.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster62.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster62.bp";
+connectAttr "groupParts124.og" "tweak61.ip[0].ig";
+connectAttr "groupId124.id" "tweak61.ip[0].gi";
+connectAttr "skinCluster62GroupId.msg" "skinCluster62Set.gn" -na;
+connectAttr "large_arm_03_GEOShape.iog.og[2]" "skinCluster62Set.dsm" -na;
+connectAttr "skinCluster62.msg" "skinCluster62Set.ub[0]";
+connectAttr "tweak61.og[0]" "skinCluster62GroupParts.ig";
+connectAttr "skinCluster62GroupId.id" "skinCluster62GroupParts.gi";
+connectAttr "groupId124.msg" "tweakSet61.gn" -na;
+connectAttr "large_arm_03_GEOShape.iog.og[3]" "tweakSet61.dsm" -na;
+connectAttr "tweak61.msg" "tweakSet61.ub[0]";
+connectAttr "large_arm_03_GEOShapeOrig.w" "groupParts124.ig";
+connectAttr "groupId124.id" "groupParts124.gi";
+connectAttr "skinCluster63GroupParts.og" "skinCluster63.ip[0].ig";
+connectAttr "skinCluster63GroupId.id" "skinCluster63.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster63.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster63.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster63.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster63.bp";
+connectAttr "groupParts126.og" "tweak62.ip[0].ig";
+connectAttr "groupId126.id" "tweak62.ip[0].gi";
+connectAttr "skinCluster63GroupId.msg" "skinCluster63Set.gn" -na;
+connectAttr "large_arm_02_GEOShape.iog.og[2]" "skinCluster63Set.dsm" -na;
+connectAttr "skinCluster63.msg" "skinCluster63Set.ub[0]";
+connectAttr "tweak62.og[0]" "skinCluster63GroupParts.ig";
+connectAttr "skinCluster63GroupId.id" "skinCluster63GroupParts.gi";
+connectAttr "groupId126.msg" "tweakSet62.gn" -na;
+connectAttr "large_arm_02_GEOShape.iog.og[3]" "tweakSet62.dsm" -na;
+connectAttr "tweak62.msg" "tweakSet62.ub[0]";
+connectAttr "large_arm_02_GEOShapeOrig.w" "groupParts126.ig";
+connectAttr "groupId126.id" "groupParts126.gi";
+connectAttr "skinCluster64GroupParts.og" "skinCluster64.ip[0].ig";
+connectAttr "skinCluster64GroupId.id" "skinCluster64.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster64.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster64.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster64.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster64.bp";
+connectAttr "groupParts128.og" "tweak63.ip[0].ig";
+connectAttr "groupId128.id" "tweak63.ip[0].gi";
+connectAttr "skinCluster64GroupId.msg" "skinCluster64Set.gn" -na;
+connectAttr "large_arm_01_GEOShape.iog.og[2]" "skinCluster64Set.dsm" -na;
+connectAttr "skinCluster64.msg" "skinCluster64Set.ub[0]";
+connectAttr "tweak63.og[0]" "skinCluster64GroupParts.ig";
+connectAttr "skinCluster64GroupId.id" "skinCluster64GroupParts.gi";
+connectAttr "groupId128.msg" "tweakSet63.gn" -na;
+connectAttr "large_arm_01_GEOShape.iog.og[3]" "tweakSet63.dsm" -na;
+connectAttr "tweak63.msg" "tweakSet63.ub[0]";
+connectAttr "large_arm_01_GEOShapeOrig.w" "groupParts128.ig";
+connectAttr "groupId128.id" "groupParts128.gi";
+connectAttr "skinCluster65GroupParts.og" "skinCluster65.ip[0].ig";
+connectAttr "skinCluster65GroupId.id" "skinCluster65.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster65.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster65.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster65.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster65.bp";
+connectAttr "groupParts130.og" "tweak64.ip[0].ig";
+connectAttr "groupId130.id" "tweak64.ip[0].gi";
+connectAttr "skinCluster65GroupId.msg" "skinCluster65Set.gn" -na;
+connectAttr "medium_arm_10_GEOShape.iog.og[2]" "skinCluster65Set.dsm" -na;
+connectAttr "skinCluster65.msg" "skinCluster65Set.ub[0]";
+connectAttr "tweak64.og[0]" "skinCluster65GroupParts.ig";
+connectAttr "skinCluster65GroupId.id" "skinCluster65GroupParts.gi";
+connectAttr "groupId130.msg" "tweakSet64.gn" -na;
+connectAttr "medium_arm_10_GEOShape.iog.og[3]" "tweakSet64.dsm" -na;
+connectAttr "tweak64.msg" "tweakSet64.ub[0]";
+connectAttr "medium_arm_10_GEOShapeOrig.w" "groupParts130.ig";
+connectAttr "groupId130.id" "groupParts130.gi";
+connectAttr "skinCluster66GroupParts.og" "skinCluster66.ip[0].ig";
+connectAttr "skinCluster66GroupId.id" "skinCluster66.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster66.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster66.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster66.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster66.bp";
+connectAttr "groupParts132.og" "tweak65.ip[0].ig";
+connectAttr "groupId132.id" "tweak65.ip[0].gi";
+connectAttr "skinCluster66GroupId.msg" "skinCluster66Set.gn" -na;
+connectAttr "large_arm_09_GEOShape.iog.og[2]" "skinCluster66Set.dsm" -na;
+connectAttr "skinCluster66.msg" "skinCluster66Set.ub[0]";
+connectAttr "tweak65.og[0]" "skinCluster66GroupParts.ig";
+connectAttr "skinCluster66GroupId.id" "skinCluster66GroupParts.gi";
+connectAttr "groupId132.msg" "tweakSet65.gn" -na;
+connectAttr "large_arm_09_GEOShape.iog.og[3]" "tweakSet65.dsm" -na;
+connectAttr "tweak65.msg" "tweakSet65.ub[0]";
+connectAttr "large_arm_09_GEOShapeOrig.w" "groupParts132.ig";
+connectAttr "groupId132.id" "groupParts132.gi";
+connectAttr "skinCluster67GroupParts.og" "skinCluster67.ip[0].ig";
+connectAttr "skinCluster67GroupId.id" "skinCluster67.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster67.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster67.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster67.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster67.bp";
+connectAttr "groupParts134.og" "tweak66.ip[0].ig";
+connectAttr "groupId134.id" "tweak66.ip[0].gi";
+connectAttr "skinCluster67GroupId.msg" "skinCluster67Set.gn" -na;
+connectAttr "large_arm_08_GEOShape.iog.og[2]" "skinCluster67Set.dsm" -na;
+connectAttr "skinCluster67.msg" "skinCluster67Set.ub[0]";
+connectAttr "tweak66.og[0]" "skinCluster67GroupParts.ig";
+connectAttr "skinCluster67GroupId.id" "skinCluster67GroupParts.gi";
+connectAttr "groupId134.msg" "tweakSet66.gn" -na;
+connectAttr "large_arm_08_GEOShape.iog.og[3]" "tweakSet66.dsm" -na;
+connectAttr "tweak66.msg" "tweakSet66.ub[0]";
+connectAttr "large_arm_08_GEOShapeOrig.w" "groupParts134.ig";
+connectAttr "groupId134.id" "groupParts134.gi";
+connectAttr "skinCluster68GroupParts.og" "skinCluster68.ip[0].ig";
+connectAttr "skinCluster68GroupId.id" "skinCluster68.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster68.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster68.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster68.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster68.bp";
+connectAttr "groupParts136.og" "tweak67.ip[0].ig";
+connectAttr "groupId136.id" "tweak67.ip[0].gi";
+connectAttr "skinCluster68GroupId.msg" "skinCluster68Set.gn" -na;
+connectAttr "large_arm_07_GEOShape.iog.og[2]" "skinCluster68Set.dsm" -na;
+connectAttr "skinCluster68.msg" "skinCluster68Set.ub[0]";
+connectAttr "tweak67.og[0]" "skinCluster68GroupParts.ig";
+connectAttr "skinCluster68GroupId.id" "skinCluster68GroupParts.gi";
+connectAttr "groupId136.msg" "tweakSet67.gn" -na;
+connectAttr "large_arm_07_GEOShape.iog.og[3]" "tweakSet67.dsm" -na;
+connectAttr "tweak67.msg" "tweakSet67.ub[0]";
+connectAttr "large_arm_07_GEOShapeOrig.w" "groupParts136.ig";
+connectAttr "groupId136.id" "groupParts136.gi";
+connectAttr "skinCluster69GroupParts.og" "skinCluster69.ip[0].ig";
+connectAttr "skinCluster69GroupId.id" "skinCluster69.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster69.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster69.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster69.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster69.bp";
+connectAttr "groupParts138.og" "tweak68.ip[0].ig";
+connectAttr "groupId138.id" "tweak68.ip[0].gi";
+connectAttr "skinCluster69GroupId.msg" "skinCluster69Set.gn" -na;
+connectAttr "large_arm_06_GEOShape.iog.og[2]" "skinCluster69Set.dsm" -na;
+connectAttr "skinCluster69.msg" "skinCluster69Set.ub[0]";
+connectAttr "tweak68.og[0]" "skinCluster69GroupParts.ig";
+connectAttr "skinCluster69GroupId.id" "skinCluster69GroupParts.gi";
+connectAttr "groupId138.msg" "tweakSet68.gn" -na;
+connectAttr "large_arm_06_GEOShape.iog.og[3]" "tweakSet68.dsm" -na;
+connectAttr "tweak68.msg" "tweakSet68.ub[0]";
+connectAttr "large_arm_06_GEOShapeOrig.w" "groupParts138.ig";
+connectAttr "groupId138.id" "groupParts138.gi";
+connectAttr "skinCluster70GroupParts.og" "skinCluster70.ip[0].ig";
+connectAttr "skinCluster70GroupId.id" "skinCluster70.ip[0].gi";
+connectAttr "fabric_JNT.wm" "skinCluster70.ma[0]";
+connectAttr "fabric_JNT.liw" "skinCluster70.lw[0]";
+connectAttr "fabric_JNT.obcc" "skinCluster70.ifcl[0]";
+connectAttr "bindPose2.msg" "skinCluster70.bp";
+connectAttr "groupParts140.og" "tweak69.ip[0].ig";
+connectAttr "groupId140.id" "tweak69.ip[0].gi";
+connectAttr "skinCluster70GroupId.msg" "skinCluster70Set.gn" -na;
+connectAttr "large_arm_05_GEOShape.iog.og[2]" "skinCluster70Set.dsm" -na;
+connectAttr "skinCluster70.msg" "skinCluster70Set.ub[0]";
+connectAttr "tweak69.og[0]" "skinCluster70GroupParts.ig";
+connectAttr "skinCluster70GroupId.id" "skinCluster70GroupParts.gi";
+connectAttr "groupId140.msg" "tweakSet69.gn" -na;
+connectAttr "large_arm_05_GEOShape.iog.og[3]" "tweakSet69.dsm" -na;
+connectAttr "tweak69.msg" "tweakSet69.ub[0]";
+connectAttr "large_arm_05_GEOShapeOrig.w" "groupParts140.ig";
+connectAttr "groupId140.id" "groupParts140.gi";
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "umbrella_MAT.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
