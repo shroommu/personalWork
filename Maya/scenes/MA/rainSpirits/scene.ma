@@ -1,6 +1,6 @@
-//Maya ASCII 2020 scene
+//Maya ASCII 2022 scene
 //Name: scene.ma
-//Last modified: Wed, Feb 16, 2022 08:33:16 PM
+//Last modified: Wed, Apr 13, 2022 10:02:36 PM
 //Codeset: 1252
 file -rdi 1 -ns "umbrella" -rfn "umbrellaRN" -op "v=0;" -typ "mayaAscii" "C:/Users/mould/Documents/Github/personalWork/Maya//scenes/MA/rainSpirits/umbrella.ma";
 file -rdi 1 -ns "rainSpiritsGirl" -rfn "rainSpiritsGirlRN" -op "v=0;" -typ "mayaAscii"
@@ -19,26 +19,25 @@ file -r -ns "rainSpirit1" -dr 1 -rfn "rainSpirit1RN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/mould/Documents/Github/personalWork/Maya//scenes/MA/rainSpirits/rainSpirit1.ma";
 file -r -ns "rainSpirit2" -dr 1 -rfn "rainSpirit1RN1" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/mould/Documents/Github/personalWork/Maya//scenes/MA/rainSpirits/rainSpirit1.ma";
-requires maya "2020";
-requires "stereoCamera" "10.0";
+requires maya "2022";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
-fileInfo "product" "Maya 2020";
-fileInfo "version" "2020";
-fileInfo "cutIdentifier" "201911140446-42a737a01c";
-fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 19043)\n";
-fileInfo "UUID" "EF23F719-45B2-F178-BB07-DE86E50DE96C";
+fileInfo "product" "Maya 2022";
+fileInfo "version" "2022";
+fileInfo "cutIdentifier" "202102181415-29bfc1879c";
+fileInfo "osv" "Windows 10 Home v2009 (Build: 19044)";
+fileInfo "UUID" "A34B932D-44BD-B59A-A0DC-B8BD227885EC";
 createNode transform -s -n "persp";
 	rename -uid "73BDC883-4BA6-BBD1-5DBD-4B8C8F549E2F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -20.133211654913893 11.309923862275355 4.9586354566430497 ;
-	setAttr ".r" -type "double3" -21.338352729084605 -799.79999999991207 -8.9803183371319016e-15 ;
+	setAttr ".t" -type "double3" -29.002214446271399 -0.19173495466647683 31.536126983070684 ;
+	setAttr ".r" -type "double3" 8.0616472698734434 -764.19999999958623 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "ACD24C28-4800-CBD4-75F7-E08B6CE89B84";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 19.728884965308985;
+	setAttr ".coi" 41.779259944141444;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -7089,7 +7088,7 @@ createNode camera -n "persp1Shape" -p "persp1";
 	setAttr ".tp" -type "double3" -0.11455604434013367 11.978301048278809 0.073034286499023438 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode fosterParent -n "umbrellaRNfosterParent1";
-	rename -uid "E0CB783A-42EF-2099-94C8-F0A586560D4B";
+	rename -uid "4CAEAEE2-4F13-E97B-BF44-BC963FF0E187";
 createNode parentConstraint -n "main_CTRL_parentConstraint1" -p "umbrellaRNfosterParent1";
 	rename -uid "6E3D3587-4910-4E34-8A29-CFB78CDC3A2D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "wrist_R_CTRLW0" -dv 1 -min 0 -at "double";
@@ -7112,7 +7111,7 @@ createNode parentConstraint -n "main_CTRL_parentConstraint1" -p "umbrellaRNfoste
 	setAttr ".rsrr" -type "double3" 143.93033100841083 173.47093621645732 -167.33756548830249 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "rainSpiritsGirlRNfosterParent1";
-	rename -uid "D69A6852-4040-60C5-4327-119FDECDB673";
+	rename -uid "0B0A82AE-4146-5A42-FE5B-B597F972D58B";
 createNode parentConstraint -n "arm_L_IK_03_CTRL_parentConstraint1" -p "rainSpiritsGirlRNfosterParent1";
 	rename -uid "4DEA00D9-42A2-1957-1A32-98BBF11FC0B7";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "arm_R_IK_03_CTRLW0" -dv 1 -min 0 
@@ -7136,22 +7135,22 @@ createNode parentConstraint -n "arm_L_IK_03_CTRL_parentConstraint1" -p "rainSpir
 	setAttr ".rsrr" -type "double3" -2.2010210509343787e-15 6.2120208622334312e-18 -1.1931759025546908e-34 ;
 	setAttr -k on ".w0" 0;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "120FBF12-460B-7F28-63F5-42820266A44F";
+	rename -uid "CFE6854A-4CC8-2464-E0F2-F5B1A1369021";
 	setAttr -s 31 ".lnk";
 	setAttr -s 31 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "D3B182B4-4704-E8A1-C649-52AEDEA87EFE";
+	rename -uid "BF9C377A-4807-9349-3081-8B880A4DE39E";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "BFC1FFF0-443B-2F28-7265-C184DE1E15DB";
+	rename -uid "0A5E2CF0-47BD-B784-229E-3AA215BCEDEE";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "FC7006D4-4CF0-907F-1A46-509BC118A53F";
+	rename -uid "3B9C6018-4B55-AA64-A61A-F1BCCA932F44";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "ABE6B9A2-4EC9-6796-43F4-69A0D04575BA";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "264528A3-4C81-E732-322E-10996EEECB01";
+	rename -uid "B62F1728-4ED2-A658-51E7-45A7A677EFBC";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3DB77C37-4A84-F212-723A-AD90F3AF8F0B";
 	setAttr ".g" yes;
@@ -7358,16 +7357,41 @@ createNode reference -n "umbrellaRN";
 		2 "umbrella:groupParts70" "inputRemoveComponent" " -type \"componentList\" 1 \"f[0:419]\""
 		
 		2 "umbrella:groupParts70" "groupId" " 523"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_01_GEO|umbrella:large_arm_01_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_10_GEO|umbrella:large_arm_10_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "umbrella:skinCluster46.outputGeometry[0]" "|umbrella:umbrella|umbrella:GEO|umbrella:fabric_GEO|umbrella:fabric_GEOShape.inMesh" 
+		""
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_05_GEO|umbrella:medium_arm_05_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "umbrella:groupId70.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_04_GEO|umbrella:large_arm_04_GEOShape.instObjGroups" 
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_05_GEO|umbrella:large_arm_05_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_01_GEO|umbrella:medium_arm_01_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_02_GEO|umbrella:large_arm_02_GEOShape.instObjGroups" 
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_02_GEO|umbrella:small_arm_02_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_02_GEO|umbrella:medium_arm_02_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_09_GEO|umbrella:medium_arm_09_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_09_GEO|umbrella:large_arm_09_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_08_GEO|umbrella:medium_arm_08_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_08_GEO|umbrella:large_arm_08_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_04_GEO|umbrella:large_arm_04_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_03_GEO|umbrella:large_arm_03_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_04_GEO|umbrella:small_arm_04_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:centralPole_GEO1|umbrella:centralPole_GEO1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_06_GEO|umbrella:small_arm_06_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_04_GEO|umbrella:medium_arm_04_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_06_GEO|umbrella:large_arm_06_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "umbrella:groupId70.groupId" "|umbrella:umbrella|umbrella:GEO|umbrella:fabric_GEO1|umbrella:fabric_GEO1Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
@@ -7375,69 +7399,44 @@ createNode reference -n "umbrellaRN";
 		""
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:fabric_GEO1|umbrella:fabric_GEO1Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_08_GEO|umbrella:small_arm_08_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_07_GEO|umbrella:large_arm_07_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_03_GEO|umbrella:small_arm_03_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_08_GEO|umbrella:small_arm_08_GEOShape.instObjGroups" 
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_10_GEO|umbrella:small_arm_10_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:push_GEO1|umbrella:push_GEO1Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_03_GEO|umbrella:large_arm_03_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "umbrella:groupId70.groupId" "umbrella:groupParts70.groupId" ""
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_04_GEO|umbrella:medium_arm_04_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_05_GEO|umbrella:large_arm_05_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_07_GEO|umbrella:small_arm_07_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_03_GEO|umbrella:medium_arm_03_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_08_GEO|umbrella:large_arm_08_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_07_GEO|umbrella:medium_arm_07_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_01_GEO|umbrella:small_arm_01_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_09_GEO|umbrella:small_arm_09_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_02_GEO|umbrella:small_arm_02_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_10_GEO|umbrella:small_arm_10_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:handle_GEO1|umbrella:handle_GEO1Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_10_GEO|umbrella:large_arm_10_GEOShape.instObjGroups" 
+		3 "umbrella:groupId70.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_06_GEO|umbrella:medium_arm_06_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_09_GEO|umbrella:medium_arm_09_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_04_GEO|umbrella:small_arm_04_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_08_GEO|umbrella:medium_arm_08_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_01_GEO|umbrella:large_arm_01_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_05_GEO|umbrella:small_arm_05_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		3 "umbrella:groupId70.groupId" "umbrella:groupParts70.groupId" ""
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:handle_GEO|umbrella:handle_GEOShape.instObjGroups" 
 		"umbrella:lambert2SG.dagSetMembers" "-na"
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:push_GEO|umbrella:push_GEOShape.instObjGroups" 
 		"umbrella:lambert2SG.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_09_GEO|umbrella:large_arm_09_GEOShape.instObjGroups" 
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_07_GEO|umbrella:medium_arm_07_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_06_GEO|umbrella:medium_arm_06_GEOShape.instObjGroups" 
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_03_GEO|umbrella:medium_arm_03_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_06_GEO|umbrella:small_arm_06_GEOShape.instObjGroups" 
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_02_GEO|umbrella:large_arm_02_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_01_GEO|umbrella:small_arm_01_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_01_GEO|umbrella:medium_arm_01_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_07_GEO|umbrella:small_arm_07_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_09_GEO|umbrella:small_arm_09_GEOShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|umbrella:umbrella|umbrella:GEO|umbrella:small_arms|umbrella:small_arm_05_GEO|umbrella:small_arm_05_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|umbrella:umbrella|umbrella:GEO|umbrella:medium_arms|umbrella:medium_arm_10_GEO|umbrella:medium_arm_10_GEOShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:large_arms|umbrella:large_arm_06_GEO|umbrella:large_arm_06_GEOShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|umbrella:umbrella|umbrella:GEO|umbrella:centralPole_GEO1|umbrella:centralPole_GEO1Shape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "umbrella:skinCluster46.outputGeometry[0]" "|umbrella:umbrella|umbrella:GEO|umbrella:fabric_GEO|umbrella:fabric_GEOShape.inMesh" 
-		""
 		5 3 "umbrellaRN" "|umbrella:umbrella|umbrella:GEO|umbrella:push_GEO|umbrella:push_GEOShape.instObjGroups" 
 		"umbrellaRN.placeHolderList[20]" "umbrella:lambert2SG.dsm"
 		5 0 "umbrellaRN" "umbrella:skinCluster46.outputGeometry[0]" "|umbrella:umbrella|umbrella:GEO|umbrella:fabric_GEO|umbrella:fabric_GEOShape.inMesh" 
@@ -7604,7 +7603,7 @@ createNode reference -n "umbrellaRN";
 lockNode -l 1 ;
 createNode reference -n "rainSpiritsGirlRN";
 	rename -uid "B75C558D-4975-743F-0D87-B9801991FC90";
-	setAttr -s 1050 ".phl";
+	setAttr -s 1054 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -8655,10 +8654,14 @@ createNode reference -n "rainSpiritsGirlRN";
 	setAttr ".phl[1048]" 0;
 	setAttr ".phl[1049]" 0;
 	setAttr ".phl[1050]" 0;
+	setAttr ".phl[1051]" 0;
+	setAttr ".phl[1052]" 0;
+	setAttr ".phl[1053]" 0;
+	setAttr ".phl[1054]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"rainSpiritsGirlRN"
 		"rainSpiritsGirlRN" 0
-		"rainSpiritsGirlRN" 1139
+		"rainSpiritsGirlRN" 1149
 		0 "|rainSpiritsGirlRNfosterParent1|arm_L_IK_03_CTRL_parentConstraint1" "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:IK_CTRLS|rainSpiritsGirl:arm_L_IK_03_CTRL_GRP|rainSpiritsGirl:arm_L_IK_03_CTRL" 
 		"-s -r "
 		1 |rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL 
@@ -8746,16 +8749,16 @@ createNode reference -n "rainSpiritsGirlRN";
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:GEO|rainSpiritsGirl:outline|rainSpiritsGirl:shoe_sole_R1|rainSpiritsGirl:shoe_sole_R1Shape" 
 		"visibility" " -k 0 1"
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:upper_body_JNT|rainSpiritsGirl:spine_01_JNT|rainSpiritsGirl:spine_02_JNT|rainSpiritsGirl:clav_R_JNT|rainSpiritsGirl:arm_R|rainSpiritsGirl:arm_R_IK_01_JNT" 
-		"rotate" " -type \"double3\" -63.66995510096268163 68.88238729797663495 -83.38827558634591242"
+		"rotate" " -type \"double3\" 40.27720923701460265 75.5582716815475095 19.09106954920533994"
 		
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:upper_body_JNT|rainSpiritsGirl:spine_01_JNT|rainSpiritsGirl:spine_02_JNT|rainSpiritsGirl:clav_R_JNT|rainSpiritsGirl:arm_R|rainSpiritsGirl:arm_R_IK_01_JNT|rainSpiritsGirl:arm_R_IK_02_JNT" 
-		"rotate" " -type \"double3\" 2.09222786582964115 117.51915173124231728 5.63552835634054361"
+		"rotate" " -type \"double3\" 2.0922278658296416 109.27207103066446336 5.48701334954510322"
 		
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:upper_body_JNT|rainSpiritsGirl:spine_01_JNT|rainSpiritsGirl:spine_02_JNT|rainSpiritsGirl:clav_L_JNT|rainSpiritsGirl:arm_L|rainSpiritsGirl:arm_L_IK_01_JNT" 
-		"rotate" " -type \"double3\" 65.85552975184718605 53.32643025467076114 129.68040134530005503"
+		"rotate" " -type \"double3\" 51.96305268419759216 37.02571418765097633 121.59823193512666251"
 		
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:upper_body_JNT|rainSpiritsGirl:spine_01_JNT|rainSpiritsGirl:spine_02_JNT|rainSpiritsGirl:clav_L_JNT|rainSpiritsGirl:arm_L|rainSpiritsGirl:arm_L_IK_01_JNT|rainSpiritsGirl:arm_L_IK_02_JNT" 
-		"rotate" " -type \"double3\" 0.83204244712329678 48.08432345715127099 2.42939924999101597"
+		"rotate" " -type \"double3\" 0.83206607131915711 49.54781043613403568 2.40984482018003376"
 		
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:upper_body_JNT|rainSpiritsGirl:spine_01_JNT|rainSpiritsGirl:spine_02_JNT|rainSpiritsGirl:neck_JNT|rainSpiritsGirl:head_JNT|rainSpiritsGirl:mouth_01_JNT" 
 		"scale" " -type \"double3\" 0 0 0"
@@ -8764,15 +8767,15 @@ createNode reference -n "rainSpiritsGirlRN";
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:upper_body_JNT|rainSpiritsGirl:spine_01_JNT|rainSpiritsGirl:spine_02_JNT|rainSpiritsGirl:neck_JNT|rainSpiritsGirl:head_JNT|rainSpiritsGirl:mouth_06_JNT" 
 		"scale" " -type \"double3\" 0 0 0"
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:lower_body_JNT|rainSpiritsGirl:leg_R|rainSpiritsGirl:leg_R_IK_01_JNT" 
-		"rotate" " -type \"double3\" -4.403217099009753 1.67025031719097838 18.70032134020267733"
+		"rotate" " -type \"double3\" 4.45453691067722612 1.79965901259691718 -43.64895185292002111"
 		
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:lower_body_JNT|rainSpiritsGirl:leg_R|rainSpiritsGirl:leg_R_IK_01_JNT|rainSpiritsGirl:leg_R_IK_02_JNT" 
-		"rotate" " -type \"double3\" 0 -1.01828751141717588 10.503853296480683"
+		"rotate" " -type \"double3\" 0 -0.017050984856699168 77.91554370795283546"
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:lower_body_JNT|rainSpiritsGirl:leg_L|rainSpiritsGirl:leg_L_IK_01_JNT" 
-		"rotate" " -type \"double3\" 4.42623976137405784 1.4290115387172464 -10.93942736869684929"
+		"rotate" " -type \"double3\" 6.9354063491372191 0.44186594077944924 -33.85614740649420895"
 		
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:JNTS|rainSpiritsGirl:COG_JNT|rainSpiritsGirl:lower_body_JNT|rainSpiritsGirl:leg_L|rainSpiritsGirl:leg_L_IK_01_JNT|rainSpiritsGirl:leg_L_IK_02_JNT" 
-		"rotate" " -type \"double3\" -0.0025146678487877453 -1.22078398075973604 -2.59894159194152419"
+		"rotate" " -type \"double3\" -0.0025141142899255025 1.58256654167863986 77.49118755609191567"
 		
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:head_CTRL_GRP|rainSpiritsGirl:head_CTRL|rainSpiritsGirl:head_CTRLShape" 
 		"controlPoints" " -s 11"
@@ -8807,10 +8810,10 @@ createNode reference -n "rainSpiritsGirlRN";
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL" 
 		"blendPoint1" " -k 1"
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL" 
-		"blendPoint1" " -av -k 1 1"
+		"blendPoint1" " -k 1"
 		2 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:IK_CTRLS|rainSpiritsGirl:arm_L_IK_03_CTRL_GRP|rainSpiritsGirl:arm_L_IK_03_CTRL" 
-		"blendParent1" " -av -k 1 0"
-		2 "rainSpiritsGirl:GEO_LYR" "displayType" " 0"
+		"blendParent1" " -k 1"
+		2 "rainSpiritsGirl:GEO_LYR" "displayType" " 2"
 		2 "rainSpiritsGirl:GEO_LYR" "visibility" " 1"
 		2 "rainSpiritsGirl:arm_R_IK_03_CTRL_visibility" "postInfinity" " 0"
 		2 "rainSpiritsGirl:arm_L_IK_03_CTRL_visibility" "postInfinity" " 0"
@@ -8819,14 +8822,25 @@ createNode reference -n "rainSpiritsGirlRN";
 		2 "rainSpiritsGirl:leg_L_IK_02_CTRL_visibility" "postInfinity" " 0"
 		2 "rainSpiritsGirl:leg_L_IK_03_CTRL_visibility" "postInfinity" " 0"
 		2 "rainSpiritsGirl:CTRLS_LYR" "visibility" " 1"
-		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL|rainSpiritsGirl:wrist_L_CTRL_pointConstraint1.constraintTranslateX" 
-		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL.translateX" 
+		2 "rainSpiritsGirl:file1" "fileTextureName" " -type \"string\" \"D:/Documents/Substance Painter/export/rainSpirits/girl_UVs_girl_MAT_diff.png\""
+		
+		2 "rainSpiritsGirl:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		2 "rainSpiritsGirl:file2" "fileTextureName" " -type \"string\" \"D:/Documents/Substance Painter/export/rainSpirits/FacePlanesAlpha.png\""
+		
+		2 "rainSpiritsGirl:file2" "colorSpace" " -type \"string\" \"sRGB\""
+		2 "rainSpiritsGirl:file4" "fileTextureName" " -type \"string\" \"D:/Documents/Substance Painter/export/rainSpirits/FacePlanesOpacity.png\""
+		
+		2 "rainSpiritsGirl:file4" "colorSpace" " -type \"string\" \"sRGB\""
+		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL|rainSpiritsGirl:wrist_R_CTRL_pointConstraint1.constraintTranslateX" 
+		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL.translateX" 
 		""
-		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL|rainSpiritsGirl:wrist_L_CTRL_pointConstraint1.constraintTranslateY" 
-		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL.translateY" 
+		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL|rainSpiritsGirl:wrist_R_CTRL_pointConstraint1.constraintTranslateY" 
+		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL.translateY" 
 		""
-		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL|rainSpiritsGirl:wrist_L_CTRL_pointConstraint1.constraintTranslateZ" 
-		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL.translateZ" 
+		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL|rainSpiritsGirl:wrist_R_CTRL_pointConstraint1.constraintTranslateZ" 
+		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL.translateZ" 
+		""
+		3 "rainSpiritsGirl:file4.outTransparency" "rainSpiritsGirl:face_planes_MAT.transparency" 
 		""
 		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL_pointConstraint1.constraintTranslateX" 
 		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL.translateX" 
@@ -8837,6 +8851,15 @@ createNode reference -n "rainSpiritsGirlRN";
 		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL_pointConstraint1.constraintTranslateZ" 
 		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_L_RK_03_JNT_ankle_CTRL.translateZ" 
 		""
+		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL|rainSpiritsGirl:wrist_L_CTRL_pointConstraint1.constraintTranslateX" 
+		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL.translateX" 
+		""
+		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL|rainSpiritsGirl:wrist_L_CTRL_pointConstraint1.constraintTranslateY" 
+		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL.translateY" 
+		""
+		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL|rainSpiritsGirl:wrist_L_CTRL_pointConstraint1.constraintTranslateZ" 
+		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_L_CTRL_GRP|rainSpiritsGirl:wrist_L_CTRL.translateZ" 
+		""
 		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL_pointConstraint1.constraintTranslateX" 
 		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL.translateX" 
 		""
@@ -8845,15 +8868,6 @@ createNode reference -n "rainSpiritsGirlRN";
 		""
 		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL_pointConstraint1.constraintTranslateZ" 
 		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL_GRP|rainSpiritsGirl:leg_R_RK_03_JNT_ankle_CTRL.translateZ" 
-		""
-		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL|rainSpiritsGirl:wrist_R_CTRL_pointConstraint1.constraintTranslateX" 
-		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL.translateX" 
-		""
-		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL|rainSpiritsGirl:wrist_R_CTRL_pointConstraint1.constraintTranslateY" 
-		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL.translateY" 
-		""
-		3 "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL|rainSpiritsGirl:wrist_R_CTRL_pointConstraint1.constraintTranslateZ" 
-		"|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:FK_CTRLS|rainSpiritsGirl:wrist_R_CTRL_GRP|rainSpiritsGirl:wrist_R_CTRL.translateZ" 
 		""
 		5 4 "rainSpiritsGirlRN" "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL.translateX" 
 		"rainSpiritsGirlRN.placeHolderList[1]" ""
@@ -10831,14 +10845,13 @@ createNode reference -n "rainSpiritsGirlRN";
 		"rainSpiritsGirlRN.placeHolderList[984]" ""
 		5 4 "rainSpiritsGirlRN" "|rainSpiritsGirl:girl|rainSpiritsGirl:CTRLS|rainSpiritsGirl:transform_CTRL|rainSpiritsGirl:IK_CTRLS|rainSpiritsGirl:leg_R_IK_02_CTRL_GRP|rainSpiritsGirl:leg_R_IK_02_CTRL.scaleZ" 
 		"rainSpiritsGirlRN.placeHolderList[985]" ""
-		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[986]" ":initialShadingGroup.dsm"
-		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[987]" ":initialShadingGroup.dsm"
-		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[988]" ":initialShadingGroup.dsm"
-		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[989]" ""
+		5 3 "rainSpiritsGirlRN" "rainSpiritsGirl:skin_tone.message" "rainSpiritsGirlRN.placeHolderList[986]" 
+		""
+		5 3 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert3SG.message" "rainSpiritsGirlRN.placeHolderList[987]" 
+		""
+		5 0 "rainSpiritsGirlRN" "rainSpiritsGirl:file2.outTransparency" "rainSpiritsGirl:face_planes_MAT.transparency" 
+		"rainSpiritsGirlRN.placeHolderList[988]" "rainSpiritsGirlRN.placeHolderList[989]" 
+		""
 		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
 		"rainSpiritsGirlRN.placeHolderList[990]" ":initialShadingGroup.dsm"
 		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
@@ -10846,7 +10859,7 @@ createNode reference -n "rainSpiritsGirlRN";
 		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
 		"rainSpiritsGirlRN.placeHolderList[992]" ":initialShadingGroup.dsm"
 		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[993]" ":initialShadingGroup.dsm"
+		"rainSpiritsGirlRN.placeHolderList[993]" ""
 		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
 		"rainSpiritsGirlRN.placeHolderList[994]" ":initialShadingGroup.dsm"
 		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
@@ -10899,14 +10912,14 @@ createNode reference -n "rainSpiritsGirlRN";
 		"rainSpiritsGirlRN.placeHolderList[1018]" ":initialShadingGroup.dsm"
 		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
 		"rainSpiritsGirlRN.placeHolderList[1019]" ":initialShadingGroup.dsm"
-		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[1020]" ""
-		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[1021]" ""
-		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[1022]" ""
-		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[1023]" ""
+		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
+		"rainSpiritsGirlRN.placeHolderList[1020]" ":initialShadingGroup.dsm"
+		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
+		"rainSpiritsGirlRN.placeHolderList[1021]" ":initialShadingGroup.dsm"
+		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
+		"rainSpiritsGirlRN.placeHolderList[1022]" ":initialShadingGroup.dsm"
+		5 2 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
+		"rainSpiritsGirlRN.placeHolderList[1023]" ":initialShadingGroup.dsm"
 		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
 		"rainSpiritsGirlRN.placeHolderList[1024]" ""
 		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
@@ -10960,7 +10973,15 @@ createNode reference -n "rainSpiritsGirlRN";
 		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
 		"rainSpiritsGirlRN.placeHolderList[1049]" ""
 		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
-		"rainSpiritsGirlRN.placeHolderList[1050]" "";
+		"rainSpiritsGirlRN.placeHolderList[1050]" ""
+		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
+		"rainSpiritsGirlRN.placeHolderList[1051]" ""
+		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
+		"rainSpiritsGirlRN.placeHolderList[1052]" ""
+		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
+		"rainSpiritsGirlRN.placeHolderList[1053]" ""
+		5 4 "rainSpiritsGirlRN" "rainSpiritsGirl:lambert10SG.dagSetMembers" 
+		"rainSpiritsGirlRN.placeHolderList[1054]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode script -n "uiConfigurationScriptNode";
@@ -10971,45 +10992,45 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n"
 		+ "            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"flat\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 1\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n"
-		+ "            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n"
-		+ "            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1187\n            -height 668\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
+		+ "            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 0\n            -nurbsSurfaces 1\n"
+		+ "            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1154\n            -height 662\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
 		+ "        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n"
 		+ "            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n"
 		+ "            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n"
 		+ "            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp1\" \n            -useInteractiveMode 0\n            -displayLights \"flat\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 0\n"
 		+ "            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 1\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n"
 		+ "            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 0\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 0\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 0\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n"
-		+ "            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 687\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n"
+		+ "            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1154\n            -height 662\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n"
 		+ "            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n"
-		+ "            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"<function selCom at 0x7f29c5c04aa0>\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n"
-		+ "            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
-		+ "            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n"
-		+ "            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n"
-		+ "                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 1\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -displayMode \"DAG\" \n"
-		+ "                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n"
-		+ "                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n"
-		+ "                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n"
-		+ "                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n"
-		+ "            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
-		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
-		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n"
-		+ "                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n"
-		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
-		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
-		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
-		+ "            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
-		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Side View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"flat\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 1\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1187\\n    -height 668\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"flat\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 1\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1187\\n    -height 668\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
+		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n"
+		+ "            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n"
+		+ "                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 1\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n"
+		+ "                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n"
+		+ "                -showUpstreamCurves 1\n                -keyMinScale 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n"
+		+ "                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n"
+		+ "                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n"
+		+ "                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n"
+		+ "                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n"
+		+ "                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n"
+		+ "\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n"
+		+ "                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n"
+		+ "                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
+		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
+		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
+		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
+		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
+		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Side View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"flat\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 1\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1154\\n    -height 662\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"flat\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 1\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 4 4 \\n    -bumpResolution 4 4 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1154\\n    -height 662\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -11046,7 +11067,7 @@ createNode materialInfo -n "materialInfo3";
 	rename -uid "511F3D81-41A3-C94A-2C7B-F682AE58C954";
 createNode file -n "file1";
 	rename -uid "0CE0750F-4517-54B7-1007-87BAF2E7867B";
-	setAttr ".ftn" -type "string" "C:/Users/mould/Documents/Allegorithmic/Substance Painter/export/umbrella_UVs_umbrella_MAT_diff.png";
+	setAttr ".ftn" -type "string" "D:/Documents/Substance Painter/export/umbrella_UVs_umbrella_MAT_diff.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture1";
 	rename -uid "E200A921-4F32-1F49-6AEF-C6BF0C95C5A4";
@@ -11208,14 +11229,14 @@ createNode polyPlanarProj -n "polyPlanarProj1";
 	setAttr ".ics" -type "componentList" 1 "f[0:35]";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 11.369972408670931 1;
 	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882813 ;
+	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882812 ;
 	setAttr ".ro" -type "double3" -18.938353129205638 -77.800000239241058 -4.3770691293126933e-09 ;
 	setAttr ".ps" -type "double2" 90.589463345199405 12.100569299891703 ;
 	setAttr ".per" yes;
 	setAttr ".cam" -type "matrix" 0.41090932488441467 0.70097082853317261 0.92452520132064819 0.92450672388076782
 		 -2.6984587036447838e-17 2.0901081562042236 -0.32455712556838989 -0.32455062866210938
 		 1.9005309343338013 -0.15155525505542755 -0.1998894214630127 -0.19988542795181274
-		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257813;
+		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257812;
 	setAttr ".prgt" 783;
 	setAttr ".ptop" 689;
 createNode polyPlanarProj -n "polyPlanarProj2";
@@ -11224,14 +11245,14 @@ createNode polyPlanarProj -n "polyPlanarProj2";
 	setAttr ".ics" -type "componentList" 1 "f[0:35]";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
 	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882813 ;
+	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882812 ;
 	setAttr ".ro" -type "double3" -18.938353129205638 -77.800000239241058 -4.3770691293126933e-09 ;
 	setAttr ".ps" -type "double2" 90.589463345199405 12.100569299891703 ;
 	setAttr ".per" yes;
 	setAttr ".cam" -type "matrix" 0.41090932488441467 0.70097082853317261 0.92452520132064819 0.92450672388076782
 		 -2.6984587036447838e-17 2.0901081562042236 -0.32455712556838989 -0.32455062866210938
 		 1.9005309343338013 -0.15155525505542755 -0.1998894214630127 -0.19988542795181274
-		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257813;
+		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257812;
 	setAttr ".prgt" 783;
 	setAttr ".ptop" 689;
 createNode polyPlanarProj -n "polyPlanarProj3";
@@ -11240,14 +11261,14 @@ createNode polyPlanarProj -n "polyPlanarProj3";
 	setAttr ".ics" -type "componentList" 1 "f[0:35]";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -11.385320669771811 1;
 	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882813 ;
+	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882812 ;
 	setAttr ".ro" -type "double3" -18.938353129205638 -77.800000239241058 -4.3770691293126933e-09 ;
 	setAttr ".ps" -type "double2" 90.589463345199405 12.100569299891703 ;
 	setAttr ".per" yes;
 	setAttr ".cam" -type "matrix" 0.41090932488441467 0.70097082853317261 0.92452520132064819 0.92450672388076782
 		 -2.6984587036447838e-17 2.0901081562042236 -0.32455712556838989 -0.32455062866210938
 		 1.9005309343338013 -0.15155525505542755 -0.1998894214630127 -0.19988542795181274
-		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257813;
+		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257812;
 	setAttr ".prgt" 783;
 	setAttr ".ptop" 689;
 createNode polyPlanarProj -n "polyPlanarProj4";
@@ -11256,14 +11277,14 @@ createNode polyPlanarProj -n "polyPlanarProj4";
 	setAttr ".ics" -type "componentList" 1 "f[0:35]";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -22.805176544620622 1;
 	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882813 ;
+	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882812 ;
 	setAttr ".ro" -type "double3" -18.938353129205638 -77.800000239241058 -4.3770691293126933e-09 ;
 	setAttr ".ps" -type "double2" 90.589463345199405 12.100569299891703 ;
 	setAttr ".per" yes;
 	setAttr ".cam" -type "matrix" 0.41090932488441467 0.70097082853317261 0.92452520132064819 0.92450672388076782
 		 -2.6984587036447838e-17 2.0901081562042236 -0.32455712556838989 -0.32455062866210938
 		 1.9005309343338013 -0.15155525505542755 -0.1998894214630127 -0.19988542795181274
-		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257813;
+		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257812;
 	setAttr ".prgt" 783;
 	setAttr ".ptop" 689;
 createNode polyPlanarProj -n "polyPlanarProj5";
@@ -11272,14 +11293,14 @@ createNode polyPlanarProj -n "polyPlanarProj5";
 	setAttr ".ics" -type "componentList" 1 "f[0:35]";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -34.196862111769136 1;
 	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882813 ;
+	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882812 ;
 	setAttr ".ro" -type "double3" -18.938353129205638 -77.800000239241058 -4.3770691293126933e-09 ;
 	setAttr ".ps" -type "double2" 90.589463345199405 12.100569299891703 ;
 	setAttr ".per" yes;
 	setAttr ".cam" -type "matrix" 0.41090932488441467 0.70097082853317261 0.92452520132064819 0.92450672388076782
 		 -2.6984587036447838e-17 2.0901081562042236 -0.32455712556838989 -0.32455062866210938
 		 1.9005309343338013 -0.15155525505542755 -0.1998894214630127 -0.19988542795181274
-		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257813;
+		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257812;
 	setAttr ".prgt" 783;
 	setAttr ".ptop" 689;
 createNode polyPlanarProj -n "polyPlanarProj6";
@@ -11288,14 +11309,14 @@ createNode polyPlanarProj -n "polyPlanarProj6";
 	setAttr ".ics" -type "componentList" 1 "f[0:35]";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -45.52263562590268 1;
 	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882813 ;
+	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882812 ;
 	setAttr ".ro" -type "double3" -18.938353129205638 -77.800000239241058 -4.3770691293126933e-09 ;
 	setAttr ".ps" -type "double2" 90.589463345199405 12.100569299891703 ;
 	setAttr ".per" yes;
 	setAttr ".cam" -type "matrix" 0.41090932488441467 0.70097082853317261 0.92452520132064819 0.92450672388076782
 		 -2.6984587036447838e-17 2.0901081562042236 -0.32455712556838989 -0.32455062866210938
 		 1.9005309343338013 -0.15155525505542755 -0.1998894214630127 -0.19988542795181274
-		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257813;
+		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257812;
 	setAttr ".prgt" 783;
 	setAttr ".ptop" 689;
 createNode polyPlanarProj -n "polyPlanarProj7";
@@ -11304,14 +11325,14 @@ createNode polyPlanarProj -n "polyPlanarProj7";
 	setAttr ".ics" -type "componentList" 1 "f[0:35]";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -56.950724437985215 1;
 	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882813 ;
+	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882812 ;
 	setAttr ".ro" -type "double3" -18.938353129205638 -77.800000239241058 -4.3770691293126933e-09 ;
 	setAttr ".ps" -type "double2" 90.589463345199405 12.100569299891703 ;
 	setAttr ".per" yes;
 	setAttr ".cam" -type "matrix" 0.41090932488441467 0.70097082853317261 0.92452520132064819 0.92450672388076782
 		 -2.6984587036447838e-17 2.0901081562042236 -0.32455712556838989 -0.32455062866210938
 		 1.9005309343338013 -0.15155525505542755 -0.1998894214630127 -0.19988542795181274
-		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257813;
+		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257812;
 	setAttr ".prgt" 783;
 	setAttr ".ptop" 689;
 createNode polyPlanarProj -n "polyPlanarProj8";
@@ -11320,14 +11341,14 @@ createNode polyPlanarProj -n "polyPlanarProj8";
 	setAttr ".ics" -type "componentList" 1 "f[0:35]";
 	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -68.411617114973097 1;
 	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882813 ;
+	setAttr ".pc" -type "double3" 1.3792769908905029 -1.7548179626464844 -17.049270629882812 ;
 	setAttr ".ro" -type "double3" -18.938353129205638 -77.800000239241058 -4.3770691293126933e-09 ;
 	setAttr ".ps" -type "double2" 90.589463345199405 12.100569299891703 ;
 	setAttr ".per" yes;
 	setAttr ".cam" -type "matrix" 0.41090932488441467 0.70097082853317261 0.92452520132064819 0.92450672388076782
 		 -2.6984587036447838e-17 2.0901081562042236 -0.32455712556838989 -0.32455062866210938
 		 1.9005309343338013 -0.15155525505542755 -0.1998894214630127 -0.19988542795181274
-		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257813;
+		 -6.4470653533935547 -12.637323379516602 89.784423828125 89.982620239257812;
 	setAttr ".prgt" 783;
 	setAttr ".ptop" 689;
 createNode polyTweakUV -n "polyTweakUV1";
@@ -11898,7 +11919,7 @@ createNode polyTweakUV -n "polyTweakUV24";
 		 0.48952913;
 createNode file -n "file2";
 	rename -uid "173AF947-425A-8C6B-98F3-9A869E52D404";
-	setAttr ".ftn" -type "string" "C:/Users/mould/Documents/Allegorithmic/Substance Painter/export/rainSpirits/sidewalk_sidewalk_MAT_diff.png";
+	setAttr ".ftn" -type "string" "D:/Documents/Substance Painter/export/rainSpirits/sidewalk_sidewalk_MAT_diff.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture2";
 	rename -uid "6A22C4B9-4E33-20B7-A5FE-A29E77FA047A";
@@ -12672,8 +12693,212 @@ createNode reference -n "rainSpiritRN";
 	setAttr ".phl[733]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"rainSpiritRN"
-		"rainSpiritRN" 0
-		"rainSpiritRN" 1244
+		"rainSpiritRN" 102
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:transform_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:transform_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:transform_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_R_CTRL_GRP|rainSpirit:eye_R_CTRL|rainSpirit:eye_R_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_R_CTRL_GRP|rainSpirit:eye_R_CTRL|rainSpirit:eye_R_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_R_CTRL_GRP|rainSpirit:eye_R_CTRL|rainSpirit:eye_R_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL|rainSpirit:pupil_R_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL|rainSpirit:pupil_R_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL|rainSpirit:pupil_R_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_L_CTRL_GRP|rainSpirit:eye_L_CTRL|rainSpirit:eye_L_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_L_CTRL_GRP|rainSpirit:eye_L_CTRL|rainSpirit:eye_L_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_L_CTRL_GRP|rainSpirit:eye_L_CTRL|rainSpirit:eye_L_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL|rainSpirit:pupil_L_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL|rainSpirit:pupil_L_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL|rainSpirit:pupil_L_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL|rainSpirit:COG_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL|rainSpirit:COG_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL|rainSpirit:COG_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL|rainSpirit:splash_rear_01_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL|rainSpirit:splash_rear_01_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL|rainSpirit:splash_rear_01_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL|rainSpirit:splash_rear_02_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL|rainSpirit:splash_rear_02_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL|rainSpirit:splash_rear_02_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL|rainSpirit:splash_rear_03_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL|rainSpirit:splash_rear_03_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL|rainSpirit:splash_rear_03_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL|rainSpirit:splash_rear_04_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL|rainSpirit:splash_rear_04_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL|rainSpirit:splash_rear_04_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL|rainSpirit:splash_center_01_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL|rainSpirit:splash_center_01_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL|rainSpirit:splash_center_01_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL|rainSpirit:splash_center_02_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL|rainSpirit:splash_center_02_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL|rainSpirit:splash_center_02_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL|rainSpirit:splash_center_03_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL|rainSpirit:splash_center_03_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL|rainSpirit:splash_center_03_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL|rainSpirit:splash_center_04_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL|rainSpirit:splash_center_04_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL|rainSpirit:splash_center_04_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL|rainSpirit:splash_rear_L_01_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL|rainSpirit:splash_rear_L_01_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL|rainSpirit:splash_rear_L_01_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL|rainSpirit:splash_rear_L_02_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL|rainSpirit:splash_rear_L_02_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL|rainSpirit:splash_rear_L_02_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL|rainSpirit:splash_rear_L_03_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL|rainSpirit:splash_rear_L_03_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL|rainSpirit:splash_rear_L_03_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL|rainSpirit:splash_rear_L_04_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL|rainSpirit:splash_rear_L_04_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL|rainSpirit:splash_rear_L_04_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL|rainSpirit:splash_front_L_01_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL|rainSpirit:splash_front_L_01_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL|rainSpirit:splash_front_L_01_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL|rainSpirit:splash_front_L_02_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL|rainSpirit:splash_front_L_02_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL|rainSpirit:splash_front_L_02_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL|rainSpirit:splash_front_L_03_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL|rainSpirit:splash_front_L_03_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL|rainSpirit:splash_front_L_03_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL|rainSpirit:splash_front_L_04_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL|rainSpirit:splash_front_L_04_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL|rainSpirit:splash_front_L_04_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL|rainSpirit:splash_front_01_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL|rainSpirit:splash_front_01_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL|rainSpirit:splash_front_01_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL|rainSpirit:splash_front_02_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL|rainSpirit:splash_front_02_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL|rainSpirit:splash_front_02_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL|rainSpirit:splash_front_03_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL|rainSpirit:splash_front_03_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL|rainSpirit:splash_front_03_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL|rainSpirit:splash_front_04_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL|rainSpirit:splash_front_04_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL|rainSpirit:splash_front_04_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL|rainSpirit:splash_front_R_01_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL|rainSpirit:splash_front_R_01_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL|rainSpirit:splash_front_R_01_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL|rainSpirit:splash_front_R_02_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL|rainSpirit:splash_front_R_02_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL|rainSpirit:splash_front_R_02_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL|rainSpirit:splash_front_R_03_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL|rainSpirit:splash_front_R_03_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL|rainSpirit:splash_front_R_03_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL|rainSpirit:splash_front_R_04_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL|rainSpirit:splash_front_R_04_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL|rainSpirit:splash_front_R_04_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL|rainSpirit:splash_rear_R_01_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL|rainSpirit:splash_rear_R_01_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL|rainSpirit:splash_rear_R_01_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL|rainSpirit:splash_rear_R_02_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL|rainSpirit:splash_rear_R_02_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL|rainSpirit:splash_rear_R_02_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL|rainSpirit:splash_rear_R_03_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL|rainSpirit:splash_rear_R_03_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL|rainSpirit:splash_rear_R_03_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL|rainSpirit:splash_rear_R_04_CTRLShape" 
+		"ghostingControl" " 0"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL|rainSpirit:splash_rear_R_04_CTRLShape" 
+		"ghostColorPreA" " 0.5"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL|rainSpirit:splash_rear_R_04_CTRLShape" 
+		"ghostColorPostA" " 0.5"
+		"rainSpiritRN" 798
 		2 "|rainSpirit:rainSpirit_1" "visibility" " 1"
 		2 "|rainSpirit:rainSpirit_1|rainSpirit:GEO|rainSpirit:body_GEO1|rainSpirit:body_GEO1Shape" 
 		"visibility" " -k 0 1"
@@ -12685,106 +12910,42 @@ createNode reference -n "rainSpiritRN";
 		"visibility" " -k 0 1"
 		2 "|rainSpirit:rainSpirit_1|rainSpirit:JNTS" "visibility" " 0"
 		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS" "visibility" " 1"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "visibility" 
-		" -av 1"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotate" 
-		" -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotateX" 
-		" -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotateY" 
-		" -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotateZ" 
-		" -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "scale" 
-		" -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "scaleX" 
-		" -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "scaleY" 
-		" -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "scaleZ" 
-		" -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_1|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_2" "visibility" " 1"
+		2 "|rainSpirit:rainSpirit_2|rainSpirit:GEO|rainSpirit:pupils|rainSpirit:pupilsShape" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|rainSpirit:rainSpirit_2|rainSpirit:GEO|rainSpirit:irises|rainSpirit:irisesShape" 
+		"instObjGroups.objectGroups" " -s 8"
+		2 "|rainSpirit:rainSpirit_2|rainSpirit:GEO|rainSpirit:irises|rainSpirit:irisesShape" 
+		"instObjGroups.objectGroups[0].objectGrpColor" " -av"
+		2 "|rainSpirit:rainSpirit_2|rainSpirit:GEO|rainSpirit:body_GEO2|rainSpirit:body_GEO2Shape" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|rainSpirit:rainSpirit_2|rainSpirit:GEO|rainSpirit:body_GEO3|rainSpirit:body_GEO3Shape" 
+		"instObjGroups.objectGroups" " -s 4"
 		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotateOrder" 
 		" 0"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_R_CTRL_GRP|rainSpirit:shoulder_R_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_R_CTRL_GRP|rainSpirit:shoulder_R_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_R_CTRL_GRP|rainSpirit:shoulder_R_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_R_CTRL_GRP|rainSpirit:shoulder_R_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_R_CTRL_GRP|rainSpirit:shoulder_R_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_R_CTRL_GRP|rainSpirit:shoulder_R_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_R_CTRL_GRP|rainSpirit:shoulder_R_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_L_CTRL_GRP|rainSpirit:shoulder_L_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_L_CTRL_GRP|rainSpirit:shoulder_L_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_L_CTRL_GRP|rainSpirit:shoulder_L_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_L_CTRL_GRP|rainSpirit:shoulder_L_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_L_CTRL_GRP|rainSpirit:shoulder_L_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_L_CTRL_GRP|rainSpirit:shoulder_L_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_2|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:shoulder_L_CTRL_GRP|rainSpirit:shoulder_L_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3" "visibility" " 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:body_GEO|rainSpirit:body_GEOShape" 
 		"visibility" " -k 0 1"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:body_GEO|rainSpirit:body_GEOShape" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:body_GEO|rainSpirit:body_GEOShape" 
+		"instObjGroups.objectGroups[1].objectGrpColor" " -av"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:pupils|rainSpirit:pupilsShape" 
 		"visibility" " -k 0 1"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:pupils|rainSpirit:pupilsShape" 
+		"instObjGroups.objectGroups" " -s 4"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:irises|rainSpirit:irisesShape" 
 		"visibility" " -k 0 1"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:irises|rainSpirit:irisesShape" 
+		"instObjGroups.objectGroups" " -s 8"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:irises|rainSpirit:irisesShape" 
+		"instObjGroups.objectGroups[3].objectGrpColor" " -av"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:body_GEO4|rainSpirit:body_GEO4Shape" 
 		"visibility" " -k 0 1"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:body_GEO4|rainSpirit:body_GEO4Shape" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|rainSpirit:rainSpirit_3|rainSpirit:GEO|rainSpirit:body_GEO4|rainSpirit:body_GEO4Shape" 
+		"instObjGroups.objectGroups[3].objectGrpColor" " -av"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:JNTS|rainSpirit:COG_JNT|rainSpirit:splash_front_R_01_JNT" 
 		"displayLocalAxis" " 0"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:JNTS|rainSpirit:COG_JNT|rainSpirit:splash_front_R_01_JNT|rainSpirit:splash_front_R_02_JNT" 
@@ -12793,902 +12954,74 @@ createNode reference -n "rainSpiritRN";
 		"displayLocalAxis" " 0"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:JNTS|rainSpirit:COG_JNT|rainSpirit:splash_front_R_01_JNT|rainSpirit:splash_front_R_02_JNT|rainSpirit:splash_front_R_03_JNT|rainSpirit:splash_front_R_04_JNT" 
 		"displayLocalAxis" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotate" 
-		" -type \"double3\" 0 -39.98409887735662238 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotateX" 
-		" -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotateY" 
-		" -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL" "rotateZ" 
-		" -av"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:transform_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:transform_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:transform_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:transform_CTRLShape" 
-		"ghostColorPostA" " 0.5"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_R_CTRL_GRP|rainSpirit:eye_R_CTRL|rainSpirit:eye_R_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_R_CTRL_GRP|rainSpirit:eye_R_CTRL|rainSpirit:eye_R_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_R_CTRL_GRP|rainSpirit:eye_R_CTRL|rainSpirit:eye_R_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_R_CTRL_GRP|rainSpirit:eye_R_CTRL|rainSpirit:eye_R_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL" 
-		"translateZ" " -av"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL|rainSpirit:pupil_R_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL|rainSpirit:pupil_R_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL|rainSpirit:pupil_R_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_R_CTRL_GRP|rainSpirit:pupil_R_CTRL|rainSpirit:pupil_R_CTRLShape" 
-		"ghostColorPostA" " 0.5"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_L_CTRL_GRP|rainSpirit:eye_L_CTRL|rainSpirit:eye_L_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_L_CTRL_GRP|rainSpirit:eye_L_CTRL|rainSpirit:eye_L_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_L_CTRL_GRP|rainSpirit:eye_L_CTRL|rainSpirit:eye_L_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:eye_L_CTRL_GRP|rainSpirit:eye_L_CTRL|rainSpirit:eye_L_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL" 
-		"translateZ" " -av"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL|rainSpirit:pupil_L_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL|rainSpirit:pupil_L_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL|rainSpirit:pupil_L_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:pupil_L_CTRL_GRP|rainSpirit:pupil_L_CTRL|rainSpirit:pupil_L_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL" 
-		"visibility" " -av 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL|rainSpirit:COG_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL|rainSpirit:COG_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL|rainSpirit:COG_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:COG_CTRL_GRP|rainSpirit:COG_CTRL|rainSpirit:COG_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL|rainSpirit:splash_rear_01_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL|rainSpirit:splash_rear_01_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL|rainSpirit:splash_rear_01_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_01_CTRL_GRP|rainSpirit:splash_rear_01_CTRL|rainSpirit:splash_rear_01_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL|rainSpirit:splash_rear_02_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL|rainSpirit:splash_rear_02_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL|rainSpirit:splash_rear_02_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_02_CTRL_GRP|rainSpirit:splash_rear_02_CTRL|rainSpirit:splash_rear_02_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL|rainSpirit:splash_rear_03_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL|rainSpirit:splash_rear_03_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL|rainSpirit:splash_rear_03_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_03_CTRL_GRP|rainSpirit:splash_rear_03_CTRL|rainSpirit:splash_rear_03_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL|rainSpirit:splash_rear_04_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL|rainSpirit:splash_rear_04_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL|rainSpirit:splash_rear_04_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_04_CTRL_GRP|rainSpirit:splash_rear_04_CTRL|rainSpirit:splash_rear_04_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL|rainSpirit:splash_center_01_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL|rainSpirit:splash_center_01_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL|rainSpirit:splash_center_01_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_01_CTRL_GRP|rainSpirit:splash_center_01_CTRL|rainSpirit:splash_center_01_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL|rainSpirit:splash_center_02_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL|rainSpirit:splash_center_02_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL|rainSpirit:splash_center_02_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_02_CTRL_GRP|rainSpirit:splash_center_02_CTRL|rainSpirit:splash_center_02_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL|rainSpirit:splash_center_03_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL|rainSpirit:splash_center_03_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL|rainSpirit:splash_center_03_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_03_CTRL_GRP|rainSpirit:splash_center_03_CTRL|rainSpirit:splash_center_03_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL|rainSpirit:splash_center_04_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL|rainSpirit:splash_center_04_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL|rainSpirit:splash_center_04_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_center_04_CTRL_GRP|rainSpirit:splash_center_04_CTRL|rainSpirit:splash_center_04_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL|rainSpirit:splash_rear_L_01_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL|rainSpirit:splash_rear_L_01_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL|rainSpirit:splash_rear_L_01_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_01_CTRL_GRP|rainSpirit:splash_rear_L_01_CTRL|rainSpirit:splash_rear_L_01_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL|rainSpirit:splash_rear_L_02_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL|rainSpirit:splash_rear_L_02_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL|rainSpirit:splash_rear_L_02_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_02_CTRL_GRP|rainSpirit:splash_rear_L_02_CTRL|rainSpirit:splash_rear_L_02_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL|rainSpirit:splash_rear_L_03_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL|rainSpirit:splash_rear_L_03_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL|rainSpirit:splash_rear_L_03_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_03_CTRL_GRP|rainSpirit:splash_rear_L_03_CTRL|rainSpirit:splash_rear_L_03_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL|rainSpirit:splash_rear_L_04_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL|rainSpirit:splash_rear_L_04_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL|rainSpirit:splash_rear_L_04_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_L_04_CTRL_GRP|rainSpirit:splash_rear_L_04_CTRL|rainSpirit:splash_rear_L_04_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL|rainSpirit:splash_front_L_01_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL|rainSpirit:splash_front_L_01_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL|rainSpirit:splash_front_L_01_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_01_CTRL_GRP|rainSpirit:splash_front_L_01_CTRL|rainSpirit:splash_front_L_01_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL|rainSpirit:splash_front_L_02_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL|rainSpirit:splash_front_L_02_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL|rainSpirit:splash_front_L_02_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_02_CTRL_GRP|rainSpirit:splash_front_L_02_CTRL|rainSpirit:splash_front_L_02_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL|rainSpirit:splash_front_L_03_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL|rainSpirit:splash_front_L_03_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL|rainSpirit:splash_front_L_03_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_03_CTRL_GRP|rainSpirit:splash_front_L_03_CTRL|rainSpirit:splash_front_L_03_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL|rainSpirit:splash_front_L_04_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL|rainSpirit:splash_front_L_04_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL|rainSpirit:splash_front_L_04_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_L_04_CTRL_GRP|rainSpirit:splash_front_L_04_CTRL|rainSpirit:splash_front_L_04_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL|rainSpirit:splash_front_01_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL|rainSpirit:splash_front_01_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL|rainSpirit:splash_front_01_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_01_CTRL_GRP|rainSpirit:splash_front_01_CTRL|rainSpirit:splash_front_01_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL|rainSpirit:splash_front_02_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL|rainSpirit:splash_front_02_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL|rainSpirit:splash_front_02_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_02_CTRL_GRP|rainSpirit:splash_front_02_CTRL|rainSpirit:splash_front_02_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL|rainSpirit:splash_front_03_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL|rainSpirit:splash_front_03_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL|rainSpirit:splash_front_03_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_03_CTRL_GRP|rainSpirit:splash_front_03_CTRL|rainSpirit:splash_front_03_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL|rainSpirit:splash_front_04_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL|rainSpirit:splash_front_04_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL|rainSpirit:splash_front_04_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_04_CTRL_GRP|rainSpirit:splash_front_04_CTRL|rainSpirit:splash_front_04_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL|rainSpirit:splash_front_R_01_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL|rainSpirit:splash_front_R_01_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL|rainSpirit:splash_front_R_01_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_01_CTRL_GRP|rainSpirit:splash_front_R_01_CTRL|rainSpirit:splash_front_R_01_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL|rainSpirit:splash_front_R_02_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL|rainSpirit:splash_front_R_02_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL|rainSpirit:splash_front_R_02_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_02_CTRL_GRP|rainSpirit:splash_front_R_02_CTRL|rainSpirit:splash_front_R_02_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL|rainSpirit:splash_front_R_03_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL|rainSpirit:splash_front_R_03_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL|rainSpirit:splash_front_R_03_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_03_CTRL_GRP|rainSpirit:splash_front_R_03_CTRL|rainSpirit:splash_front_R_03_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL|rainSpirit:splash_front_R_04_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL|rainSpirit:splash_front_R_04_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL|rainSpirit:splash_front_R_04_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_front_R_04_CTRL_GRP|rainSpirit:splash_front_R_04_CTRL|rainSpirit:splash_front_R_04_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL|rainSpirit:splash_rear_R_01_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL|rainSpirit:splash_rear_R_01_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL|rainSpirit:splash_rear_R_01_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_01_CTRL_GRP|rainSpirit:splash_rear_R_01_CTRL|rainSpirit:splash_rear_R_01_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL|rainSpirit:splash_rear_R_02_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL|rainSpirit:splash_rear_R_02_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL|rainSpirit:splash_rear_R_02_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_02_CTRL_GRP|rainSpirit:splash_rear_R_02_CTRL|rainSpirit:splash_rear_R_02_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL|rainSpirit:splash_rear_R_03_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL|rainSpirit:splash_rear_R_03_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL|rainSpirit:splash_rear_R_03_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_03_CTRL_GRP|rainSpirit:splash_rear_R_03_CTRL|rainSpirit:splash_rear_R_03_CTRLShape" 
-		"ghostColorPostA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
 		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL|rainSpirit:splash_rear_R_04_CTRLShape" 
 		"ghosting" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL|rainSpirit:splash_rear_R_04_CTRLShape" 
-		"ghostingControl" " 0"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL|rainSpirit:splash_rear_R_04_CTRLShape" 
-		"ghostColorPreA" " 0.5"
-		2 "|rainSpirit:rainSpirit_3|rainSpirit:CTRLS|rainSpirit:transform_CTRL|rainSpirit:splash_rear_R_04_CTRL_GRP|rainSpirit:splash_rear_R_04_CTRL|rainSpirit:splash_rear_R_04_CTRLShape" 
-		"ghostColorPostA" " 0.5"
 		2 "rainSpirit:GEO_LYR" "displayType" " 2"
 		5 4 "rainSpiritRN" "|rainSpirit:rainSpirit_1|rainSpirit:GEO.drawOverride" 
 		"rainSpiritRN.placeHolderList[1]" ""
@@ -15281,192 +14614,9 @@ createNode reference -n "rainSpirit1RN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"rainSpirit1RN"
 		"rainSpirit1RN" 0
-		"rainSpirit1RN" 211
+		"rainSpirit1RN" 120
 		2 "|rainSpirit1:rainSpirit_1" "visibility" " 1"
 		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:JNTS" "visibility" " 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:JNTS|rainSpirit1:COG_JNT|rainSpirit1:hip_L_JNT" 
-		"rotate" " -type \"double3\" 0 0 -42.02611850101697399"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:JNTS|rainSpirit1:COG_JNT|rainSpirit1:hip_L_JNT" 
-		"rotateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:JNTS|rainSpirit1:COG_JNT|rainSpirit1:hip_L_JNT" 
-		"rotateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:JNTS|rainSpirit1:COG_JNT|rainSpirit1:hip_L_JNT" 
-		"rotateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL" 
-		"translate" " -type \"double3\" 0 0 -6.66360893065328419"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"translate" " -type \"double3\" 0 0.023400025427649129 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"scale" " -type \"double3\" 1.14412768836055978 1.14412768836055978 1.14412768836055978"
-		
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:COG_CTRL_GRP|rainSpirit1:COG_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_shoulder_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_shoulder_R_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_shoulder_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_shoulder_R_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_shoulder_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_shoulder_L_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_shoulder_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_shoulder_L_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"rotate" " -type \"double3\" 0 0 41.76855022432234676"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_R_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"rotate" " -type \"double3\" 0 0 -42.02611850101696689"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"Translate_Constraint" " -k 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL" 
-		"Rotate_Constraint" " -k 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"visibility" " -av 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"rotateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"rotateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"rotateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"Translate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_R_JNT_pupil_R_CTRL" 
-		"Rotate_Constraint" " -av -k 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_CTRL" 
-		"scaleZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL" 
-		"translateX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL" 
-		"translateY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL" 
-		"translateZ" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL" 
-		"scaleX" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL" 
-		"scaleY" " -av"
-		2 "|rainSpirit1:rainSpirit_1|rainSpirit1:CTRLS|rainSpirit1:transform_CTRL|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_GRP|rainSpirit1:rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL" 
-		"scaleZ" " -av"
 		2 "rainSpirit1:GEO_LYR" "displayType" " 2"
 		5 4 "rainSpirit1RN" "|rainSpirit1:rainSpirit_1|rainSpirit1:GEO.drawOverride" 
 		"rainSpirit1RN.placeHolderList[1]" ""
@@ -15721,15 +14871,15 @@ createNode reference -n "rainSpirit1RN1";
 		"rainSpirit1RN1"
 		"rainSpirit1RN1" 0
 		"rainSpirit1RN1" 12
-		2 "|rainSpirit2:rainSpirit_1" "visibility" " 1"
+		2 "|rainSpirit2:rainSpirit_1" "visibility" " 0"
 		2 "rainSpirit2:GEO_LYR" "displayType" " 2"
-		5 4 "rainSpirit1RN1" "|rainSpirit2:rainSpirit_1|rainSpirit2:CTRLS|rainSpirit2:transform_CTRL.translateX" 
-		"rainSpirit1RN1.placeHolderList[1]" ""
-		5 4 "rainSpirit1RN1" "|rainSpirit2:rainSpirit_1|rainSpirit2:CTRLS|rainSpirit2:transform_CTRL.translateY" 
-		"rainSpirit1RN1.placeHolderList[2]" ""
-		5 4 "rainSpirit1RN1" "|rainSpirit2:rainSpirit_1|rainSpirit2:CTRLS|rainSpirit2:transform_CTRL.translateZ" 
-		"rainSpirit1RN1.placeHolderList[3]" ""
 		5 4 "rainSpirit1RN1" "|rainSpirit2:rainSpirit_1|rainSpirit2:CTRLS|rainSpirit2:transform_CTRL.visibility" 
+		"rainSpirit1RN1.placeHolderList[1]" ""
+		5 4 "rainSpirit1RN1" "|rainSpirit2:rainSpirit_1|rainSpirit2:CTRLS|rainSpirit2:transform_CTRL.translateX" 
+		"rainSpirit1RN1.placeHolderList[2]" ""
+		5 4 "rainSpirit1RN1" "|rainSpirit2:rainSpirit_1|rainSpirit2:CTRLS|rainSpirit2:transform_CTRL.translateY" 
+		"rainSpirit1RN1.placeHolderList[3]" ""
+		5 4 "rainSpirit1RN1" "|rainSpirit2:rainSpirit_1|rainSpirit2:CTRLS|rainSpirit2:transform_CTRL.translateZ" 
 		"rainSpirit1RN1.placeHolderList[4]" ""
 		5 4 "rainSpirit1RN1" "|rainSpirit2:rainSpirit_1|rainSpirit2:CTRLS|rainSpirit2:transform_CTRL.rotateX" 
 		"rainSpirit1RN1.placeHolderList[5]" ""
@@ -38881,7 +38031,7 @@ createNode animCurveTA -n "rainSpirit_1_JNTS_COG_JNT_hip_L_CTRL_rotateZ1";
 		 46 20.522253241433038 52 -42.026118501016967 58 20.522253241433038 64 -42.026118501016967
 		 70 20.522253241433038 76 -42.026118501016967 82 20.522253241433038 88 -42.026118501016967
 		 94 20.522253241433038 100 -42.026118501016967 106 20.522253241433038 112 -42.026118501016967
-		 118 20.522253241433038 121 -10.751932629791964 129 -51.778607592486694 158 0 164 -14.152671978963031
+		 118 20.522253241433038 121 -10.751932629791964 129 -51.778607592486694 158 0 164 -14.152671978963033
 		 169 -0.051501036142491081 173 0 185 0 195 18.762529549222862 221 18.762529549222862
 		 240 0 243 -42.026118501016967 249 20.522253241433038 255 -42.026118501016967 261 20.522253241433038
 		 267 -42.026118501016967 273 20.522253241433038 279 -42.026118501016967 285 20.522253241433038
@@ -39768,9 +38918,21 @@ createNode animCurveTU -n "transform_CTRL_scaleZ6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr ".ktv[0]"  13 1;
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "2967C3D8-4ED2-229D-5ADF-899A255A3883";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -641.00138250409634 -307.94817100269802 ;
+	setAttr ".tgi[0].vh" -type "double2" 122.02380617765715 349.19466770779906 ;
+	setAttr -s 2 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -257.14285278320312;
+	setAttr ".tgi[0].ni[0].y" 162.85714721679688;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" 50;
+	setAttr ".tgi[0].ni[1].y" 162.85714721679688;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
 select -ne :time1;
-	setAttr ".o" 13;
-	setAttr ".unw" 13;
+	setAttr ".o" 438;
+	setAttr ".unw" 438;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -39801,6 +38963,17 @@ select -ne :defaultResolution;
 	setAttr ".pa" 1;
 select -ne :defaultObjectSet;
 	setAttr -s 6 ".dsm";
+select -ne :defaultColorMgtGlobals;
+	setAttr ".cfe" yes;
+	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya-legacy/config.ocio";
+	setAttr ".vtn" -type "string" "sRGB gamma (legacy)";
+	setAttr ".vn" -type "string" "sRGB gamma";
+	setAttr ".dn" -type "string" "legacy";
+	setAttr ".wsn" -type "string" "scene-linear Rec 709/sRGB";
+	setAttr ".ovt" no;
+	setAttr ".povt" no;
+	setAttr ".otn" -type "string" "sRGB gamma (legacy)";
+	setAttr ".potn" -type "string" "sRGB gamma (legacy)";
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
@@ -40946,100 +40119,105 @@ connectAttr "leg_R_IK_02_CTRL_rotateZ.o" "rainSpiritsGirlRN.phl[982]";
 connectAttr "leg_R_IK_02_CTRL_scaleX.o" "rainSpiritsGirlRN.phl[983]";
 connectAttr "leg_R_IK_02_CTRL_scaleY.o" "rainSpiritsGirlRN.phl[984]";
 connectAttr "leg_R_IK_02_CTRL_scaleZ.o" "rainSpiritsGirlRN.phl[985]";
-connectAttr "umbrellaRN.phl[68]" "rainSpiritsGirlRN.phl[986]";
-connectAttr "umbrellaRN.phl[69]" "rainSpiritsGirlRN.phl[987]";
-connectAttr "umbrellaRN.phl[70]" "rainSpiritsGirlRN.phl[988]";
-connectAttr "umbrellaRN.phl[71]" "rainSpiritsGirlRN.phl[989]";
-connectAttr "umbrellaRN.phl[72]" "rainSpiritsGirlRN.phl[990]";
-connectAttr "umbrellaRN.phl[73]" "rainSpiritsGirlRN.phl[991]";
-connectAttr "umbrellaRN.phl[74]" "rainSpiritsGirlRN.phl[992]";
-connectAttr "umbrellaRN.phl[75]" "rainSpiritsGirlRN.phl[993]";
-connectAttr "umbrellaRN.phl[76]" "rainSpiritsGirlRN.phl[994]";
-connectAttr "umbrellaRN.phl[77]" "rainSpiritsGirlRN.phl[995]";
-connectAttr "umbrellaRN.phl[78]" "rainSpiritsGirlRN.phl[996]";
-connectAttr "umbrellaRN.phl[79]" "rainSpiritsGirlRN.phl[997]";
-connectAttr "umbrellaRN.phl[80]" "rainSpiritsGirlRN.phl[998]";
-connectAttr "umbrellaRN.phl[81]" "rainSpiritsGirlRN.phl[999]";
-connectAttr "umbrellaRN.phl[82]" "rainSpiritsGirlRN.phl[1000]";
-connectAttr "umbrellaRN.phl[83]" "rainSpiritsGirlRN.phl[1001]";
-connectAttr "umbrellaRN.phl[84]" "rainSpiritsGirlRN.phl[1002]";
-connectAttr "umbrellaRN.phl[85]" "rainSpiritsGirlRN.phl[1003]";
-connectAttr "umbrellaRN.phl[86]" "rainSpiritsGirlRN.phl[1004]";
-connectAttr "umbrellaRN.phl[87]" "rainSpiritsGirlRN.phl[1005]";
-connectAttr "umbrellaRN.phl[88]" "rainSpiritsGirlRN.phl[1006]";
-connectAttr "umbrellaRN.phl[89]" "rainSpiritsGirlRN.phl[1007]";
-connectAttr "umbrellaRN.phl[90]" "rainSpiritsGirlRN.phl[1008]";
-connectAttr "umbrellaRN.phl[91]" "rainSpiritsGirlRN.phl[1009]";
-connectAttr "umbrellaRN.phl[92]" "rainSpiritsGirlRN.phl[1010]";
-connectAttr "umbrellaRN.phl[93]" "rainSpiritsGirlRN.phl[1011]";
-connectAttr "umbrellaRN.phl[94]" "rainSpiritsGirlRN.phl[1012]";
-connectAttr "umbrellaRN.phl[95]" "rainSpiritsGirlRN.phl[1013]";
-connectAttr "umbrellaRN.phl[96]" "rainSpiritsGirlRN.phl[1014]";
-connectAttr "umbrellaRN.phl[97]" "rainSpiritsGirlRN.phl[1015]";
-connectAttr "umbrellaRN.phl[98]" "rainSpiritsGirlRN.phl[1016]";
-connectAttr "umbrellaRN.phl[99]" "rainSpiritsGirlRN.phl[1017]";
-connectAttr "umbrellaRN.phl[100]" "rainSpiritsGirlRN.phl[1018]";
-connectAttr "umbrellaRN.phl[101]" "rainSpiritsGirlRN.phl[1019]";
-connectAttr "|scene|sidewalk|sidewalk_1|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1020]"
+connectAttr "rainSpiritsGirlRN.phl[986]" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "|scene|sidewalk|OLD|sidewalk_2|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1021]"
+connectAttr "rainSpiritsGirlRN.phl[987]" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "|scene|sidewalk|OLD|sidewalk_3|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1022]"
+connectAttr "rainSpiritsGirlRN.phl[988]" "rainSpiritsGirlRN.phl[989]";
+connectAttr "umbrellaRN.phl[68]" "rainSpiritsGirlRN.phl[990]";
+connectAttr "umbrellaRN.phl[69]" "rainSpiritsGirlRN.phl[991]";
+connectAttr "umbrellaRN.phl[70]" "rainSpiritsGirlRN.phl[992]";
+connectAttr "umbrellaRN.phl[71]" "rainSpiritsGirlRN.phl[993]";
+connectAttr "umbrellaRN.phl[72]" "rainSpiritsGirlRN.phl[994]";
+connectAttr "umbrellaRN.phl[73]" "rainSpiritsGirlRN.phl[995]";
+connectAttr "umbrellaRN.phl[74]" "rainSpiritsGirlRN.phl[996]";
+connectAttr "umbrellaRN.phl[75]" "rainSpiritsGirlRN.phl[997]";
+connectAttr "umbrellaRN.phl[76]" "rainSpiritsGirlRN.phl[998]";
+connectAttr "umbrellaRN.phl[77]" "rainSpiritsGirlRN.phl[999]";
+connectAttr "umbrellaRN.phl[78]" "rainSpiritsGirlRN.phl[1000]";
+connectAttr "umbrellaRN.phl[79]" "rainSpiritsGirlRN.phl[1001]";
+connectAttr "umbrellaRN.phl[80]" "rainSpiritsGirlRN.phl[1002]";
+connectAttr "umbrellaRN.phl[81]" "rainSpiritsGirlRN.phl[1003]";
+connectAttr "umbrellaRN.phl[82]" "rainSpiritsGirlRN.phl[1004]";
+connectAttr "umbrellaRN.phl[83]" "rainSpiritsGirlRN.phl[1005]";
+connectAttr "umbrellaRN.phl[84]" "rainSpiritsGirlRN.phl[1006]";
+connectAttr "umbrellaRN.phl[85]" "rainSpiritsGirlRN.phl[1007]";
+connectAttr "umbrellaRN.phl[86]" "rainSpiritsGirlRN.phl[1008]";
+connectAttr "umbrellaRN.phl[87]" "rainSpiritsGirlRN.phl[1009]";
+connectAttr "umbrellaRN.phl[88]" "rainSpiritsGirlRN.phl[1010]";
+connectAttr "umbrellaRN.phl[89]" "rainSpiritsGirlRN.phl[1011]";
+connectAttr "umbrellaRN.phl[90]" "rainSpiritsGirlRN.phl[1012]";
+connectAttr "umbrellaRN.phl[91]" "rainSpiritsGirlRN.phl[1013]";
+connectAttr "umbrellaRN.phl[92]" "rainSpiritsGirlRN.phl[1014]";
+connectAttr "umbrellaRN.phl[93]" "rainSpiritsGirlRN.phl[1015]";
+connectAttr "umbrellaRN.phl[94]" "rainSpiritsGirlRN.phl[1016]";
+connectAttr "umbrellaRN.phl[95]" "rainSpiritsGirlRN.phl[1017]";
+connectAttr "umbrellaRN.phl[96]" "rainSpiritsGirlRN.phl[1018]";
+connectAttr "umbrellaRN.phl[97]" "rainSpiritsGirlRN.phl[1019]";
+connectAttr "umbrellaRN.phl[98]" "rainSpiritsGirlRN.phl[1020]";
+connectAttr "umbrellaRN.phl[99]" "rainSpiritsGirlRN.phl[1021]";
+connectAttr "umbrellaRN.phl[100]" "rainSpiritsGirlRN.phl[1022]";
+connectAttr "umbrellaRN.phl[101]" "rainSpiritsGirlRN.phl[1023]";
+connectAttr "|scene|sidewalk|sidewalk_1|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1024]"
 		;
-connectAttr "|scene|sidewalk|OLD|sidewalk_4|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1023]"
+connectAttr "|scene|sidewalk|OLD|sidewalk_2|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1025]"
 		;
-connectAttr "|scene|sidewalk|OLD|sidewalk_5|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1024]"
+connectAttr "|scene|sidewalk|OLD|sidewalk_3|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1026]"
 		;
-connectAttr "|scene|sidewalk|OLD|sidewalk_6|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1025]"
+connectAttr "|scene|sidewalk|OLD|sidewalk_4|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1027]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_0|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1026]"
+connectAttr "|scene|sidewalk|OLD|sidewalk_5|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1028]"
 		;
-connectAttr "|scene|sidewalk|OLD|sidewalk_7|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1027]"
+connectAttr "|scene|sidewalk|OLD|sidewalk_6|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1029]"
 		;
-connectAttr "water_OutlineShape.iog" "rainSpiritsGirlRN.phl[1028]";
-connectAttr "|scene|sidewalk|sidewalk_8|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1029]"
+connectAttr "|scene|sidewalk|sidewalk_0|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1030]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_9|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1030]"
+connectAttr "|scene|sidewalk|OLD|sidewalk_7|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1031]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_10|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1031]"
+connectAttr "water_OutlineShape.iog" "rainSpiritsGirlRN.phl[1032]";
+connectAttr "|scene|sidewalk|sidewalk_8|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1033]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_11|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1032]"
+connectAttr "|scene|sidewalk|sidewalk_9|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1034]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_12|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1033]"
+connectAttr "|scene|sidewalk|sidewalk_10|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1035]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_13|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1034]"
+connectAttr "|scene|sidewalk|sidewalk_11|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1036]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_14|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1035]"
+connectAttr "|scene|sidewalk|sidewalk_12|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1037]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_15|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1036]"
+connectAttr "|scene|sidewalk|sidewalk_13|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1038]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_16|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1037]"
+connectAttr "|scene|sidewalk|sidewalk_14|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1039]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_17|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1038]"
+connectAttr "|scene|sidewalk|sidewalk_15|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1040]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_18|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1039]"
+connectAttr "|scene|sidewalk|sidewalk_16|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1041]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_19|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1040]"
+connectAttr "|scene|sidewalk|sidewalk_17|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1042]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_20|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1041]"
+connectAttr "|scene|sidewalk|sidewalk_18|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1043]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_21|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1042]"
+connectAttr "|scene|sidewalk|sidewalk_19|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1044]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_22|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1043]"
+connectAttr "|scene|sidewalk|sidewalk_20|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1045]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_23|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1044]"
+connectAttr "|scene|sidewalk|sidewalk_21|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1046]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_24|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1045]"
+connectAttr "|scene|sidewalk|sidewalk_22|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1047]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_25|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1046]"
+connectAttr "|scene|sidewalk|sidewalk_23|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1048]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_26|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1047]"
+connectAttr "|scene|sidewalk|sidewalk_24|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1049]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_27|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1048]"
+connectAttr "|scene|sidewalk|sidewalk_25|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1050]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_28|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1049]"
+connectAttr "|scene|sidewalk|sidewalk_26|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1051]"
 		;
-connectAttr "|scene|sidewalk|sidewalk_29|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1050]"
+connectAttr "|scene|sidewalk|sidewalk_27|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1052]"
+		;
+connectAttr "|scene|sidewalk|sidewalk_28|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1053]"
+		;
+connectAttr "|scene|sidewalk|sidewalk_29|sidewalk_1_outline|sidewalk_1_outlineShape.iog" "rainSpiritsGirlRN.phl[1054]"
 		;
 connectAttr "extraGEO_LYR.di" "rainSpiritRN.phl[1]";
 connectAttr "transform_CTRL_visibility3.o" "rainSpiritRN.phl[2]";
@@ -42179,10 +41357,10 @@ connectAttr "rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_Rotate_Constraint1
 		;
 connectAttr "rainSpirit_1_JNTS_COG_JNT_eye_L_JNT_pupil_L_CTRL_visibility1.o" "rainSpirit1RN.phl[117]"
 		;
-connectAttr "transform_CTRL_translateX6.o" "rainSpirit1RN1.phl[1]";
-connectAttr "transform_CTRL_translateY6.o" "rainSpirit1RN1.phl[2]";
-connectAttr "transform_CTRL_translateZ6.o" "rainSpirit1RN1.phl[3]";
-connectAttr "transform_CTRL_visibility6.o" "rainSpirit1RN1.phl[4]";
+connectAttr "transform_CTRL_visibility6.o" "rainSpirit1RN1.phl[1]";
+connectAttr "transform_CTRL_translateX6.o" "rainSpirit1RN1.phl[2]";
+connectAttr "transform_CTRL_translateY6.o" "rainSpirit1RN1.phl[3]";
+connectAttr "transform_CTRL_translateZ6.o" "rainSpirit1RN1.phl[4]";
 connectAttr "transform_CTRL_rotateX6.o" "rainSpirit1RN1.phl[5]";
 connectAttr "transform_CTRL_rotateY6.o" "rainSpirit1RN1.phl[6]";
 connectAttr "transform_CTRL_rotateZ6.o" "rainSpirit1RN1.phl[7]";
