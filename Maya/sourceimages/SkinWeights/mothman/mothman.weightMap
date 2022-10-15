@@ -1,0 +1,21 @@
+// Exported skin weight map file
+// 
+body_GEO	spine_01_JNT	body_GEO_spine_01_JNT.iff
+body_GEO	spine_02_JNT	body_GEO_spine_02_JNT.iff
+body_GEO	lower_body_JNT	body_GEO_lower_body_JNT.iff
+body_GEO	leg_R_01_JNT	body_GEO_leg_R_01_JNT.iff
+body_GEO	knee_R_01_JNT	body_GEO_knee_R_01_JNT.iff
+body_GEO	knee_R_02_JNT	body_GEO_knee_R_02_JNT.iff
+body_GEO	knee_R_03_JNT	body_GEO_knee_R_03_JNT.iff
+body_GEO	foot_R_01_JNT	body_GEO_foot_R_01_JNT.iff
+body_GEO	foot_R_02_JNT	body_GEO_foot_R_02_JNT.iff
+body_GEO	foot_R_03_JNT	body_GEO_foot_R_03_JNT.iff
+body_GEO	knee_R_EXTRA_01_JNT	body_GEO_knee_R_EXTRA_01_JNT.iff
+body_GEO	leg_L_01_JNT	body_GEO_leg_L_01_JNT.iff
+body_GEO	knee_L_01_JNT	body_GEO_knee_L_01_JNT.iff
+body_GEO	knee_L_02_JNT	body_GEO_knee_L_02_JNT.iff
+body_GEO	knee_L_03_JNT	body_GEO_knee_L_03_JNT.iff
+body_GEO	foot_L_01_JNT	body_GEO_foot_L_01_JNT.iff
+body_GEO	foot_L_02_JNT	body_GEO_foot_L_02_JNT.iff
+body_GEO	foot_L_03_JNT	body_GEO_foot_L_03_JNT.iff
+body_GEO	knee_L_EXTRA_01_JNT	body_GEO_knee_L_EXTRA_01_JNT.iff
